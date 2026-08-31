@@ -61,6 +61,16 @@ class LocalGluingTests(unittest.TestCase):
             tuple(range(6)),
             search.universal_edge_class_isomorphism(6, edges, roots, classes),
         )
+        side_classes = search.edge_class_arrays(edges, roots, classes)
+        conditions = search.parent_permutation_conditions(6, edges, roots, classes)
+        exact = [permutation for permutation, pairs in conditions if not pairs]
+        self.assertIn(tuple(range(6)), exact)
+        self.assertTrue(all(permutation not in exact for permutation in maps))
+        self.assertIsNone(search.separating_binary_assignment(len(classes), conditions))
+        identity_pairs = search.permutation_class_pairs(
+            6, edges, side_classes, tuple(range(6))
+        )
+        self.assertEqual(frozenset(), identity_pairs)
 
 
 if __name__ == "__main__":

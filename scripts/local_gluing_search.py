@@ -14,6 +14,7 @@ checkers before it is printed.  Orders at most 13 are negative controls.
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 import random
 import subprocess
@@ -149,6 +150,81 @@ def universal_edge_class_isomorphism(
         return False
 
     return tuple(mapping) if search(tuple(range(n))) else None
+
+
+def edge_class_arrays(
+    edges: tuple[tuple[int, int], ...],
+    roots: tuple[int, ...],
+    class_index: dict[int, int],
+) -> tuple[tuple[int, ...], tuple[int, ...]]:
+    """Return the equality-class label of every edge on each parent side."""
+
+    slots = len(edges)
+    return tuple(
+        tuple(class_index[roots[side * slots + position]] for position in range(slots))
+        for side in range(2)
+    )
+
+
+def permutation_class_pairs(
+    n: int,
+    edges: tuple[tuple[int, int], ...],
+    side_classes: tuple[tuple[int, ...], tuple[int, ...]],
+    permutation: tuple[int, ...],
+) -> frozenset[tuple[int, int]]:
+    """Class equalities required for ``permutation`` to map G onto H.
+
+    A binary class assignment ``values`` makes the permutation a parent-graph
+    isomorphism exactly when ``values[a] == values[b]`` for every returned
+    pair ``(a,b)``.  Equal pairs are omitted.
+    """
+
+    position = {edge: i for i, edge in enumerate(edges)}
+    required = set()
+    for edge, source_position in position.items():
+        image = tuple(sorted((permutation[edge[0]], permutation[edge[1]])))
+        a = side_classes[0][source_position]
+        b = side_classes[1][position[image]]
+        if a != b:
+            required.add((a, b))
+    return frozenset(required)
+
+
+def parent_permutation_conditions(
+    n: int,
+    edges: tuple[tuple[int, int], ...],
+    roots: tuple[int, ...],
+    class_index: dict[int, int],
+) -> tuple[tuple[tuple[int, ...], frozenset[tuple[int, int]]], ...]:
+    """Enumerate the exact binary condition for every G-to-H permutation."""
+
+    side_classes = edge_class_arrays(edges, roots, class_index)
+    return tuple(
+        (permutation, permutation_class_pairs(n, edges, side_classes, permutation))
+        for permutation in itertools.permutations(range(n))
+    )
+
+
+def separating_binary_assignment(
+    class_count: int,
+    conditions: tuple[tuple[tuple[int, ...], frozenset[tuple[int, int]]], ...],
+) -> tuple[int, ...] | None:
+    """Find a class assignment for which no parent permutation is an isomorphism.
+
+    This exhaustive solver is intended for small class counts.  A condition
+    with no unequal class pair is an exact-label globalizer and immediately
+    proves that no separating assignment exists.
+    """
+
+    if any(not pairs for _permutation, pairs in conditions):
+        return None
+    for values in itertools.product((0, 1), repeat=class_count):
+        if all(
+            any(values[a] != values[b] for a, b in pairs)
+            for _permutation, pairs in conditions
+        ):
+            return values
+    return None
 
 
 def verify_local_maps(g: Graph, h: Graph, maps: tuple[tuple[int, ...], ...]) -> bool:

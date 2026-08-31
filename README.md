@@ -17,9 +17,15 @@ Run the controls with:
 python3 -m unittest discover -s tests -v
 python3 scripts/exhaustive_small.py --vertices 6
 python3 scripts/exhaustive_local_maps.py --vertices 4 --progress 0
+python3 scripts/analyze_n6_obstruction.py
+python3 scripts/exhaustive_transposition_systems.py --allow-identity --representatives 0
 ```
 
 No hash equality is ever accepted as a certificate.
+
+`docs/CONSTRUCTION_FORMALISM.md` separates the local-map, edge-class, and
+binary-realization layers and gives the exact assignment-specific parent
+permutation condition.
 
 See `docs/FIRST_STRIKE.md` for the current construction frontier and the exact
 order-five local-gluing census.
