@@ -9,6 +9,50 @@ Date: 2026-08-31
 No zero-globalizer system and no binary assignment-specific separator was
 found in the exact domains below.
 
+## Complete exceptional-leaf census
+
+The completed length-two source frontier contains 8,849,705 residual-
+centralizer canonical leaves.  Exactly 3,181 require a nonidentity rescue.
+Full relabeling and side reversal reduce them to 467 primitive orbits.  Every
+exact-label globalizer of every orbit was then used as the outside-deletion
+row of a legitimate one-vertex lift, producing 11,410 order-seven families.
+
+| Number of 3-cycle rows | Source leaves | Nonidentity exceptions | Full orbits | Legitimate lifts |
+|---:|---:|---:|---:|---:|
+| 0 | 95,280 | 5 | 3 | 19 |
+| 1 | 126,630 | 7 | 6 | 238 |
+| 2 | 843,885 | 63 | 34 | 1,628 |
+| 3 | 2,250,202 | 246 | 62 | 2,994 |
+| 4 | 3,000,200 | 642 | 117 | 3,074 |
+| 5 | 2,000,120 | 1,251 | 142 | 2,142 |
+| 6 | 533,388 | 967 | 103 | 1,315 |
+| **Total** | **8,849,705** | **3,181** | **467** | **11,410** |
+
+The 467 primitive orbits have class-count distribution
+
+```text
+classes 2: 324
+classes 3:  96
+classes 4:  39
+classes 5:   6
+classes 6:   2
+```
+
+The legitimate lifts have these exact distributions:
+
+```text
+lift classes:      3: 10,056; 4: 186; 5: 640; 6: 482; 7: 38; 9: 8
+old classes kept:  2: 10,056; 3: 822; 4: 486; 5: 38; 6: 8
+globalizers:       2: 6; 3: 6; 4: 16; 6: 66; 8: 504;
+                  10: 340; 16: 4,208; 72: 6,264
+```
+
+There are zero zero-globalizer lifts and zero assignment-specific
+separators.  The histograms are marginal: exact joint recovery additionally
+proved that no lift in the `r=2` or `r=4` strata simultaneously has at most
+two rescuers and at least six classes.  This prevents the misleading
+combination of separately favorable histogram bins.
+
 ## Assignment-specific strike
 
 For a parent permutation `p`, let `E_p` be the set of unequal edge-class
