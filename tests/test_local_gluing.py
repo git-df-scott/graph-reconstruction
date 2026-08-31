@@ -72,6 +72,33 @@ class LocalGluingTests(unittest.TestCase):
         )
         self.assertEqual(frozenset(), identity_pairs)
 
+    def test_length_two_minimum_rescue_primitive(self):
+        maps = (
+            (0, 2, 3, 1, 4, 5),
+            (4, 1, 2, 5, 0, 3),
+            (4, 1, 2, 5, 0, 3),
+            (5, 2, 1, 3, 4, 0),
+            (0, 5, 1, 3, 4, 2),
+            (0, 2, 1, 4, 3, 5),
+        )
+        edges, roots, classes = search.edge_partition(6, maps)
+        self.assertEqual(3, len(classes))
+        conditions = search.parent_permutation_conditions(6, edges, roots, classes)
+        exact = tuple(permutation for permutation, pairs in conditions if not pairs)
+        self.assertEqual(
+            (
+                (0, 2, 1, 3, 4, 5),
+                (4, 1, 2, 5, 0, 3),
+            ),
+            exact,
+        )
+        self.assertIsNone(search.separating_binary_assignment(len(classes), conditions))
+        for mask in range(1 << len(classes)):
+            values = tuple((mask >> bit) & 1 for bit in range(len(classes)))
+            g, h = search.instantiate(6, edges, roots, classes, values)
+            self.assertTrue(same_deck(g, h))
+            self.assertTrue(search.is_isomorphic(g, h))
+
 
 if __name__ == "__main__":
     unittest.main()

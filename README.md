@@ -19,6 +19,7 @@ python3 scripts/exhaustive_small.py --vertices 6
 python3 scripts/exhaustive_local_maps.py --vertices 4 --progress 0
 python3 scripts/analyze_n6_obstruction.py
 python3 scripts/exhaustive_transposition_systems.py --allow-identity --representatives 0
+python3 scripts/exhaustive_length2_frontier.py --family mixed --three-count 2
 ```
 
 No hash equality is ever accepted as a certificate.
