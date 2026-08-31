@@ -67,15 +67,27 @@ def random_local_maps(n: int, moves: int, rng: random.Random) -> tuple[tuple[int
 
 
 def edge_partition(n: int, maps: tuple[tuple[int, ...], ...]):
+    return edge_partition_families(n, (maps,))
+
+
+def edge_partition_families(
+    n: int,
+    map_families: tuple[tuple[tuple[int, ...], ...], ...],
+):
+    """Partition parent edge slots using one or more complete card-map families."""
+
     edges, index = edge_index(n)
     slots = len(edges)
     union = UnionFind(2 * slots)
-    for deleted, permutation in enumerate(maps):
-        for edge, position in index.items():
-            if deleted in edge:
-                continue
-            image = tuple(sorted((permutation[edge[0]], permutation[edge[1]])))
-            union.union(position, slots + index[image])
+    for maps in map_families:
+        if len(maps) != n:
+            raise ValueError("each family must contain one map per deleted vertex")
+        for deleted, permutation in enumerate(maps):
+            for edge, position in index.items():
+                if deleted in edge:
+                    continue
+                image = tuple(sorted((permutation[edge[0]], permutation[edge[1]])))
+                union.union(position, slots + index[image])
     roots = tuple(union.find(i) for i in range(2 * slots))
     classes = sorted(set(roots))
     return edges, roots, {root: i for i, root in enumerate(classes)}

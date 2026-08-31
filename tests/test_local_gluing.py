@@ -99,6 +99,80 @@ class LocalGluingTests(unittest.TestCase):
             self.assertTrue(same_deck(g, h))
             self.assertTrue(search.is_isomorphic(g, h))
 
+    def test_multiple_card_map_families_preserve_each_family(self):
+        first = (
+            (0, 2, 3, 1, 4, 5),
+            (4, 1, 2, 5, 0, 3),
+            (4, 1, 2, 5, 0, 3),
+            (5, 2, 1, 3, 4, 0),
+            (0, 5, 1, 3, 4, 2),
+            (0, 2, 1, 4, 3, 5),
+        )
+        twist = (0, 1, 2, 4, 3, 5)
+        # Keep the test independent of the census helper.
+        second_rows = [[0] * 6 for _ in range(6)]
+        for deleted, permutation in enumerate(first):
+            for source in range(6):
+                second_rows[twist[deleted]][twist[source]] = twist[permutation[source]]
+        second = tuple(tuple(row) for row in second_rows)
+        edges, roots, classes = search.edge_partition_families(6, (first, second))
+        values = tuple(index & 1 for index in range(len(classes)))
+        g, h = search.instantiate(6, edges, roots, classes, values)
+        self.assertTrue(search.verify_local_maps(g, h, first))
+        self.assertTrue(search.verify_local_maps(g, h, second))
+        self.assertTrue(same_deck(g, h))
+
+    def test_disjoint_rescue_twist_collapses_to_one_class(self):
+        primitive = (
+            (0, 2, 3, 1, 4, 5),
+            (4, 1, 2, 5, 0, 3),
+            (4, 1, 2, 5, 0, 3),
+            (5, 2, 1, 3, 4, 0),
+            (0, 5, 1, 3, 4, 2),
+            (0, 2, 1, 4, 3, 5),
+        )
+        twist = (0, 1, 3, 2, 4, 5)
+        rows = [[0] * 6 for _ in range(6)]
+        for deleted, permutation in enumerate(primitive):
+            for source in range(6):
+                rows[twist[deleted]][twist[source]] = twist[permutation[source]]
+        second = tuple(tuple(row) for row in rows)
+        edges, roots, classes = search.edge_partition_families(
+            6, (primitive, second)
+        )
+        self.assertEqual(1, len(classes))
+        conditions = search.parent_permutation_conditions(6, edges, roots, classes)
+        self.assertEqual(720, sum(not pairs for _permutation, pairs in conditions))
+        self.assertIsNone(search.separating_binary_assignment(len(classes), conditions))
+
+    def test_five_vertex_overlap_collapses_to_one_class(self):
+        primitive = (
+            (0, 2, 3, 1, 4, 5),
+            (4, 1, 2, 5, 0, 3),
+            (4, 1, 2, 5, 0, 3),
+            (5, 2, 1, 3, 4, 0),
+            (0, 5, 1, 3, 4, 2),
+            (0, 2, 1, 4, 3, 5),
+        )
+        rescuers = ((0, 2, 1, 3, 4, 5), (4, 1, 2, 5, 0, 3))
+
+        def lift(block, outside_rescuer):
+            reverse = {actual: label for label, actual in enumerate(block)}
+            outside = next(vertex for vertex in range(7) if vertex not in block)
+            result = []
+            for deleted in range(7):
+                local = outside_rescuer if deleted == outside else primitive[reverse[deleted]]
+                permutation = list(range(7))
+                for label, actual in enumerate(block):
+                    permutation[actual] = block[local[label]]
+                result.append(tuple(permutation))
+            return tuple(result)
+
+        first = lift((0, 1, 2, 3, 4, 5), rescuers[0])
+        second = lift((0, 1, 2, 3, 4, 6), rescuers[1])
+        _edges, _roots, classes = search.edge_partition_families(7, (first, second))
+        self.assertEqual(1, len(classes))
+
 
 if __name__ == "__main__":
     unittest.main()
