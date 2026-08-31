@@ -665,6 +665,9 @@ Remote `main` and the completed local commit were verified byte-for-byte at
 - `scripts/kill_universal_rescuer.py` — complete deletion-fixed row vocabulary,
   witness matrix, six-row CSP, independent dynamic program, minimal cores,
   terminal classifier, and hostile raw replay.
+- `scripts/single_merge_escape.py` — complete classification of all 15
+  one-pair old-class merges, modified row vocabularies, terminal CSPs, and raw
+  S7 minimum-globalizer replay.
 
 ## Complete progress timeline
 
@@ -684,27 +687,29 @@ Remote `main` and the completed local commit were verified byte-for-byte at
    cycle-insertion systems; universal `r1` discovered.
 8. `ab55889` — complete arbitrary compatible-row CSP; `r1` and all four old
    A4 rescuers proved unavoidable while all six old classes remain distinct.
+9. `dae7492` — complete single-merge escape strike: all 15 raw merges and
+   seven A4 class-action orbits classified; three Goldilocks merges kill all
+   four old rescuers but leave exactly two emergent globalizers.
 
 ## Current live boundary
 
 ```text
 Preserving all six old classes -> all four A4 globalizers survive.
+Merging one matching-class pair -> old A4 dies, but two new rescuers survive.
+Minimum exact-label globalizer count in the closed single-merge domain: 2.
+Zero-globalizer systems: 0.
 ```
 
-The smallest hypothesis that can now be relaxed is one controlled old-class
-merge.
+The full certificate and exact representative are recorded in
+`docs/SINGLE_MERGE_ESCAPE.md`.  The new tests raise the hardened suite to
+30/30 passing.
 
 ## Exactly one next strike
 
-Permit exactly one pair among the six old primitive classes to merge.  There
-are 15 possible pairs.  For each pair:
-
-1. rebuild the complete deletion-fixed compatible-row vocabulary;
-2. determine whether the row-2 forcing core breaks;
-3. compute the exact incidence signature and all surviving old rescuers;
-4. reject immediately if the coloring enters the certified S4 or S5 regime;
-5. run all 5,040 permutations only on genuine survivors;
-6. stop immediately if a multi-class zero-globalizer system appears.
+Couple two different matching-class merge constraints whose unavoidable
+transposition pairs are complementary, then solve their joint incidence CSP
+under the proved A4 class action.  The target is to make the residual V4
+rescue torsors disjoint while retaining the nine-class profile.
 
 Binary realization remains forbidden until exact-label globalizers reach
 zero.
