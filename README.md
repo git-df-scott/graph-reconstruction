@@ -37,3 +37,10 @@ order-five local-gluing census.
 
 See `docs/RESILIENT_LIFT_COUPLING_STRIKE.md` for the exact nine-class
 resilient-lift and Pareto coupling theorems.
+
+## Sol 1
+
+The complete first cloud-session ledger--every exact search, script, file,
+test, result, commit, and push--is recorded in [`docs/SOL_1.md`](docs/SOL_1.md).
+Its final verdict is `GRC CE: NO`; the strongest endpoint is the universal
+`A4`-rescuer obstruction at commit `ab55889`.
