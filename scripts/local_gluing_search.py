@@ -80,8 +80,7 @@ def edge_partition_families(
     slots = len(edges)
     union = UnionFind(2 * slots)
     for maps in map_families:
-        if len(maps) != n:
-            raise ValueError("each family must contain one map per deleted vertex")
+        validate_local_maps(n, maps)
         for deleted, permutation in enumerate(maps):
             for edge, position in index.items():
                 if deleted in edge:
@@ -91,6 +90,21 @@ def edge_partition_families(
     roots = tuple(union.find(i) for i in range(2 * slots))
     classes = sorted(set(roots))
     return edges, roots, {root: i for i, root in enumerate(classes)}
+
+
+def validate_local_maps(
+    n: int, maps: tuple[tuple[int, ...], ...]
+) -> None:
+    """Require one genuine deletion-card permutation fixing each deletion."""
+
+    if len(maps) != n:
+        raise ValueError("each family must contain one map per deleted vertex")
+    target = list(range(n))
+    for deleted, permutation in enumerate(maps):
+        if len(permutation) != n or sorted(permutation) != target:
+            raise ValueError(f"row {deleted} is not a permutation of range({n})")
+        if permutation[deleted] != deleted:
+            raise ValueError(f"row {deleted} does not fix its deleted vertex")
 
 
 def instantiate(
@@ -240,6 +254,12 @@ def separating_binary_assignment(
 
 
 def verify_local_maps(g: Graph, h: Graph, maps: tuple[tuple[int, ...], ...]) -> bool:
+    try:
+        validate_local_maps(g.n, maps)
+    except ValueError:
+        return False
+    if h.n != g.n:
+        return False
     for deleted, permutation in enumerate(maps):
         for u in range(g.n):
             if u == deleted:

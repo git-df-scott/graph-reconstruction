@@ -11,6 +11,15 @@ import local_gluing_search as search
 
 
 class LocalGluingTests(unittest.TestCase):
+    def test_rejects_malformed_local_maps(self):
+        valid = tuple(tuple(range(4)) for _ in range(4))
+        malformed = list(valid)
+        malformed[1] = (1, 0, 2, 3)
+        with self.assertRaisesRegex(ValueError, "does not fix"):
+            search.edge_partition(4, tuple(malformed))
+        g, h = search.instantiate(4, *search.edge_partition(4, valid), (0,) * 6)
+        self.assertFalse(search.verify_local_maps(g, h, tuple(malformed)))
+
     def test_equations_imply_equal_decks(self):
         rng = random.Random(17)
         maps = search.random_local_maps(7, 1, rng)
@@ -172,6 +181,79 @@ class LocalGluingTests(unittest.TestCase):
         second = lift((0, 1, 2, 3, 4, 6), rescuers[1])
         _edges, _roots, classes = search.edge_partition_families(7, (first, second))
         self.assertEqual(1, len(classes))
+
+    def test_resilient_double_transposition_lift(self):
+        lift = (
+            (0, 1, 3, 2, 5, 4, 6),
+            (0, 1, 3, 2, 5, 4, 6),
+            (3, 4, 2, 0, 1, 5, 6),
+            (2, 5, 0, 3, 4, 1, 6),
+            (2, 5, 0, 3, 4, 1, 6),
+            (3, 4, 2, 0, 1, 5, 6),
+            (0, 1, 3, 2, 5, 4, 6),
+        )
+        edges, roots, classes = search.edge_partition(7, lift)
+        self.assertEqual(7, len(classes))
+        conditions = search.parent_permutation_conditions(7, edges, roots, classes)
+        exact = tuple(permutation for permutation, pairs in conditions if not pairs)
+        self.assertEqual(
+            (
+                (0, 1, 3, 2, 5, 4, 6),
+                (2, 5, 0, 3, 4, 1, 6),
+                (3, 4, 2, 0, 1, 5, 6),
+            ),
+            exact,
+        )
+        self.assertIsNone(search.separating_binary_assignment(len(classes), conditions))
+
+    def test_resilient_disjoint_rescue_twist_becomes_side_symmetric(self):
+        lift = (
+            (0, 1, 3, 2, 5, 4, 6),
+            (0, 1, 3, 2, 5, 4, 6),
+            (3, 4, 2, 0, 1, 5, 6),
+            (2, 5, 0, 3, 4, 1, 6),
+            (2, 5, 0, 3, 4, 1, 6),
+            (3, 4, 2, 0, 1, 5, 6),
+            (0, 1, 3, 2, 5, 4, 6),
+        )
+        twist = (0, 4, 2, 3, 5, 1, 6)
+        rows = [[0] * 7 for _ in range(7)]
+        for deleted, permutation in enumerate(lift):
+            for source in range(7):
+                rows[twist[deleted]][twist[source]] = twist[permutation[source]]
+        second = tuple(tuple(row) for row in rows)
+        edges, roots, classes = search.edge_partition_families(7, (lift, second))
+        self.assertEqual(5, len(classes))
+        side_classes = search.edge_class_arrays(edges, roots, classes)
+        self.assertEqual(side_classes[0], side_classes[1])
+        conditions = search.parent_permutation_conditions(7, edges, roots, classes)
+        self.assertEqual(36, sum(not pairs for _permutation, pairs in conditions))
+        self.assertIsNone(search.separating_binary_assignment(len(classes), conditions))
+
+    def test_nine_class_resilient_lift(self):
+        lift = (
+            (0, 2, 3, 1, 4, 5, 6),
+            (3, 1, 0, 2, 4, 5, 6),
+            (1, 3, 2, 0, 4, 5, 6),
+            (2, 0, 1, 3, 4, 5, 6),
+            (1, 3, 2, 0, 4, 5, 6),
+            (1, 3, 2, 0, 4, 5, 6),
+            (0, 2, 3, 1, 4, 5, 6),
+        )
+        edges, roots, classes = search.edge_partition(7, lift)
+        self.assertEqual(9, len(classes))
+        conditions = search.parent_permutation_conditions(7, edges, roots, classes)
+        exact = tuple(permutation for permutation, pairs in conditions if not pairs)
+        self.assertEqual(
+            (
+                (0, 2, 3, 1, 4, 5, 6),
+                (1, 3, 2, 0, 4, 5, 6),
+                (2, 0, 1, 3, 4, 5, 6),
+                (3, 1, 0, 2, 4, 5, 6),
+            ),
+            exact,
+        )
+        self.assertIsNone(search.separating_binary_assignment(len(classes), conditions))
 
 
 if __name__ == "__main__":

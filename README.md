@@ -22,6 +22,8 @@ python3 scripts/exhaustive_transposition_systems.py --allow-identity --represent
 python3 scripts/exhaustive_length2_frontier.py --family mixed --three-count 2
 python3 scripts/analyze_primitive_couplings.py
 python3 scripts/analyze_partial_overlap_couplings.py
+python3 scripts/analyze_resilient_lift_couplings.py --first r4 --second r4 \
+  --globalizer-min-classes 8
 ```
 
 No hash equality is ever accepted as a certificate.
@@ -32,3 +34,6 @@ permutation condition.
 
 See `docs/FIRST_STRIKE.md` for the current construction frontier and the exact
 order-five local-gluing census.
+
+See `docs/RESILIENT_LIFT_COUPLING_STRIKE.md` for the exact nine-class
+resilient-lift and Pareto coupling theorems.
