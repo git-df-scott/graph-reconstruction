@@ -1,0 +1,1424 @@
+THE GRAPH RECONSTRUCTION CONJECTURE:
+  SOME NEW RESULTS AND OBSERVATIONS
+
+
+                                By
+
+
+
+              AMITESH SAHA SHUVA
+
+                   A Thesis submitted to the
+
+                   School of Graduate Studies
+
+    in partial fulﬁllment of the requirements for the degree of
+
+
+
+                  MASTER OF SCIENCE
+
+
+  DEPARTMENT OF COMPUTER SCIENCE
+
+
+          Memorial University of Newfoundland
+
+
+
+                        February, 2015
+
+
+
+
+           St. John’s                    Newfoundland
+                                ABSTRACT
+
+A vertex-deleted subgraph (or simply a card) of graph G is an induced sub-
+graph of G containing all but one of its vertices. The deck of G is the multiset
+of its cards. One of the best-known unanswered questions of graph theory
+asks whether G can be reconstructed in a unique way (up to isomorphism)
+from its deck. The likely positive answer to this question is known as the
+Reconstruction Conjecture.
+     In the ﬁrst part of the thesis two basic equivalence relations are considered
+on the set of vertices of the graph G to be reconstructed. The one is card
+equivalence, better known as removal equivalence, by which two vertices are
+equivalent if their removal results in isomorphic cards. The other equivalence
+is similarity, also called automorphism equivalence. Two vertices u and v
+are automorphism-equivalent (similar) if there exists an automorphism of G
+taking u to v. These relations are analyzed on various examples with special
+attention to vertices that are card-equivalent but not similar. Such vertices
+are called pseudo-similar, and they have been studied very extensively in the
+literature. The ﬁrst result of the thesis is a structural characterization of
+card equivalence in terms of automorphism equivalence. A similar result was
+obtained by Godsil and Kocay in 1982 on the characterization of pseudo-
+similar vertices, which result is proved in the thesis as a corollary to the
+characterization theorem on card equivalence.
+     In the second part of the thesis, the concept of relative degree-sequence
+is introduced for subgraphs of a graph G. By “relative” it is meant that each
+degree in the degree-sequence of the subgraph is coupled up with the original
+degree of the corresponding vertex in G. A new conjecture is formulated,
+which says that G is uniquely determined (up to isomorphism) by the multiset
+of the relative degree-sequences of its induced subgraphs. The new conjecture
+is then related to the Reconstruction Conjecture in a natural way.
+     The third part of the thesis contains an original new result on graph
+reconstruction. Card-minimal graphs are investigated, the deck of which is
+a set. Thus, the deck of such graphs is free from duplicate cards. It is shown
+that every card-minimal graph G is reconstructible, provided that G does
+not have pseudo-similar couples of vertices. This condition is recognizable,
+that is, it can be checked by looking at the deck of G only.
+     The results of this thesis have been partially published in [1].
+
+
+
+                                        ii
+                    ACKNOWLEDGMENTS
+
+
+
+
+First and foremost, I oﬀer my sincerest gratitude to my supervisor, Dr.
+Miklós Bartha, for his supervision, motivation, immense support and valu-
+able suggestions throughout the research work. I attribute the level of my
+Masters degree to his encouragement and eﬀort and without him this thesis,
+would not have been completed. His guidance was source of inspiration for
+me and I could not have imagined for a better and friendlier supervisor.
+
+
+
+I would like to gratefully acknowledge my supervisor, the School of Grad-
+uate Studies (SGS) and the Department of Computer Science, Memorial
+University of Newfoundland for the ﬁnancial support throughout this Mas-
+ters period.
+
+
+
+At last I would like to express my gratitude to my parents and siblings for
+their support and encouragement.
+
+
+
+
+                                    iii
+Contents
+
+1 Introduction                                                               1
+  1.1 Historical overview . . . . . . . . . . . . . . . . . . . . . . . .    1
+  1.2 Basic terminology . . . . . . . . . . . . . . . . . . . . . . . . .    3
+
+2 Definitions, and some easily recoverable data                            7
+  2.1 Deﬁnitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+  2.2 A few known elementary results . . . . . . . . . . . . . . . . . 10
+
+3 Card equivalence and pseudo-similarity                                 13
+  3.1 Characterizing card equivalence . . . . . . . . . . . . . . . . . 13
+  3.2 Mutually pseudo-similar sets of vertices . . . . . . . . . . . . . 23
+
+4 Relative degree-sequences                                             28
+  4.1 A few combinatorial observations . . . . . . . . . . . . . . . . 28
+  4.2 The relative degree-sequence conjecture . . . . . . . . . . . . . 31
+
+5 The reconstruction of card-minimal graphs                                35
+  5.1 The role of pseudo-similar couples of vertices in card-minimal
+      graphs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+  5.2 The reconstruction result . . . . . . . . . . . . . . . . . . . . . 37
+
+6 Conclusion                                                                39
+
+
+
+
+                                     iv
+List of Figures
+
+ 1.1   Pseudo-similar vertices. . . . . . . . . . . . . . . . . . . . . . .    3
+
+ 2.1   Constructing the deck of a graph. . . . . . . . . . . . . . . . .       8
+ 2.2   The smallest card-minimal graph. . . . . . . . . . . . . . . . .        9
+
+ 3.1   The graph of Example 3.1.2. . . . . . . . . . . . . . . . . . . .      14
+ 3.2   The graph of Example 3.1.3. . . . . . . . . . . . . . . . . . . .      15
+ 3.3   The graph H of Example 3.1.3. . . . . . . . . . . . . . . . . .        16
+ 3.4   The graph of Example 3.1.4. . . . . . . . . . . . . . . . . . . .      16
+ 3.5   The graph of Example 3.1.4 extended. . . . . . . . . . . . . .         17
+ 3.6   Extending graph G to H, a small example. . . . . . . . . . . .         22
+ 3.7   The graph H used as a meta-edge. . . . . . . . . . . . . . . .         25
+ 3.8   The triangle T3 built up from three H-edges. . . . . . . . . . .       25
+
+ 4.1   Graph G and its subgraph Q. . . . . . . . . . . . . . . . . . . 29
+
+ 5.1   Graphs with and without pseudo-similar couples of vertices. . 36
+ 5.2   The smallest card-minimal graph, revisited. . . . . . . . . . . 37
+
+
+
+
+                                      v
+Chapter 1
+
+Introduction
+
+1.1     Historical overview
+The Reconstruction Conjecture is generally regarded as one of the foremost
+unsolved problems in graph theory. Frank Harary [9] has even classiﬁed it
+as a graphical disease because of its contagious nature. Some sources say
+that the problem was discovered in Wisconsin in 1941 by Kelly and Ulam,
+and claimed its ﬁrst victim (P. J. Kelly) in 1942. Indeed, Kelly’s doctoral
+dissertation [13], which he wrote under the supervision of Ulam, appeared in
+that year. Later, in 1957, Kelly published the ﬁrst relevant result on graph
+reconstruction, showing that trees are reconstructible [14].
+   Others say that Stanislaw Ulam knew about the ideas that later became
+the Reconstruction Conjecture as early as 1929 when, along with Stanislaw
+Mazur, Stefan Banach, Kazimierz Kuratowski, and others, he was a member
+of the Lwów School of Mathematics in Poland. (Today Lviv, Ukraine, also
+known as Lemberg, Galicia, Austria-Hungary.) Ulam had spent many years
+collecting problems that were posed by fellow graduate students and profes-
+sors during his years in graduate school in Lwów. These problems have been
+recorded in the famous Scottish Book, which was a thick notebook used by
+mathematicians of the Lwów School of Mathematics for jotting down prob-
+lems meant to be solved. The notebook was named after the ”Scottish Café”
+
+
+                                     1
+in Lwów where it was kept. Ulam himself contributed 40 problems as a sin-
+gle author to the Scottish Book, another 11 with Banach and Mazur, and an
+additional 15 with others.
+    Even though the Reconstruction Conjecture cannot be found in the Scot-
+tish Book, it does appear in the ﬁrst part of a monograph written by Ulam
+in 1960 under the title “A Collection of Mathematical Problems” [27], and
+Ulam does say in the preface:
+
+     In spirit, the questions considered in the ﬁrst part of this collec-
+     tion belong to a complex of problems represented in the Scottish
+     Book.. . . Many of the problems contained here were indeed ﬁrst
+     inscribed in the Scottish Book, but the greater part of the mate-
+     rial is of later origin . . . Many of the problems originated through
+     conversations with others and were stimulated by the transistory
+     interests of the moment in various mathematical centers.
+
+   The uncertainties above have created a diﬃculty in trying to determine
+who should have credit for creating this beautiful problem in graph theory.
+The commonly accepted solution to this dispute is to call the problem the
+Kelly-Ulam conjecture. The conjecture itself, as speciﬁed below, was given
+the name “an inductive lemma in combinatorial analysis” by Ulam. The
+reader should keep in mind that this version of the conjecture is presented
+here for purely historical reasons; we will never actually use the original
+metric terminology by Ulam.
+Ulam’s Statement of the Reconstruction Conjecture [27]
+
+     Suppose that in two sets A and B, each containing n elements,
+     there is deﬁned a distance function ρ for every pair of distinct
+     points, with values either 1 or 2, and ρ(p, p) = 0. Assume that
+     for every subset of n − 1 points of A, there exists an isometric
+     system of n − 1 points of B, and that the number of distinct
+
+
+                                      2
+                      v              u
+
+
+                    Figure 1.1: Pseudo-similar vertices.
+
+      subsets isometric to any given subset of n − 1 points is the same
+      in A and in B. Are A and B isometric?
+
+   Interestingly, the problem of graph reconstruction has yet another impor-
+tant historical aspect, which is related to the concept of pseudo-similarity.
+According to the survey [20] by Josef Lauri, graph theorists seem to have
+stumbled on this concept quite by accident. If two vertices u and v in a
+graph G are similar, that is, there is an automorphism of G which maps
+one into the other, then it is clear G − u and G − v are isomorphic graphs.
+However, the converse is not true, because G − u and G − v can be iso-
+morphic without u and v being similar in G. The smallest graph for which
+this can happen is shown in Fig. 1.1. Nobody seems to have given this phe-
+nomenon any thought until (as reported by Harary and Palmer [11]) someone
+apparently found a proof of the celebrated Reconstruction Conjecture which
+depended on the assumption that if G − u and G − v are isomorphic, then
+u and v must be similar. To Harary and Palmer goes the credit of taking
+what could simply have remained a curious counter-example, and turning it
+into a graph theoretic concept worthy of investigation. Their 1965 and 1966
+papers proved the ﬁrst results and set the scene for further studies.
+
+
+1.2     Basic terminology
+In this section we present the collection of basic deﬁnitions in graph theory
+that will be used throughout the thesis. Additional terminology speciﬁcally
+
+                                     3
+related to the problem of graph reconstruction will follow in later chapters.
+    An undirected graph (or simply a graph) G consists of a ﬁnite non-empty
+set V (G) of vertices and a set of unordered pairs E(G) of edges. Notice that,
+by this deﬁnition, multiple edges are not allowed to occur in G. Indeed, E(G)
+is not a multiset. By an unordered pair of vertices we in fact mean a couple
+{u, v} ⊆ V (G), even though we shall simply write (u, v) ∈ E(G). Loops (i.e.,
+edges connecting vertices with themselves) are therefore excluded from E(G)
+as well. An edge (u, v) is said to connect the vertices u and v, to be incident
+with these two vertices, and vertices u and v are said to be adjacent.
+    Even though it is not consistent with the above deﬁnition of graphs,
+in some situations it is inevitable to accept the “empty graph” also as a
+graph. This abstraction has no vertices and no edges, so that it is indeed
+completely empty. Its presence is useful in some graph operations, e.g., in
+taking the disjoint union of graphs. The relevance of the empty graph is that
+it becomes a unit element for this operation, rendering the corresponding
+algebraic structure on graphs a classical (commutative) monoid.
+    Let G and H be graphs. A one-to-one correspondence φ mapping V (G)
+onto V (H) is called an isomorphism if for every pair u, v of vertices in V (G),
+(u, v) ∈ E(G) iﬀ (φ(u), φ(v)) ∈ E(H). If such an isomorphism exists, then
+the graphs G and H are said to be isomorphic, in notation G ∼        = H. An
+isomorphism of graph G onto itself is called an automorphism of G.
+   The number of edges in graph G incident with a concrete vertex v is called
+the degree of v and denoted by dG (v) (d(v), if G is understood). The degree-
+sequence of G is the sequence of degrees of G’s vertices in a non-decreasing
+order. A graph in which all degrees are equal to k is said to be k-regular,
+and if G is k-regular for some k, we simply say that G is regular. A complete
+graph is one in which every two distinct vertices are connected by an edge.
+   An alternating sequence of vertices and edges, beginning and ending with
+vertices such that each edge in the sequence is incident with the vertex im-
+mediately preceding it and with the one immediately following it, is called a
+
+
+                                       4
+walk. If all edges in a walk are distinct, then the walk is a trail, and if, in
+addition, the vertices are also distinct, then the trail is a path. The length of
+a walk is the number of occurrences of edges in it. A walk or trail in which
+the ﬁrst vertex coincides with the last one is called closed. A cycle is a closed
+trail of length at least three that consists of a path together with an edge
+connecting the ﬁrst and last vertices of the path. A graph not containing
+cycles is called a tree.
+   If G and H are graphs such that V (H) ⊆ V (G) and E(H) ⊆ E(G),
+then H is called a subgraph of G. If H is a subgraph of G and if every edge
+(u, v) ∈ E(G) is also in E(H), provided that its endpoints u and v are in
+V (H), then we call H an induced subgraph of G. If Y ⊆ V (G), then G[Y ],
+the subgraph of G induced by Y , is the induced subgraph of G having Y
+as its vertices. With some ambiguity, for X ⊆ V (G) we shall simply write
+G − X to denote the induced subgraph G[V (G) \ X]. Sometimes we even
+write G − x or G − x − y to mean G − {x} or G − {x, y} if x and y are
+individual vertices of G.
+   A graph is connected if every two vertices are joined by a path. A maximal
+connected subgraph of G is called a component of G. A disconnected graph
+is one that has more than one components.
+    If the edges of a graph have a direction assigned to them, then we speak
+of a directed graph. More precisely, a directed graph, or digraph for short, G
+consists of a set V (G) of vertices and a set E(G) of ordered pairs of vertices,
+called edges. The deﬁnition of walk, trail, path, and cycle must be modiﬁed
+somewhat in digraphs, saying that each edge e = (u, v) in these constructs
+(as alternating sequences of vertices and edges) connects the vertex u before
+e to the vertex v after e. An acyclic digraph is one containing no directed
+cycles. A digraph is strongly connected if for every ordered pair (u, v) of
+vertices there is a (directed) path joining u to v.
+   A tournament is a digraph obtained by assigning a direction for each
+edge in an undirected complete graph. In other words, a tournament is an
+
+
+                                       5
+orientation of a complete graph, or equivalently, a directed graph in which
+every pair of distinct vertices is connected by a single directed edge. A
+tournament T is called transitive if (u, v) ∈ E(T ) and (v, w) ∈ E(T ) imply
+(u, w) ∈ E(T ) for all distinct vertices u, v, w. If (u, v) ∈ E(T ), then we also
+say that vertex u dominates vertex v in T .
+   At the end of Chapter 4 we shall also need to use some basic linear al-
+gebraic terminology to address the connection between the Reconstruction
+Conjecture and our new conjecture on sets of relative degree-sequences. Since
+the introduction of this terminology would take us too far in this short in-
+troduction, we just refer the reader to any standard text in linear algebra for
+the concepts involved in those arguments.
+
+
+
+
+                                       6
+Chapter 2
+
+Definitions, and some easily
+recoverable data
+
+In this chapter we review the most important deﬁnitions relating to the
+problem of graph reconstruction, and provide a brief summary of some of
+the best-known elementary results.
+
+
+2.1     Definitions
+Definition 2.1.1 For a graph G and vertex v ∈ V (G), G − v is called a
+vertex-deleted subgraph of G, or the card associated with vertex v in G. We
+do not distinguish between isomorphic cards, though. The multiset of cards
+collected from G in this way is called the deck of G, denoted D(G).
+
+See Fig 2.1 for the deck of a small graph G.
+   In the language of modern graph theory, the Reconstruction Conjecture,
+introduced in Section 1.1 as the Kelly-Ulam conjecture, states that an arbi-
+trary graph G having at least three vertices can be reconstructed in a unique
+way (up to isomorphism) from its deck.
+    Ever since its inception, this problem has remained a mystery. Trying to
+solve it is similar to conducting a criminal investigation. There is a suspect,
+the graph G, who leaves plenty of evidence (i.e., the deck D(G)) on the crime
+
+                                      7
+               Figure 2.1: Constructing the deck of a graph.
+
+scene. Yet, no brilliant detective has been able to track down the suspect
+for over 70 years, and the number of works on the case is rapidly decreasing
+year by year. The reconstruction problem was, however, very popular in the
+past. According to [25], more than 300 research papers had been published
+on graph reconstruction between 1950 and 2004.
+
+Definition 2.1.2 Two vertices u, v ∈ V (G) are called hypomorphic or card-
+equivalent (c-equivalent, for short) if the card associated with u is identical
+to the one associated with v, i.e., G − u ∼ = G − v. (Remember that we do
+not distinguish between isomorphic cards.)
+
+Yet another name for card equivalence is removal equivalence, which is often
+used in the literature. Card equivalence will be denoted by ∼c . Clearly, ∼c
+is indeed an equivalence relation on V (G).
+
+Definition 2.1.3 Two graphs G and H are hypomorphic if D(G) and D(H)
+are identical as multisets, that is, each card appears in D(G) and D(H) the
+
+                                      8
+               Figure 2.2: The smallest card-minimal graph.
+
+same number of times. (Recall that D(G) denotes the deck of G.) If G
+and H are hypomorphic, then a hypomorphism of G onto H is a bijection
+φ : V (G) → V (H) such that G − v ∼
+                                  = H − φ(v) holds for every v ∈ V (G).
+
+A reconstruction of G is a graph G′ such that G and G′ are hypomorphic, or,
+equivalently, there exists a hypomorphism of G onto G′ . Using this terminol-
+ogy, the Reconstruction Conjecture simply says that two graphs G and H are
+hypomorphic iﬀ they are isomorphic. In other words, all reconstructions of
+G are isomorphic (to G, of course). Clearly, every isomorphism of G onto H
+is a hypomorphism, but the converse is not true, even if the Reconstruction
+Conjecture holds. Indeed, the Reconstruction Conjecture only says that if
+there is a hypomorphism between G and H, then there is one which is also
+an isomorphism.
+
+Definition 2.1.4 Graph G is called card-minimal if D(G) is a set, that is,
+each card is unique in D(G).
+
+Our aim in this thesis is to show that the Reconstruction Conjecture holds
+true for a large subclass of card-minimal graphs. Notice that both graphs
+on two vertices have two identical cards, therefore every card-minimal graph
+has at least three vertices. In fact it is easy to see by trying out all graphs
+on ﬁve or less vertices that the smallest card-minimal graph has six vertices.
+See Fig. 2.2.
+    One might think that card-minimal graphs are trivially reconstructible,
+since there is a unique hypomorphism between any two hypomorphic card-
+
+                                      9
+minimal graphs G and H. While this is certainly true, we have no direct
+information on E(G) and E(H), therefore the given unique hypomorphism
+may not be an isomorphism. Reconstructing G from D(G) is still a very com-
+plex issue for such graphs. As we shall see, any duplication of cards in D(G)
+indicates a kind of symmetry in the internal structure of G. Consequently,
+the class of card-minimal graphs is really large. Our result is therefore in
+accordance with the observation in [3] saying that the probability that a ran-
+domly chosen graph on n vertices is not reconstructible goes to 0 as n goes
+to inﬁnity.
+
+Definition 2.1.5 A function deﬁned on a class G of graphs is reconstructible
+if, for each graph G in G, it takes the same value on all reconstructions of G.
+
+Definition 2.1.6 A class (or property) G of graphs is recognizable if, for
+each G-graph G, every reconstruction of G is also in G.
+
+Deﬁnition 2.1.6 essentially says that a property of graphs is recognizable if
+its presence is already indicated by the deck of such graphs. For example,
+as we shall immediately see, the degree-sequence of graphs is a recognizable
+property. To spell it out, the class of graphs having the same concrete degree-
+sequence (as a property) is recognizable. By the same token, according to
+Deﬁnition 2.1.5, the degree-sequence is a reconstructible function of (gen-
+eral) graphs. Deﬁnitions 2.1.5 and 2.1.6 are therefore somewhat ambiguous,
+and the words “reconstructible” and “recognizable” can be interchanged, de-
+pending on the context (namely, the class G of graphs in hand). To add even
+more to the confusion, we shall sometimes say that a property or some data
+obtained about graph G is recoverable if it can be recovered from D(G).
+
+
+2.2      A few known elementary results
+In general, it is trivial that |V (G)|, the number of vertices of G, is recoverable
+from D(G). It is still easy to see that |E(G)| is also recoverable. Indeed, add
+
+                                        10
+up the numbers of edges appearing on the cards of D(G), and observe that
+this sum is equal to
+                            (|V (G)| − 2) · |E(G)|.
+See [23, Theorem 2.1] for the details of this simple combinatorial argument.
+   Once |E(G)| is given, calculating the degree d(v) of vertex v for card
+G − v is straightforward:
+
+                         d(v) = |E(G)| − |E(G − v)|.
+
+Clearly, the degree of any vertex c-equivalent with v is the same as that of
+v. We thus have managed to recover the degree-sequence of G from D(G).
+(Recall that the degree-sequence of G is the sequence of degrees of G’s vertices
+in a non-decreasing order.)
+    A similar combinatorial argument leads to the following result, known as
+Kelly’s Lemma [14], see also [23, Theorem 2.4].
+
+Proposition 2.2.1 For any graph Q, let sQ (G) denote the number of sub-
+graphs of G isomorphic to Q. Then sQ (G) = sQ (H) whenever G and H are
+hypomorphic and |V (Q)| < |V (G)|.
+
+Proof. There exists a hypomorphism φ of G onto H. Since each subgraph of
+G isomorphic to Q is contained in |V (G)| − |V (Q)| vertex-deleted subgraphs
+of G, and a similar remark applies to H, and since G − v ∼   = H − φ(v) for
+every v ∈ V (G), it follows that
+                                    X
+  sQ (G) · (|V (G)| − |V (Q)|) =             sQ (G − v)
+                                   v∈V (G)
+                                    X                           X
+                               =             sQ (H − φ(v)) =             sQ (H − w)
+                                   v∈V (G)                     w∈V (H)
+
+                               = sQ (H) · (|V (H) − |V (Q)|),
+
+from which we infer that sQ (G) = sQ (H), since |V (Q)| < |V (G)| = |V (H)|.
+                                                                               
+   The following result is also due to Kelly [14].
+
+                                       11
+Theorem 2.2.2 Regular graphs are reconstructible.
+
+Proof. Let G be a k-regular graph. Since the degree-sequence is recognizable
+(reconstructible/recoverable), all reconstructions of G are k-regular. Also, all
+k-regular reconstructions of G are isomorphic, because each can be obtained,
+up to isomorphism, from an arbitrary card G − v by adding a vertex and
+connecting it to every vertex of degree k − 1 in G − v.      
+   Kelly [14] also applied his lemma (Proposition 2.2.1 above) to show that
+disconnected graphs and trees are reconstructible. The reader is referred to
+either of the surveys [4] or [23] for a proof of these results.
+    Nash-Williams [23] has shown that the so-called degree-sequence sequence
+of G is recoverable from D(G). Essentially this means that, not only d(v) can
+be read from the card G − v as above, but also the degrees of the neighbors
+of v are recoverable in this way. We shall reformulate Nash-Williams’ proof
+in Chapter 4 in terms of relative degree-sequences. A natural question to ask
+at this point is whether the degrees of the neighbors of the neighbors of v are
+also recoverable, and so on, moving away further and further from vertex v.
+This question is already a lot more diﬃcult to answer, mainly because the
+desired degrees and degree-sequences are no longer c-equivalence invariant.
+In other words, the answer depends on the representant vertex v chosen for
+the card G − v. For card-minimal graphs, however, these data should be
+recoverable, even though probably very diﬃcult to obtain.
+   One of the last true champions of graph reconstruction was F. Harary.
+He suggested a natural analogue [8] of the Reconstruction Conjecture, which
+says that every graph having at least four vertices is uniquely reconstructible
+from the deck of its edge-deleted subgraphs. Others have come up with
+similar conjectures for directed graphs, cf. [24, 26], and have obtained partial
+results proving or disproving them. See again [23] and [4] for more details.
+
+
+
+
+                                      12
+Chapter 3
+
+Card equivalence and
+pseudo-similarity
+
+3.1     Characterizing card equivalence
+The simple results discussed so far are of a strictly combinatorial nature, and
+they do not even touch on the structural properties of card equivalence. In
+this section we present a real structural characterization of this equivalence
+relation, which is our ﬁrst main result. In this characterization, card equiv-
+alence is compared with another important equivalence relation on V(G),
+namely automorphism equivalence.
+
+Definition 3.1.1 Two vertices u, v ∈ V (G) are automorphism-equivalent
+(a-equivalent, for short) if there exists an automorphism of G taking u to v.
+The (vertex-)orbits of G are the equivalence classes of V (G) by automorphism
+equivalence.
+
+Automorphism equivalence will be denoted by ∼a . In the literature, two
+automorphism-equivalent vertices are usually called similar. It is obvious
+that ∼a is an equivalence relation, but its relationship to ∼c is not clear for
+the ﬁrst sight. Remember that ∼c denotes card-equivalence.
+
+
+
+
+                                      13
+                         u1             u2              u3
+
+
+
+                   Figure 3.1: The graph of Example 3.1.2.
+
+Example 3.1.2 Let G be the graph in Fig. 3.1, and consider the vertices
+u1 , u2 , u3 in G. It is easy to see that ui ∼c uj and ui ∼a uj both hold for any
+1 ≤ i, j ≤ 3.
+
+In general, it is clear by the deﬁnitions that ∼a ⊆∼c . Example 3.1.3 below
+shows, however, that ∼c 6⊆∼a .
+
+Example 3.1.3 Let G be the graph of Fig. 3.2, and consider again the
+vertices u1 , u2 , u3 . As it turns out, u1 ∼c u3 , but u1 6∼a u3 . Furthermore, G
+has no automorphisms other than the identity.
+
+Vertices that are c-equivalent but not a-equivalent are called pseudo-similar
+in the literature. See [20] for an extensive survey on pseudo-similarity. Ver-
+tices u1 and u3 in the graph G of Fig. 3.2 are typical pseudo-similar ones.
+The graph G itself arises from deleting a leaf vertex u4 from an appropriate
+graph H — shown in Fig. 3.3 — in which u4 is the “natural continuation”
+of the sequence of vertices u1 , u2 , u3 . The graph H has a non-trivial auto-
+morphism θ, which extends an appropriate automorphism ψ of the “kernel”
+subgraph G − {u1 , u2 , u3 } in such a way that the vertices ui , 1 ≤ i ≤ 4, are
+mapped by θ into each other in the cyclic order
+
+                               ui 7→ u(i (mod 4))+1 .
+
+                                        14
+                    u1            u2            u3
+
+
+
+                   Figure 3.2: The graph of Example 3.1.3.
+
+The vertices u1 and u3 must of course be at the two ends of the “tail” sequence
+u1 , u2 , u3 of G in order to maintain card equivalence.
+     The following example is somewhat diﬀerent, yet it illustrates the same
+kernel-tail decomposition idea with the kernel subgraph being disconnected.
+
+
+Example 3.1.4 Consider the graph G of Fig. 3.4. Clearly, the vertices u1
+and u2 are pseudo-similar. At the ﬁrst glance it appears that one cannot ex-
+tend G to a graph H having an automorphism that builds on an appropriate
+automorphism of the kernel G − {u1 , u2 } in such a way that u1 is mapped to
+u2 . A look at Fig. 3.5, however, shows immediately that this is possible, and
+the solution follows the exact same pattern as in Example 3.1.3.
+
+   The above examples show that the equivalence ∼c is rather inconvenient
+to deal with in a direct way. We need to ﬁnd a characterization of ∼c that
+brings it in line with the much better structured equivalence ∼a . The basis
+of this characterization is the following lemma.
+
+Lemma 3.1.5 Let u and v be two distinct vertices of G. Then u ∼c v iff
+there exists a sequence of vertices x0 , x1 , . . . , xk (k ≥ 1) in G satisfying the
+conditions (i) and (ii) below.
+
+                                        15
+ u1           u2         u3          u4
+
+
+
+Figure 3.3: The graph H of Example 3.1.3.
+
+
+
+
+         u1                   u2
+
+
+
+
+ Figure 3.4: The graph of Example 3.1.4.
+
+
+
+
+                   16
+  u1                 u2    u3   u4    u5   u6
+
+
+
+
+Figure 3.5: The graph of Example 3.1.4 extended.
+
+
+
+
+                      17
+  (i) x0 = v and xk = u;
+
+ (ii) there exists an isomorphism φ of G−u onto G−v such that φ(xi ) = xi+1
+      for every 0 ≤ i < k.
+
+Proof. Notice ﬁrst that the graphs G − u and G − v are not separated in the
+lemma, they both use the vertices of the common supergraph G. The lemma
+therefore establishes a link between two c-equivalent vertices u and v in G
+through a sequence of (necessarily distinct) vertices x1 , . . . , xn−1 in G − u − v.
+These vertices, however, need not be c-equivalent with u or each other in G.
+For example, in the graph of Fig. 3.2, if v = u1 and u = u3 , then k = 2,
+x1 = u2 , and φ can be derived from the automorphism of G − {u1 , u2 , u3 }
+that determines a cyclic permutation of the four small cycles of G from left
+to right. Clearly, u1 6∼c u2 .
+    Suﬃciency of condition (ii) alone for having u ∼c v is trivial. Assuming
+that u ∼c v, choose an arbitrary isomorphism φ : G − u → G − v. Let
+x1 = φ(v), x2 = φ(x1 ), and so on, until u = xk = φ(xk−1 ) is reached.
+Vertex u must indeed be encountered at some point along this line, since φ,
+being an isomorphism, is an injective mapping V (G) \ {u} → V (G) \ {v}.
+Consequently, the vertices x1 , . . . , xk−1 in V (G) \ {u, v} will all be diﬀerent
+until xk = u stops this necessarily ﬁnite sequence. Mind that xi+1 = φ(xi ) 6=
+v, since v is not a vertex of G − v. Therefore the sequence x0 , . . . , xk cannot
+return to itself. The proof is complete.        
+
+Theorem 3.1.6 Let u and v be two distinct vertices of G. Then u ∼c v iff
+there exists a sequence of pairwise distinct vertices x0 , x1 , . . . , xk (k ≥ 1) and
+an automorphism ψ of the subgraph G − {x0 , x1 , . . . , xk } which satisfy the
+following three conditions.
+
+  (i) x0 = v and xk = u;
+
+ (ii) if X = {x0 , x1 , . . . , xk }, then for every 0 ≤ i < k and vertex wi ∈
+      V (G) \ X adjacent to xi in G (or, equivalently, in G − u), the vertex
+
+                                         18
+      wi+1 = ψ(wi ) is adjacent to xi+1 in G (i.e., in G − v);
+
+(iii) for every 0 ≤ i < j < k,
+
+                   xi is adjacent to xj iff xi+1 is adjacent to xj+1
+
+      (in G, of course).
+
+Vertices u and v are a-equivalent iff the sequence of vertices x0 , . . . , xk and the
+automorphism ψ can be chosen in such a way that the assignments xi 7→ xi+1 ,
+u 7→ v extend ψ to an automorphism of G.
+
+Proof. Intuitively, condition (ii) says that for every 0 ≤ i < k, the neighbors
+of xi in G − X are matched up with those of xi+1 in G − X by the automor-
+phism ψ. Condition (iii) settles the issue of how the vertices xi themselves
+are connected in G. Clearly, the question whether u is connected to v is
+irrelevant.
+    The ﬁrst statement of the theorem, regarding the existence of X and
+ψ, is in fact a simple consequence of Lemma 3.1.5. Concerning suﬃciency,
+if ψ is an automorphism of G − X satisfying (ii), then by (i) and (iii) it
+can be extended to an isomorphism φ of G − u onto G − v satisfying (ii)
+of Lemma 3.1.5. Thus, u ∼c v. Conversely, if u ∼c v, then the required
+automorphism ψ can be chosen as the restriction of the isomorphism φ –
+guaranteed by Lemma 3.1.5 – to G − X. Notice that the subgraph G − X
+may turn out to be empty.
+    As to the second statement of the theorem (regarding the a-equivalence
+of u and v), if the given extension of ψ becomes an automorphism of G, then
+clearly u ∼a v. On the other hand, if χ is an automorphism of G taking u to
+v, then the restriction of χ to the vertices V (G)−{u} deﬁnes an isomorphism
+φ of G − u onto G − v. Apply Lemma 3.1.5 to obtain the vertices X from
+φ, and construct the automorphism ψ of G − X by restricting φ to that
+subgraph. Clearly, the assignments xi 7→ xi+1 and u 7→ v, when extending
+ψ, will simply reconstruct the original automorphism χ.   
+                                         19
+   At this point the reader may want to have a second look at Examples 3.1.2
+and 3.1.3, and identify the underlying automorphism ψ in the graphs of
+Fig. 3.1 and Fig. 3.2. One important point is that, given the fact v ∼a u
+(and therefore u ∼c v), one must not jump to the conclusion that x0 = v
+and x1 = u will do for X = {x0 , x1 } in Theorem 3.1.6, and then be taken
+by surprise that the desired automorphism ψ cannot be located in G − X.
+For example, in the graph G of Fig. 3.1, if v = u1 and u = u2 , then x1 = u3 !
+Consequently, X = {u1 , u2 , u3 }, and the automorphism ψ is just the one
+taking the three small cycles into one another following a cyclic permutation
+with oﬀset 2 from left to right.
+   The pair (s, ψ), where s is the sequence (x0 , . . . xk ) constructed in
+Lemma 3.1.5 and ψ is the automorphism of the graph G − X according
+to Theorem 3.1.6, is called a kernel-tail decomposition of G with respect to
+the c-equivalent pair of vertices (u, v). The sequence s is the tail and the
+subgraph G − X is the kernel of this decomposition. Clearly, the decompo-
+sition is not unique regarding the sequence s. Moreover, even with s being
+ﬁxed, the corresponding automorphism ψ of the kernel G − X may not be
+uniquely determined.
+   Following [20], for the rest of this chapter we shall concentrate on the
+concept of pseudo-similarity in graphs. The most general construction from
+which all pairs of pseudo-similar vertices can be obtained was found by Godsil
+and Kocay [7], who showed that such pairs can in fact always be captured
+by destroying some circular symmetry in a larger graph. We have already
+elaborated on this idea to some extent in Examples 3.1.3 and 3.1.4. Below
+we give a proof of [7, Theorem 2.2] as a corollary to our Theorem 3.1.6. The
+reader is advised to follow the main steps of the proof on Figures 3.3 and 3.4.
+
+Corollary 3.1.7 ([7]) Let G be a graph with pseudo-similar vertices u and
+v. Then there is a graph H with the following properties:
+
+  (i) G is an induced subgraph of H.
+
+
+                                      20
+ (ii) There exists an automorphism θ of H which maps G − u onto G − v in
+      such a way that u = θk (v) for some k ≥ 1.
+
+(iii) V (H) \ V (G) = {y1 , . . . , yr }, where yi = θk+i (v) and θ(yr ) = v.
+Proof. By Theorem 3.1.6, G has a kernel-tail decomposition (s, ψ) with
+respect to (u, v), where s = (x0 , . . . , xk ), k ≥ 1 is the tail with v = x0
+and u = xk , and ψ is an appropriate automorphism of the kernel G − X
+(X = {x0 , . . . , xk }). Let M denote the set of neighbors of v belonging to the
+kernel. Even though it is an aside at this point, observe that M cannot be
+empty. Indeed, if M = ∅, then Theorem 3.1.6 (iii) would imply that that the
+vertices xi and xk−i are exchange-equivalent for each 0 ≤ i ≤ k, contradicting
+the fact that x0 = v and xk = u are pseudo-similar. For the same reason, it
+cannot happen either that M is a singleton and ψ(M ) = M . Nevertheless,
+the construction we are going to present will extend G to an appropriate H
+in these two special cases as well. As we shall see, the chiral symmetry of
+the vertices xi will simply be turned into a circular one by adding an extra
+vertex xk+1 .
+   Consider the sets of vertices M, ψ(M ), ψ 2 (M ), . . . , where by deﬁnition,
+ψ(M ) = {ψ(w)|w ∈ M }. By Theorem 3.1.6 (ii) we know that these sets of
+vertices, up to power k, are exactly the kernel-neighbors of x0 , . . . , xk . Since
+G − X is ﬁnite and ψ is an automorphism, there exists a smallest integer
+j ≥ 1 such that ψ j (M ) = M and the sets ψ i (M ), 1 ≤ i ≤ j are pairwise
+distinct. Consequently, there exists a smallest l > k such that ψ l+1 (M ) = M .
+Notice that the choice l > k is crucial. Choosing l = k – if at all possible –
+would allow G to be extended to a seemingly appropriate graph H by adding
+edges connecting some of x0 , . . . , xk only, and so missing the requirement
+that G be an induced subgraph of the extension. For example, in the graph
+of Fig. 3.1, connect u1 with u2 and u2 with u3 to obtain graph G. Then u1
+and u3 are no longer a-equivalent, but they are still pseudo-similar. If v = u1
+and u = u3 , then the number j in the argument above is clearly 3. Simply
+connecting u3 with u1 by a new edge in this situation would result in a graph
+
+                                         21
+              v=x 1                   u=x 2                            x3
+
+           Figure 3.6: Extending graph G to H, a small example.
+
+
+H satisfying the requirements of the theorem, except for the condition that
+G be an induced subgraph of H.
+   Let r = l − k, and adjoin to V (G) r new vertices y1 , . . . , yr . For each
+1 ≤ i ≤ r, install a new edge from yi to each vertex of ψ k+i (M ). See Fig. 3.5.
+Finally, by letting xk+1 = y1 , . . . xk+r = yr in the sequence of vertices
+
+                          x0 , x1 , . . . , xk , xk+1 , . . . xk+r ,
+
+add new edges between xi and xj recursively to the minimum extent in order
+to maintain the condition (iii) of Theorem 3.1.6 in a circular fashion. That
+is, the condition:
+
+      xi is adjacent to xj iﬀ xi+1 (mod (k+r)) is adjacent to xj+1 (mod (k+r))
+
+must hold for each 0 ≤ i < j ≤ k + r. The details of this recursive procedure
+are straightforward, and left to the reader. See Fig. 3.6 for a small example.
+
+   The resulting graph after the above extensions is H. It is obvious that G is
+a proper induced subgraph of H, and H satisﬁes the conditions (i) and (ii) of
+the corollary with the extension θ of ψ by which the vertices x0 , x1 , . . . , xk+r
+are mapped to each other in the way:
+
+                xi 7→ xi+1 (mod (k+r)) , 1 ≤ i ≤ k + r.                     
+                                             22
+   A reader familiar with the original proof of [7, Theorem 2.2] by Godsil
+and Kocay will notice that their proof (for a ﬁnite graph G) is essentially the
+combination of our Theorem 3.1.6 and Corollary 3.1.7, just as we presented
+them above. For this reason, Theorem 3.1.6 cannot be considered a com-
+pletely new contribution. There is, however, a major diﬀerence in the nature
+of these two results. While our Theorem 3.1.6 is primarily a decomposition
+tool, [7, Theorem 2.2] tends to blow up the graph, sometimes quite signiﬁ-
+cantly. Refer to Fig. 3.5 for an evidence of this fact. The importance of the
+kernel-tail decomposition lies in the fact that it could be used as a lemma in
+inductive reasonings about the structure of symmetries in G.
+   One disturbing observation arising from Theorem 3.1.6 is that it does not
+reﬂect the transitivity of card equivalence. Indeed, if (s, ψ) and (t, χ) are
+kernel-tail decompositions of G with respect to c-equivalent pairs (u, v) and
+(v, w), respectively, then the theorem provides no clue for ﬁnding a kernel-
+tail decomposition with respect to (u, w). Working out such a method will
+be the subject of a future study.
+
+
+3.2      Mutually pseudo-similar sets of vertices
+According to [20], the most interesting open questions on pseudo-similarity
+are related to the issue of ﬁnding large sets of mutually pseudo-similar vertices
+in graphs. Lauri does not explain in his survey why one must say “mutually
+pseudo-similar” in this context. The reason is that pseudo-similarity by itself
+is not an equivalence relation on V (G) as one might suspect, and it is not true
+that card equivalence is simply the union of automorphism equivalence and
+pseudo-similarity. Mutually pseudo-similar therefore means pairwise pseudo-
+similar in standard mathematical terms.
+   The problem of ﬁnding graphs with more than two mutually pseudo-
+similar vertices has been investigated by a number of authors [6, 15, 16, 17,
+18, 19, 21, 22]. Among these, the construction of [16] is particularly simple
+
+
+                                       23
+to describe in terms of our kernel-tail decomposition. The basic idea of the
+construction is the observation that coming up with a number of mutually
+pseudo-similar vertices is much easier in directed graphs. Notice that the
+concept of card equivalence and that of of pseudo-similarity is meaningful in
+directed graphs, literally by the original deﬁnition of these concepts.
+   The transitive tournament Tk on k vertices {1, . . . k}, in which vertex
+i dominates vertex j iﬀ i < j, is a perfect example of a directed graph
+having all of its vertices mutually pseudo-symmetric. The problem of ﬁnding
+an undirected graph with k mutually pseudo-symmetric vertices therefore
+reduces to transforming (i.e., blowing up) Tk into an undirected graph while
+preserving the pseudo-similarity of the old vertices {1, . . . , k}. We shall work
+out the solution for the simplest case k = 3 below.
+   Take an arbitrary graph H with two pseudo-similar vertices u, v, so that
+H has a kernel-tail decomposition (s, ψ) with s = (v, u). The graph H with
+its distinguished ordered pair (v, u) of vertices can be considered as a directed
+(meta-)edge in any graph, connecting two (not necessarily distinct) vertices x
+and y, so that the source x of the meta-edge is identiﬁed with v and the target
+y is identiﬁed with u. If x = y, then vertices u and v will be joined in H,
+which might lead to a multigraph. The exact mathematical formalism that
+corresponds to this technique is the general operation of graph composition
+described e.g. in [2, 5]. For our present purposes, however, the heuristic idea
+of creating a meta-edge from H is completely adequate.
+    Take, for example, the graph of Fig. 3.7 as H, and assemble the transitive
+triangle T3 from three “H-edges” as shown in Fig. 3.8. The “direction” of
+each edge in the resulting graph G is v → u. It is now obvious that the
+vertices x, y, z corresponding to the three vertices of T3 are pseudo-similar.
+As proved in [16], this technique works for an arbitrary k ≥ 3. One could
+as well use Theorem 3.1.6 to provide an independent proof of this fact. It is
+essential, however, that the tail s of the decomposition (s, q) of H has length
+two, otherwise the construction does not work.
+
+
+                                       24
+                  v           u
+
+        Figure 3.7: The graph H used as a meta-edge.
+
+
+
+
+                              u
+                          u   z
+
+
+
+
+v                                                  v
+        x                                      y
+    v                                              u
+
+
+
+
+Figure 3.8: The triangle T3 built up from three H-edges.
+
+
+
+
+                              25
+   As a generalization of Corollary 3.1.7, Kocay [17] has obtained the fol-
+lowing result on mutually pseudo-similar vertices.
+
+Theorem 3.2.1 ([17]) Let G be a graph with a set U = {u0 , u1 , . . . uk−1 } of
+k mutually pseudo-similar vertices. Let φi : G−ui → G−u0 be isomorphisms
+for 1 ≤ i ≤ k − 1. Then G can be extended to a graph H, and each φi to an
+endomorphism θi of H such that:
+
+  (i) G is an induced subgraph of H;
+
+ (ii) the vertices of U , together with those in V (H) \ V (G), are in the same
+      orbit in H.
+
+Theorem 3.2.1 is an analogue of Corollary 3.1.7 with one important diﬀerence:
+the graph H in Theorem 3.2.1 is infinite, even when G is ﬁnite. The full
+analogue of Corollary 3.1.7, as well as that of our Theorem 3.1.6 regarding
+the kernel-tail decomposition of a graph relative to a complete c-equivalence
+class of vertices is still unknown.
+    We end this section by a deﬁnition that will be used in Chapter 5. A
+2-vertex-deleted subgraph of a graph G having at least three vertices is an
+induced subgraph of G containing all but two of its vertices. On the analogy
+of cards, a 2-vertex-deleted subgraph of G is called a 2-card, and the multi-
+set of G’s 2-cards is called the 2-deck of G. As in the case of cards, we do
+not distinguish between isomorphic 2-cards. Clearly, the 2-deck of G is com-
+putable from D(G). Indeed, one must include each vertex-deleted subgraph
+of every card in D(G), and correct by observing that each 2-card has thus
+been counted twice.
+
+Definition 3.2.2 Let {u, v} and {x, y} be two couples of vertices in V (G).
+These two couples are 2-card-equivalent if they generate the same 2-card, that
+is, G − u − v ∼
+              = G − x − y. The couples {u, v} and {x, y} are pseudo-similar
+if they are 2-card-equivalent, but none of u, v is similar (i.e., a-equivalent) to
+any of x, y.
+
+                                       26
+Observe that, by deﬁnition, if {u, v} and {x, y} are pseudo-similar, then the
+vertices u, v, x, y must be pairwise distinct.
+   The creation of the 2-deck of G raises the following natural question: is
+it possible to mark each 2-card G − u − v of G with the cards of the vertices
+u and v? The question is not ambiguous, since the correspondence between
+the multiset of 2-cards and pairs of vertices {u, v} in G is a bijection. It
+may happen, though, that a given pair of (not necessarily distinct) 1-cards
+will mark several distinct 2-cards, and diﬀerent instances of the same 2-card
+will be marked by diﬀerent pairs of 1-cards. As we shall see in Chapter 4,
+answering the above question is very diﬃcult, almost as hard as proving the
+Reconstruction Conjecture itself.
+
+
+
+
+                                     27
+Chapter 4
+
+Relative degree-sequences
+
+4.1      A few combinatorial observations
+Recall from Chapter 1 that the degree-sequence of graph G is the sequence
+of degrees of its vertices in a non-decreasing order. Let Q be a subgraph of
+G. The degree of a vertex v ∈ V (Q) relative to G is a pair (r, d), where d
+(r) is the degree of v in G (respectively, Q). We shall use the notation rd for
+the pair (r, d), and say that v has relative degree r out of d.
+
+Definition 4.1.1 The relative degree-sequence of subgraph Q (with respect
+to G) is the sequence of relative degrees rd of its vertices in an order that
+is non-decreasing regarding the superscripts d and also non-decreasing in r
+among those degrees that have the same superscript d.
+
+The degree-sequence of G and the relative degree-sequence of Q with respect
+to G will be denoted by ds(G) and rdsG (Q), respectively. In order to ensure
+that ds(G) and rdsG (Q) have the same length, we shall include a relative
+“degree” ∅d in rdsG (Q) for each vertex v ∈ V (G) \ V (Q) with degree d. The
+“number” ∅ is treated as 0, but the notation ∅ will distinguish between a
+vertex that has been deleted and one that is still present but isolated. This
+distinction is purely technical, however, because one can easily ﬁll in the ∅d
+relative degrees in rdsG (Q) once ds(G) is known.
+
+
+                                      28
+                                      .
+                                      v1
+                                                               .
+                                                               v1
+
+
+                           G:   .
+                                v2
+                                           .
+                                           v3
+                                                     Q:   .
+                                                          v2
+                                                                    .
+                                                                    v3
+
+                                      .
+                                      v4
+                                                               .
+                                                               v4
+
+
+
+                     Figure 4.1: Graph G and its subgraph Q.
+
+Example 4.1.2 Consider the graph G and its subgraph Q in Fig. 4.1. The
+degree-sequence of G is 2, 2, 3, 3, while the relative degree sequence of Q with
+respect to G is 12 , 12 , 13 , 33 .
+
+The following simple combinatorial observation is equivalent to Nash-
+Williams’ result [23, Corollary 3.5] on degree-sequence sequences, also dealt
+with in Chapter 1.
+
+Proposition 4.1.3 For every vertex v ∈ V (G), rdsG (G − v) is recoverable
+from D(G).
+
+Proof. We have seen in Chapter 1 that d(v) and ds(G) are recoverable from
+D(G). Write the sequence ds(G − v) underneath ds(G) by inserting the
+“degree” ∅ in ds(G − v) right under the position of the ﬁrst occurrence of
+d(v) in ds(G). For example:
+
+                     ds(G) :        2 2 2 3 3 4 4
+                     ds(G − v)) :   1 1 2 2 3 ∅ 3
+                     rdsG (G − v) : 12 12 22 23 33 ∅4 34
+
+Observe that the “true” degrees in ds(G − v) will lag behind those in ds(G),
+so that the diﬀerence between two degrees in aligned positions is at most 1.
+Therefore it is trivial to ﬁll out the missing superscripts in ds(G − v), so that
+the resulting sequence becomes rdsG (G − v).         
+    Proposition 4.1.3 basically says that, for every card G − v, the degrees
+of the vertices adjacent to v in G are uniquely determined by ds(G) and
+
+                                                29
+ds(G−v). Indeed, these are exactly the degrees r+1 appearing in rdsG (G−v)
+as rr+1 . Of course, we still have no information about the actual position of
+v’s neighbors in G − v.
+   We immediately generalize Proposition 4.1.3 to ﬁnd out the relative
+degree-sequence of all 2-vertex-deleted subgraphs of G. Notice that, for two
+distinct vertices u, v ∈ V (G), the subgraph G − u − v is no longer determined
+by the cards G − u and G − v in a unique way, since the cards themselves do
+not uniquely identify the vertices u, v. Moreover, the subgraph G − u − v,
+too, can be isomorphic to other subgraphs G − u′ − v ′ in which u′ and v ′ are
+associated with some diﬀerent cards.
+
+Theorem 4.1.4 Let u and v be two distinct vertices of G. Given the degree-
+sequence of the subgraph G−u−v, rdsG (G−u−v) is uniquely determined by
+the data ds(G), ds(G − u), and ds(G − v). Moreover, the question whether u
+and v are adjacent in G or not turns out from the data ds(G), ds(G − u − v),
+d(u) and d(v).
+
+Proof. We use the same alignment argument as in the proof of Proposi-
+tion 4.1.3. Write the degree-sequences ds(G), ds(G−u), and ds(G−v) under
+each other, inserting the ∅ symbol in the appropriate positions of ds(G − u)
+and ds(G − v). Furthermore, insert two ∅’s in ds(G − u − v) aligned with the
+ones already inserted in ds(G − u) and ds(G − v). If d(u) = d(v) = d, then
+insert two consecutive ∅’s aligned with the beginning of the block marked by
+degree d in ds(G). For example:
+
+    ds(G) :               2   2   2    3 3      4   4   ... ... ...   ...
+    ds(G − u) :           1   1   2    2 3      4   4   ... ∅ ...     ...
+    ds(G − v) :           1   2   2    2 2      3   4   ... ... ∅     ...
+    ds(G − u − v) :       0   1   1    2 2      3   4   ... ∅ ∅       ...
+                                  →    ←
+    rdsG (G − u − v) : 02 12      22   13 23    34 44 . . .   ∅   ∅   ...
+
+Let nG (d) (nG,Q (rd )) denote the number of occurrences of d (rd ) in ds(G)
+(respectively, rdsG (Q)). Assume, for simplicity, that the smallest degree in
+
+                                       30
+G is d0 ≥ 2. Then, clearly:
+                         nG,Q ((d0 − 2)d0 ) = nQ (d0 − 2).
+It follows that:
+   nG,Q ((d0 − 1)d0 ) = nG−u (d0 − 1) + nG−v (d0 − 1) − 2 · nQ (d0 − 2), and
+
+          nG,Q (dd00 ) = nG (d0 ) − nG,Q ((d0 − 2)d0 ) − nG,Q ((d0 − 1)d0 ),
+provided that neither of the degrees d(u) and d(v) equals d0 . If either or both
+does, then the above calculation changes in a straightforward way regarding
+the numbers nG,Q ((d0 − 1)d0 ) and nG,Q (dd00 ). Observe that some adjacent
+degrees d−1 and d (d ≥ 1) in ds(G−u−v), showing up as relative degrees (d−
+1)d+1 and dd in rdsG (G − u − v), must be interchanged in the latter sequence,
+since the ascending order with respect to the superscripts has priority over
+that of the actual subgraph degrees. See the example above regarding the
+relative degrees 13 and 22 .
+    One can then carry on in the same way, calculating the numbers
+nG,Q ((d0 − 1)d0 +1 ), nG,Q (dd00 +1 ), nG,Q ((d0 + 1)d0 +1 ), and so on. Details are
+left to the reader.
+   As to the second statement of the theorem, if
+                    |E(G)| − |E(G − u − v)| = d(u) + d(v),
+then u and v are not connected in G, otherwise they are. The numbers |E(G)|
+and |E(G − u − v)| are determined by ds(G) and ds(G − u − v), respectively.
+The proof is complete.     
+
+4.2      The relative degree-sequence conjecture
+Proposition 4.1.3 and Theorem 4.1.4 show that the concept of relative degree-
+sequence is rather fundamental in the study of graph reconstruction. To pro-
+vide yet another evidence of this observation, let Rds(G) denote the multiset
+                   {rdsG (Q)|Q is an induced subgraph of G}.
+
+                                         31
+Thus, relative degree-sequences of subgraphs count with multiplicity in
+Rds(G). We put forward the following conjecture, which is very closely
+related to the Reconstruction Conjecture.
+
+Conjecture 4.2.1 For every graph G, Rds(G) identifies G up to isomor-
+phism.
+
+Conjecture 4.2.1 is especially interesting for several reasons.
+
+   1. It appears to hold for all graphs with no exceptions.
+
+   2. It provides a characterization of graph isomorphism, which has been
+       sought for a very long time.
+
+   3. Algebraically, if G = G1 +G2 , where + denotes disjoint union of graphs,
+       then
+                                 Rds(G) = Rds(G1 ) × Rds(G2 ).                           (4.2.1)
+
+In equation 4.2.1 above, × stands for concatenation of sets of relative degree-
+sequences in the formal language sense (taking the quotient of the product
+by commutativity). In terms of polynomials, one can think of a relative
+degree rd as a formal variable. Let X denote the set of all such variables.
+Then Rds(G) becomes a polynomial PG of the variables X over the integer
+ring Z, in which all coeﬃcients are non-negative. Indeed, the coeﬃcient of
+a term xp11 . . . xpkk in PG is the number of times the relative degree-sequence
+xp11 . . . xpkk , that is, the sequence:
+
+                       (x1 , . . . , x1 , x2 , . . . , x2 , . . . , xk , . . . , xk ),
+
+comes up in Rds(G). The polynomial PG itself is simply the sum of these
+terms for all relative degree-sequences. Notice that the empty graph trans-
+lates into the polynomial 1, that is, the empty sequence (product) of vari-
+ables, and not to 0. The polynomial 0 is not the image of any graph at
+all.
+
+                                                    32
+   Let Z[X] denote the commutative Z-module (in fact algebra) of X-
+polynomials over Z. (Mind that addition of polynomials is commutative
+in Z[X].) Our fundamental observation is that the operation × in equa-
+tion 4.2.1 translates naturally into product of polynomials in the algebra
+Z[X]. This product makes the algebra Z[X] associative and commutative,
+therefore a commutative ring. In this way we could establish an embedding
+of the additive commutative monoid structure of graphs with disjoint union
+into the multiplicative structure of the commutative ring Z[X], which would
+be a very strong result, indeed.
+   Conjecture 4.2.1 was the starting point of the present study, and the
+observation in the previous paragraph served as a motivation for it. Even
+more generally, our ambitious goal is to ﬁnd an embedding of the free traced
+monoidal category [12] of ﬂowchart schemes, which is practically a graph
+structure with the tensor operation being disjoint union of graphs, into the
+compact closed category of free modules over the commutative ring Z[X], in
+which tensor and trace are the standard matrix operations. Conjecture 4.2.1
+is the key to this very general result. We do not wish to elaborate on al-
+gebraic and category theoretic issues in the present study, however, and the
+arguments above are included for the sake of revealing the real motives in
+formulating Conjecture 4.2.1 only. As it turned out very soon, the key to
+Conjecture 4.2.1 is in fact the Reconstruction Conjecture, therefore the focus
+of research has changed from algebra to combinatorics.
+  Naturally enough, Conjecture 4.2.1 also has an “edge” version, in which
+Rds(G) is deﬁned as the set of relative degree-sequences of all subgraphs of
+G. This version, too, appears to hold for all graphs G with no exceptions.
+   The connection between Conjecture 4.2.1 and the Reconstruction Con-
+jecture is the following. If one could compute Rds(G) from D(G), then
+Conjecture 4.2.1 would imply the Reconstruction Conjecture. As our sec-
+ond main result in Chapter 5 shows, however, computing the whole multiset
+Rds(G) appears to be far too much work in order to reconstruct G. Therefore
+
+
+                                     33
+this reconstruction argument probably does not hold much water, indicating
+that Conjecture 4.2.1 is even tougher than the Reconstruction Conjecture.
+   On the other hand, if, given Rds(G), one could isolate Rds(G−v) for each
+vertex-deleted subgraph of G, then the Reconstruction Conjecture would im-
+ply Conjecture 4.2.1 through a straightforward induction argument. Since
+our concern is eventually Conjecture 4.2.1, and the construction of the mul-
+tiset of multisets
+                         {Rds(G − v)|v ∈ V (G)}
+
+from Rds(G) looks promising, we shall try to prove the Reconstruction Con-
+jecture ﬁrst.
+
+
+
+
+                                    34
+Chapter 5
+
+The reconstruction of
+card-minimal graphs
+
+In this chapter we present our second main result, which aims at the recon-
+struction of card-minimal graphs not containing pseudo-similar couples of
+vertices.
+
+
+5.1         The role of pseudo-similar couples of ver-
+            tices in card-minimal graphs
+Recall from Chapter 2 that graph G is card-minimal if D(G) is a set of |V (G)|
+diﬀerent cards. According to Deﬁnition 3.2.2, two couples of vertices {u, v}
+and {x, y} in a card-minimal graph G are pseudo-similar iﬀ:
+
+                           G−u−v ∼
+                                 = G − x − y,
+
+and u, x, y, z are pairwise distinct. Indeed, given the fact that there are
+no distinct a-equivalent vertices in a card-minimal graph (not even pseudo-
+similar ones), the condition that neither of u, v is a-equivalent to any of x, y
+is equivalent to the condition that these vertices are pairwise distinct.
+   To shed some light on the intuition behind pseudo-similarity between
+couples of vertices in a card-minimal graph G, let Q be an arbitrary graph
+
+                                      35
+       u                      x
+           v                      y
+                         a)                                 b)
+
+
+ Figure 5.1: Graphs with and without pseudo-similar couples of vertices.
+
+having |V (G)| − 2 vertices. Consider the set C of cards in D(G) in which Q
+is isomorphic to at least one vertex-deleted subgraph. Construct the graph
+GQ which has C as its set of vertices, and any two cards G − u, G − v are
+connected in GQ iﬀ G − u − v ∼   = Q. (Remember that G is card-minimal,
+therefore the deﬁnition of GQ is correct.) Then G is free from pseudo-similar
+couples of vertices iﬀ GQ is either a triangle or a star graph for every 2-card
+Q of G. In other words, either |C| = 2 and GQ is a single edge, or |C| > 2
+and the following two conditions are met:
+
+  1. the subgraph Q occurs k ≥ 2 times as a vertex-deleted subgraph in
+     some card G − u ∈ C;
+
+  2. |C| = k + 1 and the cards in C diﬀerent from G − u all have a single
+     occurrence of Q in them, with the possible exception that k = 2 and
+     all the three cards in C have two occurrences of Q in them.
+
+See Fig. 5.1a for a card-minimal graph G which does, and Fig. 5.1b for
+one which does not contain pseudo-similar couples of vertices. The smallest
+card-minimal graph of Fig. 2.2 does have a pair of pseudo-similar couples, as
+shown by Fig. 5.2
+   It is clear by the above characterization that the property of not having
+pseudo-similar couples of vertices is recognizable for card-minimal graphs,
+
+                                      36
+                           v                     y
+
+
+
+
+                           u      x
+
+         Figure 5.2: The smallest card-minimal graph, revisited.
+
+i.e., the property is decidable by looking at the deck only. (Of course, the
+property of being card-minimal is immediately recognizable.) Indeed, for
+each 2-card Q of G, one must construct the graph GQ and check if it is a
+triangle or a star graph. If so, then G is free from pseudo-similar couples of
+vertices, otherwise it is not. Remember from Chapter 3 that the 2-deck of G
+is constructible from D(G).
+
+
+5.2     The reconstruction result
+In this section we present our second main result on the reconstruction of
+card-minimal graphs not containing pseudo-similar couples of vertices.
+
+Theorem 5.2.1 Every card-minimal graph G free from pseudo-similar cou-
+ples of vertices is reconstructible.
+
+Proof. Let Q be an arbitrary 2-card of G, and ﬁnd the set C of cards in
+which Q is isomorphic to at least one vertex-deleted subgraph. Clearly, C
+has at least two elements. If there are exactly two cards G − u and G − v in
+C, then conclude that Q ∼= G − u − v, and use Theorem 4.1.4 to decide if u
+and v are adjacent in G or not. If C has more than two elements, then two
+cases are possible.
+Case A: |C| = 3, and each card in C has two subgraphs isomorphic to Q.
+Case B: there is exactly one card G − u ∈ C that contains more than one
+subgraph isomorphic to Q.
+
+                                      37
+   In case A, Q ∼= G − u − v for any pair G − u, G − v of distinct cards in
+C, while in case B, Q ∼
+                      = G − u − v for all vertices v 6= u such that G − v ∈ C.
+Furthermore, in case B, Q is not isomorphic to any other 2-card of G. (In
+other words, Q 6∼
+                = G − u1 − u2 , where G − u1 and G − u2 are both in C but
+ui 6= u for either i = 1 or 2.) In both cases, use Theorem 4.1.4 to ﬁnd out if
+u is adjacent to v in G, knowing that Q ∼  = G − u − v. It is evident that the
+above procedure will decide for each pair of cards G − u, G − v in D(G) if the
+vertices u and v are adjacent in G or not. Graph G is thus reconstructed,
+and the proof is complete.    
+
+
+
+
+                                     38
+Chapter 6
+
+Conclusion
+
+Motivated by an independent study in algebra and category theory, we have
+presented a structural analysis of graphs with the aim of being able to recon-
+struct them from some partial information. The basis of the reconstruction
+of graph G could either be the classical multiset of G’s vertex-deleted sub-
+graphs, or the multiset of relative degree-sequences of all induced subgraphs
+of G.
+  In order to better understand the problem of graph reconstruction, in
+Chapter 3 we have considered two basic equivalence relations on the set
+of vertices of a graph G: card equivalence and automorphism equivalence.
+Card equivalence is the one that is directly related to the Reconstruction
+Conjecture. Our examples have shown, however, that this equivalence is
+sometimes rather inconvenient to deal with. Automorphism equivalence has
+a much more transparent structure, and it has turned out to be very closely
+related to card equivalence. To demonstrate this fact, we have worked out
+a characterization theorem for card equivalence, which shows how to bring
+card equivalence in line with automorphism equivalence.
+   With respect to relative degree sequences, in Chapter 4 we have pro-
+vided a generalization of an earlier observation by Nash-Williams on the
+degree-sequence sequence of graphs. Recognizing the importance of relative
+degree-sequences in graph reconstruction, we have proposed a new conjec-
+
+
+                                     39
+ture saying that every graph G is uniquely determined (up to isomorphism)
+by the multiset of relative degree-sequences of its induced subgraphs. This
+conjecture directly connects the motivating algebraic study to the problem
+of graph reconstruction, showing that the new conjecture is probably even
+more diﬃcult to prove than the Reconstruction Conjecture.
+   In Chapter 5 we have investigated the class of card-minimal graphs, the
+deck of which is a set. We have also generalized the concept of peudo-
+similarity to couples of vertices in any graph G. As a result we have shown
+that every card-minimal graph G not having pseudo-similar couples of ver-
+tices is reconstructible.
+
+
+
+
+                                    40
+Bibliography
+
+[1] Bartha, M. and Shuva, A. S., Reconstructing graphs from a deck of all
+   distinct cards, Studia Univ. Babes-Bolyai Mathematica 59, Number 4,
+   2014, 443–455.
+
+[2] Bauderon, M. and Courcelle, B., Graph expressions and graph rewritings,
+    Math. Systems. Theory 20 (1987), 83–127.
+
+[3] Bollobás, B., Almost every graph has reconstruction number three, J.
+    Graph Theory 14 (1990), 1–4.
+
+[4] Bondy, J. A., A Graph Reconstructor’s Manual, in: Surveys in Combi-
+    natorics, 1991, London Mathematical Society Lecture Note Series No.
+   166, Cambridge University Press, 1991, pp. 221-252.
+
+[5] Engelfriet, J. and Vereijken, J. J., Context-free graph grammars and con-
+   catenation of graphs, Acta Informatica 34 (1997), 773–803.
+
+[6] Godsil, C. D. and Kocay, W. L., Graphs with three mutually pseudo-
+   similar vertice, J. Combin. Theory Ser. B 35 (1983) 240–246.
+
+[7] Godsil, C. D. and Kocay, W. L., Constructing graphs with pairs of
+   pseudo-similar vertices, J. Combin. Theory Ser. B 32 (1982), 146–155.
+
+[8] Harary, F., On the reconstruction of a graph from a collection of sub-
+   graphs, In: Theory of Graphs and its Applications (Proc. Sympos.
+
+
+
+                                    41
+    Smolenice, 1963). Publ. House Czechoslovak Acad. Sci., Prague, 1964,
+    pp. 47–52.
+
+ [9] Harary, F. The four color conjecture and other graphical diseases, Proof
+     Techniques in Graph Theory, Proc. Second Ann Arbor Graph Theory
+    Conference, Ann Arbor, Mich., 1968), ed. F. Harary. Academic Press,
+    New York, 1969, pp. 1-9.
+
+[10] Harary, F., A survey of the reconstruction conjecture, Lecture Notes in
+    Mathematics 406 (1974), 18–28.
+
+[11] Harary, F. and Palmer, E. M., On similar points of a graph, J. Math.
+     Mech. 15 (1966), 623–630.
+
+[12] Joyal, A., Street, R. and Verity, D., Traced monoidal categories, Math.
+    Proc. Camb. Phil. Soc., 119 (1996), 447–468.
+
+[13] Kelly, P. J., On Isometric Transformations, Ph.D. thesis, University of
+     Wisconsin, 1942.
+
+[14] Kelly, P. J., A congruence theorem for trees, Paciﬁc J. Math. 7 (1957),
+    961–968.
+
+[15] Kimble, R. J., Existence of graphs where almost every edge is pseudo-
+    similar, Proc. 4th International Conf., Theory and Applications of
+    Graphs, Western Michigan University, Kalamazoo, G. Chartrand et al.
+    eds., Wiley (1981), pp. 431-436.
+
+[16] Kimble, R. J., Schwenk, A. J. and Stockmeyer, P. K., Pseudosimilar ver-
+     tices in a graph, J. Graph Theory 5 (1981), 171–181.
+
+[17] Kocay, W. L., A small graph with three mutually pseudo-similar vertices,
+    Ars Combinatorica 14 (1982), 99–103.
+
+[18] Kocay. W. L., Graphs, groups and pseudo-similar vertices, J. Austral.
+     Math. Soc., Ser. A 37 (1984), 181-189.
+
+                                       42
+[19] Krishnamoorthy, V. and Parthasarathy, K. R., Cospectral graphs and
+     digraphs with given automorphism group, J. Combin. Theory Ser. B 19
+    (1975), 204–213.
+
+[20] Lauri, J., Pseudosimilarity in graphs – a survey, Ars Combinatorica 46
+    (1997), 77–95.
+
+[21] Lauri, J. and Marino, M. C., On pseudosimilarity in graphs, Combina-
+    torics ’88, Proc. International Conf. on Incidence Geometries and Com-
+    binatorial Structures, Ravello, Italy, 1988, ed. A. Barlotti et al. Vol. 2
+    (1991), pp. 169–179.
+
+[22] Lauri, J. Endvertex-deleted subgraphs, Ars Combinatoria 36 (1993), 171-
+     182.
+
+[23] Nash-Williams, C. St. J. A., The Reconstruction Problem, in: L. Beineke,
+     R. J. Wilson, eds., Selected topics in graph theory, Academic Press,
+    1978, pp. 205–236.
+
+[24] Ramachandran, S., On a new digraph reconstruction conjecture, J. Com-
+    bin. Theory Ser. B 31 (1981), 143–149,
+
+[25] Ramachandran, S., Graph Reconstruction–Some New Developments,
+    AKCE J. Graphs. Combin. 1 (2004), 51–61.
+
+[26] Stockmeyer, P. K., The falsity of the reconstruction conjecture for tour-
+    naments, J. Graph Theory 1 (1977), 19–25.
+
+[27] Ulam, S. M., A Collection of Mathematical Problems, Wiley (Inter-
+    science) New York, 1960, Second edition: Problems in Modem Mathe-
+    matics, 1964.
+
+
+
+
+                                     43
+
