@@ -24,14 +24,18 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifndef MAXN
 #define MAXN 7
-#define MAXE 21
+#endif
+#ifndef MAXE
+#define MAXE 28
+#endif
 
 static int N, E, PRUNE = 1;
 static int eidx[MAXN][MAXN], eu[MAXE], ev[MAXE];
-static int perms[5040][MAXN], nperms;
-static int fix[MAXN][720], nfix[MAXN];
-static int eimg[5040][MAXE];
+static int perms[40320][MAXN], nperms;
+static int fix[MAXN][5040], nfix[MAXN];
+static int eimg[40320][MAXE];
 
 static void rec_perm(int *p, int *used, int k) {
     if (k == N) { memcpy(perms[nperms++], p, sizeof(int) * N); return; }
