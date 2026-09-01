@@ -10,16 +10,17 @@ GRC CE: NO
 
 A genuinely different legal-order construction was attacked.  Instead of
 coarsening the old order-seven incidence partition, the search built explicit
-simple graphs as two- and three-sheet covers of asymmetric pseudosimilar base
-graphs.  The parents have orders 16 and 24, so every searched graph is already
-above the independently verified `n <= 13` range.
+simple graphs as two-, three-, and four-sheet covers of asymmetric
+pseudosimilar base graphs.  The parents have orders 16, 24, and 32, so every
+searched graph is already above the independently verified `n <= 13` range.
 
-Three exact domains were completed:
+Four exact domains were completed:
 
 ```text
 C2 signed two-lifts, every cycle rank: 84,096 presentations
 C3 cyclic three-lifts, ranks 3–5:       6,912 presentations
 S3 nonabelian three-lifts, rank 3:      3,456 presentations
+S4 four-sheet lifts, rank 3:           10,896 presentations
 ```
 
 No nonisomorphic equal-deck pair exists in any stated domain.
@@ -35,6 +36,7 @@ a spanning tree, so only the cycle-rank many chord voltages remain.
 - `C3` gives regular cyclic three-lifts.
 - `S3` gives arbitrary three-sheet permutation covers and can have trivial
   deck-transformation group.
+- `S4` gives conjugacy-reduced four-sheet permutation covers.
 
 This is not an abstract local-map gadget or binary realization.  Every state
 is an explicit finite simple parent graph and is checked through its complete
@@ -175,6 +177,24 @@ nonisomorphic equal decks:       0
 Thus noncommuting monodromy and potentially trivial cover automorphism groups
 do not by themselves create a deck collision.
 
+## S4 four-sheet result
+
+The full symmetric group on four sheets was the final scaling control.  The
+`24^3` raw voltage triples reduce to 681 exact simultaneous-conjugacy classes.
+Across all 16 rank-three bases:
+
+```text
+voltage presentations:        10,896
+parent isomorphism classes:       681
+distinct exact decks:             681
+repeated exact decks:          10,215
+repeated decks isomorphic:     10,215
+nonisomorphic equal decks:          0
+```
+
+The frozen base alone already gives 681 different decks.  Every other base
+provides another quotient presentation of those same 681 parent classes.
+
 ## Exact verification stack
 
 The search uses:
@@ -199,6 +219,7 @@ Recorded discovery runtimes were approximately:
 C2 global hostile replay: 400.51 seconds
 C3 ranks 3–5:             110.84 seconds
 S3 rank 3:                 70.46 seconds
+S4 rank 3:                344.45 seconds
 ```
 
 The reusable implementation streams bases and retains one representative per
@@ -209,8 +230,8 @@ deck digest.  It does not retain giant populations of Python graph objects.
 **Computationally exhaustive:** In the fixed 12-class pseudosimilarity family
 defined by `p=(0 1)(2 3)(4 5 6 7)`, every connected asymmetric base was found
 exactly.  Across all signed two-lifts, cyclic three-lifts through rank five,
-and nonabelian three-lifts at rank three, equal ordinary vertex decks occur
-only between isomorphic parents.
+nonabelian three-lifts at rank three, and four-sheet `S4` lifts at rank three,
+equal ordinary vertex decks occur only between isomorphic parents.
 
 This is a theorem about the stated finite cover domains.  It is not the Graph
 Reconstruction Conjecture and does not exclude counterexamples elsewhere.
@@ -235,5 +256,5 @@ is two nonisomorphic Schreier covers whose every deleted card has conjugate
 monodromy.
 
 That is the next direct CE address.  It changes the representation, not just
-the voltage values, and attacks the mechanism that survived all three cover
+the voltage values, and attacks the mechanism that survived all four cover
 searches.

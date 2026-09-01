@@ -21,10 +21,17 @@ class CoveringSpaceStrikeTests(unittest.TestCase):
         bases = strike.classified_bases({3})
         self.assertEqual(16, len(bases))
         _assignment, _base, tree, chords = bases[0]
-        for group, order in (("C2", 16), ("C3", 24), ("S3", 24)):
-            graph = strike.voltage_lift(tree, chords, 1, group)
+        cases = (("C2", 16, 1), ("C3", 24, 1), ("S3", 24, 1),
+                 ("S4", 32, (strike.S4[0], strike.S4[1], strike.S4[2])))
+        for group, order, voltage in cases:
+            graph = strike.voltage_lift(tree, chords, voltage, group)
             self.assertEqual(order, graph.n)
-            self.assertEqual(2 * (len(tree) + len(chords)) if group == "C2" else 3 * (len(tree) + len(chords)), graph.m)
+            sheets = {"C2": 2, "C3": 3, "S3": 3, "S4": 4}[group]
+            self.assertEqual(sheets * (len(tree) + len(chords)), graph.m)
+
+    def test_s4_rank_three_conjugacy_count(self):
+        representatives = strike.simultaneous_conjugacy_representatives(strike.S4, 3)
+        self.assertEqual(681, len(representatives))
 
     def test_complete_rank_three_c2_regression(self):
         result = strike.search("C2", (3,), progress=0)

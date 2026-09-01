@@ -10,7 +10,7 @@ GRC CE: NO
 
 This session abandoned further Goldilocks coarsening and attacked explicit
 legal-order graphs through graph covers.  No counterexample was found, but
-three new structured domains were closed exactly and the first explicit
+four new structured domains were closed exactly and the first explicit
 asymmetric pseudosimilar base was frozen in the repository.
 
 ## New angle
@@ -22,6 +22,7 @@ globalizer obstruction:
 ```text
 base order 8 -> two-lift parent order 16
 base order 8 -> three-lift parent order 24
+base order 8 -> four-lift parent order 32
 ```
 
 Every searched state is already an actual finite simple graph above order 13.
@@ -85,6 +86,19 @@ repeated decks isomorphic:     3,407
 nonisomorphic equal decks:         0
 ```
 
+### Four-sheet lifts (`S4`), rank 3
+
+```text
+bases:                            16
+simultaneous-conjugacy classes:  681 per base
+presentations:                10,896
+parent isomorphism classes:      681
+distinct exact decks:            681
+repeated exact decks:         10,215
+repeated decks isomorphic:    10,215
+nonisomorphic equal decks:         0
+```
+
 ## Strongest theorem
 
 Within each completed domain, the ordinary vertex deck is injective on the
@@ -101,8 +115,8 @@ base in the fixed pseudosimilarity incidence family.
 - Every digest collision received an exact deck replay.
 - Every exact collision received independent adjacency/backtracking parent
   isomorphism.
-- All 78,840 two-lift, 6,694 cyclic, and 3,407 nonabelian repeated decks were
-  parent-isomorphic.
+- All 78,840 two-lift, 6,694 cyclic, 3,407 three-sheet nonabelian, and 10,215
+  four-sheet nonabelian repeated decks were parent-isomorphic.
 - No reduced-deck or local-map inference was used.
 
 ## Artifacts

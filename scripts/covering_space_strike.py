@@ -30,6 +30,7 @@ PSEUDO_MAP = (1, 0, 3, 2, 5, 6, 7, 4)
 SEED_GRAPH6 = "GQyPA_"
 BASE_EDGES = tuple(itertools.combinations(range(BASE_N), 2))
 S3 = tuple(itertools.permutations(range(3)))
+S4 = tuple(itertools.permutations(range(4)))
 
 
 def incidence_classes():
@@ -149,6 +150,30 @@ def integer_digits(value, base, count):
     return tuple(result)
 
 
+def compose(left, right):
+    return tuple(left[right[index]] for index in range(len(left)))
+
+
+def inverse(permutation):
+    result = [0] * len(permutation)
+    for source, image in enumerate(permutation):
+        result[image] = source
+    return tuple(result)
+
+
+def simultaneous_conjugacy_representatives(permutations, rank):
+    def conjugate(permutation, by):
+        return compose(compose(by, permutation), inverse(by))
+
+    return tuple(sorted({
+        min(
+            tuple(conjugate(permutation, by) for permutation in voltage_tuple)
+            for by in permutations
+        )
+        for voltage_tuple in itertools.product(permutations, repeat=rank)
+    }))
+
+
 def voltage_lift(tree, chords, code, voltage_group):
     if voltage_group == "C2":
         sheets = 2
@@ -159,12 +184,20 @@ def voltage_lift(tree, chords, code, voltage_group):
     elif voltage_group == "S3":
         sheets = 3
         permutations = S3
+    elif voltage_group == "S4":
+        sheets = 4
+        permutations = S4
     else:
         raise ValueError(voltage_group)
-    digits = integer_digits(code, len(permutations), len(chords))
-    chord_voltage = {
-        edge: permutations[digits[index]] for index, edge in enumerate(chords)
-    }
+    if voltage_group == "S4":
+        if len(code) != len(chords):
+            raise ValueError("one S4 permutation is required per chord")
+        chord_voltage = dict(zip(chords, code))
+    else:
+        digits = integer_digits(code, len(permutations), len(chords))
+        chord_voltage = {
+            edge: permutations[digits[index]] for index, edge in enumerate(chords)
+        }
     identity = tuple(range(sheets))
     rows = [0] * (sheets * BASE_N)
     for u, v in tree + chords:
@@ -207,7 +240,7 @@ def reconstruct(assignment, voltage_code, voltage_group):
 
 def search(voltage_group, ranks, hostile=True, progress=16):
     started = time.monotonic()
-    group_order = {"C2": 2, "C3": 3, "S3": 6}[voltage_group]
+    group_order = {"C2": 2, "C3": 3, "S3": 6, "S4": 24}[voltage_group]
     bases = classified_bases(set(ranks))
     deck_table = {}
     presentations = digest_collisions = exact_collisions = 0
@@ -215,7 +248,11 @@ def search(voltage_group, ranks, hostile=True, progress=16):
     rank_histogram = Counter()
     for base_index, (assignment, graph, tree, chords) in enumerate(bases, 1):
         rank_histogram[len(chords)] += 1
-        for voltage_code in range(group_order ** len(chords)):
+        if voltage_group == "S4":
+            voltage_codes = simultaneous_conjugacy_representatives(S4, len(chords))
+        else:
+            voltage_codes = range(group_order ** len(chords))
+        for voltage_code in voltage_codes:
             parent = voltage_lift(tree, chords, voltage_code, voltage_group)
             deck = canonical_deck(parent)
             digest = exact_deck_digest(deck)
@@ -305,7 +342,7 @@ def base_classification():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--group", choices=("C2", "C3", "S3"))
+    parser.add_argument("--group", choices=("C2", "C3", "S3", "S4"))
     parser.add_argument("--ranks", default="")
     parser.add_argument("--classify-bases", action="store_true")
     parser.add_argument("--pretty", action="store_true")

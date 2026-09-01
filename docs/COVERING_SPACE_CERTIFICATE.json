@@ -65,6 +65,19 @@
       "repeated_decks_parent_isomorphic": 3407,
       "nonisomorphic_equal_deck_pairs": 0,
       "runtime_seconds": 70.46
+    },
+    "S4_rank_3": {
+      "parent_order": 32,
+      "base_count": 16,
+      "rank": 3,
+      "simultaneous_conjugacy_classes_per_base": 681,
+      "voltage_presentations": 10896,
+      "parent_isomorphism_classes": 681,
+      "distinct_exact_decks": 681,
+      "repeated_exact_decks": 10215,
+      "repeated_decks_parent_isomorphic": 10215,
+      "nonisomorphic_equal_deck_pairs": 0,
+      "runtime_seconds": 344.45
     }
   },
   "verification": [
