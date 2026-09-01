@@ -1,0 +1,51 @@
+{
+  "grc_ce": "NO",
+  "starting_commit": "8366214",
+  "geometry": {
+    "points": 6,
+    "duads": 15,
+    "synthemes": 15,
+    "totals": 6,
+    "group_pairs_replayed": 518400,
+    "outer_homomorphism": true,
+    "outer_involution": true,
+    "outer_images": 720
+  },
+  "direct_fifteen": {
+    "unordered_pair_orbitals": 2,
+    "orbital_sizes": [45, 60],
+    "invariant_graphs": 4,
+    "counterexamples": 0
+  },
+  "combined_domain": {
+    "carrier_order": 42,
+    "carrier_orbit_sizes": [6, 6, 15, 15],
+    "unordered_pair_orbitals": 15,
+    "raw_invariant_graphs": 32768,
+    "stable_deck_quotient_classes": 14912,
+    "class_size_distribution": {"1": 384, "2": 12864, "4": 1664},
+    "parent_isomorphic_deck_collision_pairs": 22848,
+    "rescue_counts": {
+      "swap_fifteen_only": 3840,
+      "swap_six_only": 3520,
+      "full_semilinear_swap": 15488
+    },
+    "nonisomorphic_deck_collisions": 0
+  },
+  "s6_subgroups": {
+    "conjugacy_classes": 56,
+    "outer_nonconjugate_directed_classes": 38,
+    "outer_balanced_nonconjugate_directed_classes": 2,
+    "outer_balanced_unordered_pairs": 1,
+    "unique_pair_order": 4,
+    "unique_pair_coset_degree": 180,
+    "element_cycle_types": {"identity": 1, "double_transposition": 3}
+  },
+  "independent_raw_replay": {
+    "orbitals_cover_all_861_pairs": true,
+    "collision_pairs_replayed": 22848,
+    "unrescued_pairs": 0
+  },
+  "peak_rss_kib": 79692,
+  "next_strike": "degree-balanced partial coupling of the unique S6 V4 Gassmann pair to ordinary and exotic six-point anchors"
+}
