@@ -1,0 +1,22 @@
+{
+  "grc_ce": "NO",
+  "translation_theorem": "Every full odd-translation release code is a singleton.",
+  "cube_isometry_classification": [
+    {"dimension": 2, "subsets_checked": 10, "odd_isometries": 4, "complete_release_codes": 0},
+    {"dimension": 3, "subsets_checked": 246, "odd_isometries": 24, "complete_release_codes": 0},
+    {"dimension": 4, "subsets_checked": 65518, "odd_isometries": 192, "complete_release_codes": 0}
+  ],
+  "outer_s6": {
+    "duads": 15,
+    "synthemes": 15,
+    "totals": 6,
+    "outer_images_distinct": 720,
+    "ordinary_s5_order": 120,
+    "exotic_s5_order": 120,
+    "ordinary_s5_point_orbits": [1, 5],
+    "exotic_s5_point_orbits": [6],
+    "point_total_intersection_order": 20,
+    "transposition_outer_type": [2, 2, 2]
+  },
+  "next_strike": "mixed ordinary/exotic S6 orbital incidence on the 15-element duad-syntheme carrier"
+}
