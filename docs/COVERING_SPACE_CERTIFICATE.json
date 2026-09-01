@@ -1,0 +1,82 @@
+{
+  "status": "EXHAUSTIVE_NO_COUNTEREXAMPLE_IN_STATED_DOMAINS",
+  "grc_ce": "NO",
+  "base_family": {
+    "order": 8,
+    "pseudosimilar_vertices": [0, 1],
+    "deletion_isomorphism": [1, 0, 3, 2, 5, 6, 7, 4],
+    "incidence_classes": 12,
+    "raw_binary_assignments": 4096,
+    "connected_exact_asymmetric_bases": 192,
+    "all_exact_asymmetric_bases_color_refinement_discrete": true,
+    "rank_histogram": {
+      "3": 16,
+      "4": 32,
+      "5": 16,
+      "6": 16,
+      "7": 32,
+      "8": 16,
+      "9": 16,
+      "10": 32,
+      "11": 16
+    },
+    "frozen_seed": {
+      "graph6": "GQyPA_",
+      "edges": [[0, 2], [0, 4], [0, 5], [1, 3], [1, 4], [1, 7], [2, 4], [2, 6], [3, 5], [3, 7]],
+      "degrees": [3, 3, 3, 3, 3, 2, 1, 2],
+      "deletion_canonical_code": [7, 1171744],
+      "automorphism_sending_0_to_1": null,
+      "exactly_asymmetric": true
+    }
+  },
+  "exact_searches": {
+    "C2_all_ranks": {
+      "parent_order": 16,
+      "base_count": 192,
+      "ranks": [3, 4, 5, 6, 7, 8, 9, 10, 11],
+      "switching_class_presentations": 84096,
+      "parent_isomorphism_classes": 5256,
+      "distinct_exact_decks": 5256,
+      "repeated_exact_decks": 78840,
+      "repeated_decks_parent_isomorphic": 78840,
+      "nonisomorphic_equal_deck_pairs": 0,
+      "global_hostile_runtime_seconds": 400.51
+    },
+    "C3_ranks_3_to_5": {
+      "parent_order": 24,
+      "base_count": 64,
+      "ranks": [3, 4, 5],
+      "voltage_presentations": 6912,
+      "parent_isomorphism_classes": 218,
+      "distinct_exact_decks": 218,
+      "repeated_exact_decks": 6694,
+      "repeated_decks_parent_isomorphic": 6694,
+      "nonisomorphic_equal_deck_pairs": 0,
+      "runtime_seconds": 110.84
+    },
+    "S3_rank_3": {
+      "parent_order": 24,
+      "base_count": 16,
+      "rank": 3,
+      "voltage_presentations": 3456,
+      "parent_isomorphism_classes": 49,
+      "distinct_exact_decks": 49,
+      "repeated_exact_decks": 3407,
+      "repeated_decks_parent_isomorphic": 3407,
+      "nonisomorphic_equal_deck_pairs": 0,
+      "runtime_seconds": 70.46
+    }
+  },
+  "verification": [
+    "exact incidence union-find",
+    "explicit deletion-map edge replay",
+    "independent exact automorphism backtracking",
+    "spanning-tree gauge normalization",
+    "full multiplicity-preserving canonical vertex decks",
+    "SHA-256 deck digest used only as a filter",
+    "exact deck replay on every digest collision",
+    "independent parent-isomorphism backtracking on every exact collision"
+  ],
+  "binary_realization": "not applicable; parents are explicit simple graphs",
+  "counterexample": null
+}
