@@ -111,12 +111,32 @@ class Encoder:
             self.add(col if guard is None else col + [-guard])
             for a, b in itertools.combinations(col, 2):
                 self.add([-a, -b])
-        # degree preservation inside the card prunes: deg_{G-i}(u) = deg_{H-i}(x) is implied; skip.
-        # adjacency preservation
+        # degree compatibility inside the card: deg_{G-i}(u) = d_u - G[u,i] must equal
+        # deg_{H-i}(x) = d_x - H[x,i].  Pairs with |d_u - d_x| > 1 are impossible; the
+        # others force the two incidence bits.  Sound because the labelled degree
+        # vector is shared; it removes most P_i variables.
+        d = self.degrees
+        for u in others:
+            for x in others:
+                pv = self.p[(i, u, x)]
+                if abs(d[u] - d[x]) > 1:
+                    self.add([-pv])
+                elif d[u] == d[x]:
+                    self.add([-pv, -self.gv(u, i), self.hv(x, i)])
+                    self.add([-pv, self.gv(u, i), -self.hv(x, i)])
+                elif d[u] == d[x] + 1:
+                    self.add([-pv, self.gv(u, i)])
+                    self.add([-pv, -self.hv(x, i)])
+                else:
+                    self.add([-pv, -self.gv(u, i)])
+                    self.add([-pv, self.hv(x, i)])
+        # adjacency preservation (skip pairs already forced false)
         for u, v in itertools.combinations(others, 2):
             for x in others:
+                if abs(d[u] - d[x]) > 1:
+                    continue
                 for y in others:
-                    if x == y:
+                    if x == y or abs(d[v] - d[y]) > 1:
                         continue
                     base = [-self.p[(i, u, x)], -self.p[(i, v, y)]]
                     if guard is not None:
