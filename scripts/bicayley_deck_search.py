@@ -300,5 +300,57 @@ def main():
                 run_family_b(name, elems, report)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" and "--family-c" not in sys.argv:
     main()
+
+
+# ------------------------------------------------ family C: cards of Cayley graphs ----
+
+def run_family_c(name, elems, report):
+    """G = Cay(Gamma, C) minus the identity vertex; bucket decks across all C."""
+    mul, inv, ident = regular_rep(elems)
+    g = len(mul)
+    invsets = list(inverse_closed_sets(g, inv, ident))
+    buckets = {}
+    count = hits = 0
+    t0 = time.time()
+    for C in invsets:
+        if len(C) in (0, g - 1):
+            continue
+        X = cone(mul, inv, C, frozenset())  # Cayley graph plus an isolated vertex g
+        X = X.delete_vertex(g)
+        G = X.delete_vertex(ident)
+        certs = sorted(certificate(G.delete_vertex(v)) for v in range(G.n))
+        key = hashlib.sha256(b"C" + b"|".join(certs)).digest()
+        cert = hashlib.sha256(certificate(G)).digest()
+        count += 1
+        prev = buckets.get(key)
+        if prev is None:
+            buckets[key] = (cert, sorted(C))
+        elif prev[0] != cert:
+            hits += 1
+            H = cone(mul, inv, frozenset(prev[1]), frozenset()).delete_vertex(g).delete_vertex(ident)
+            ok = same_deck(G, H) and not is_isomorphic(G, H)
+            report(name, "C", ok, G, H, sorted(C), prev[1])
+    print(f"family C {name} (order {g}, n={g-1}): graphs={count} distinct decks={len(buckets)} collisions={hits} {time.time()-t0:.0f}s", flush=True)
+
+
+def main_c():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--orders", type=str, default="15,16,17,18,19,20,21,22,23,24")
+    a = ap.parse_args()
+
+    def report(name, fam, ok, G, H, p1, p2):
+        print(("HIT" if ok else "REFUTED-ON-REPLAY"), fam, name, "n=", G.n, "G=", G.to_graph6(), "H=", H.to_graph6(), p1, p2, flush=True)
+
+    for g in [int(x) for x in a.orders.split(",")]:
+        groups = {f"Z{g}": cyclic(g)}
+        if g % 2 == 0:
+            groups[f"D{g // 2}"] = dihedral(g // 2)
+        for name, elems in groups.items():
+            run_family_c(name, elems, report)
+
+
+if __name__ == "__main__" and "--family-c" in sys.argv:
+    sys.argv.remove("--family-c")
+    main_c()
