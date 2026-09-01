@@ -10,11 +10,15 @@ unknown H - v), which makes this far cheaper than the two-graph encoder in
 scripts/hypomorphism_sat.py, so it scales to the orders 14 to 20 where a
 candidate can be tested against every possible mate.
 
-Non-isomorphism.  Any isomorphism G -> H preserves labelled degrees, so H
-is tau(G) for some tau in W = prod Sym(degree classes).  When |W| is at
-most --tau-limit every labelled copy tau(G) is blocked by one clause
-(exact); otherwise the copies found by the solver are blocked one at a
-time with nauty deciding isomorphism (CEGAR).
+Symmetry.  The constraint system is invariant under relabelling H by tau
+exactly when G - tau^{-1}(v) ~= G - v for every constrained v, so the sound
+symmetry group is W = prod Sym(card classes of G) (vertices with isomorphic
+cards; dropped vertices form classes by degree).  Any isomorphism G -> H
+lies in W, so H is tau(G) for some tau in W.  When |W| is at most
+--tau-limit every labelled copy tau(G) is blocked by one clause (exact);
+otherwise an adjacent-transposition lex-leader predicate under W is added
+and the copies found by the solver are blocked one at a time with nauty
+deciding isomorphism (CEGAR).
 
 Any SAT answer is replayed through the Python deck and isomorphism
 checkers.  --drop k removes the constraints of k cards (positive control:
@@ -115,6 +119,31 @@ class Enc:
                         self.add([-allowed[(a, x)], -allowed[(b, y)], lit])
             self.p[v] = allowed
 
+    def lex_leader_adjacent(self, classes):
+        """H <=lex tau(H) for every adjacent transposition tau = (i j) inside a
+        degree class (Codish et al. style partial symmetry breaking).  Rows of
+        the adjacency matrix restricted to the other vertices are compared."""
+        n = self.n
+        for cl in classes.values():
+            for i, j in zip(cl, cl[1:]):
+                others = [k for k in range(n) if k not in (i, j)]
+                # row_i (over others) <=lex row_j (over others)
+                prev = None
+                for k in others:
+                    a, b = self.hv(i, k), self.hv(j, k)
+                    # eq_k <-> (a <-> b); condition: if all previous equal then a <= b, i.e. not (a and not b)
+                    ctx = [-prev] if prev is not None else []
+                    self.add(ctx + [-a, b])
+                    e = self.new()
+                    # e <-> (prev and (a <-> b))
+                    self.add([-e, a, -b]); self.add([-e, -a, b])
+                    if prev is not None:
+                        self.add([-e, prev])
+                        self.add([e, -prev, a, b]); self.add([e, -prev, -a, -b])
+                    else:
+                        self.add([e, a, b]); self.add([e, -a, -b])
+                    prev = e
+
     def block_labelled(self, rows):
         clause = []
         for (a, b), var in self.h.items():
@@ -122,10 +151,11 @@ class Enc:
         self.add(clause)
 
 
-def degree_group(d):
+def degree_group(d, G=None, dropped=()):
     classes = {}
     for v, x in enumerate(d):
-        classes.setdefault(x, []).append(v)
+        key = ("dropped", x) if v in dropped else ((x, nauty_cert(G.delete_vertex(v))) if G is not None else x)
+        classes.setdefault(key, []).append(v)
     size = 1
     for c in classes.values():
         size *= math.factorial(len(c))
@@ -169,8 +199,10 @@ def nauty_cert(g):
 def run(G: Graph, tau_limit=200000, dropped=(), verbose=False, max_rounds=100000):
     enc = Enc(G)
     enc.encode(dropped)
-    classes, wsize = degree_group(enc.d)
+    classes, wsize = degree_group(enc.d, G, dropped)
     exact = wsize <= tau_limit
+    if not exact:
+        enc.lex_leader_adjacent(classes)
     if exact:
         seen = set()
         for tau in all_taus(classes, G.n):
@@ -179,7 +211,7 @@ def run(G: Graph, tau_limit=200000, dropped=(), verbose=False, max_rounds=100000
                 seen.add(rows)
                 enc.block_labelled(rows)
     if verbose:
-        print(f"n={G.n} G={G.to_graph6()} d={sorted(enc.d)} |W|={wsize} exact={exact} vars={enc.nv} clauses={len(enc.clauses)} dropped={list(dropped)}", flush=True)
+        print(f"n={G.n} G={G.to_graph6()} d={sorted(enc.d)} card-classes={sorted(len(c) for c in classes.values())} |W|={wsize} exact={exact} vars={enc.nv} clauses={len(enc.clauses)} dropped={list(dropped)}", flush=True)
     t0 = time.time()
     rounds = 0
     cg = nauty_cert(G) if pynauty else None
