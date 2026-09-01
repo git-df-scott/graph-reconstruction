@@ -1,0 +1,50 @@
+{
+  "grc_ce": "NO",
+  "source_family": "Kocay X^n,Y^n",
+  "source_pair_n3": {
+    "points": 9,
+    "blocks_each": 28,
+    "parents_isomorphic": false,
+    "induced_hypergraph_point_decks_equal": true,
+    "induced_point_card_type_multiplicities": [1, 2, 2, 2, 2],
+    "incidence_matrix_row_decks_equal": false,
+    "incidence_row_card_types_each": 5,
+    "incidence_row_card_types_matching_across_pair": 0,
+    "block_decks_equal": false,
+    "x_block_card_types": 14,
+    "y_block_card_types": 16,
+    "block_card_types_matching_across_pair": 2,
+    "complement_incidence_row_card_types_matching_across_pair": 0
+  },
+  "source_pair_n4": {
+    "points": 17,
+    "blocks_each": 200,
+    "parents_isomorphic": false,
+    "induced_hypergraph_point_decks_equal": true,
+    "incidence_matrix_row_decks_equal": false,
+    "incidence_row_card_types_each": 9,
+    "incidence_row_card_types_matching_across_pair": 0,
+    "block_decks_equal": false,
+    "x_block_card_types": 100,
+    "y_block_card_types": 104,
+    "block_card_types_matching_across_pair": 4
+  },
+  "six_module_trade_space_n3": {
+    "labeled_members": 64,
+    "parent_isomorphism_types": 40,
+    "induced_point_deck_classes": 37,
+    "nonisomorphic_induced_point_deck_collision_pairs": 6,
+    "incidence_row_deck_classes": 40,
+    "nonisomorphic_incidence_row_deck_collision_pairs": 0,
+    "block_deck_classes": 40,
+    "nonisomorphic_block_deck_collision_pairs": 0,
+    "bideck_classes": 40,
+    "nonisomorphic_bideck_collision_pairs": 0
+  },
+  "independent_replay": "ordinary split-incidence graphs with block vertices made a clique",
+  "reproduction": [
+    "PYTHONPATH=src:scripts python scripts/dual_deck_trade_strike.py --n 3",
+    "PYTHONPATH=src:scripts python scripts/dual_deck_trade_strike.py --n 4 --skip-structured-search",
+    "PYTHONPATH=src:scripts python -m unittest tests.test_dual_deck_trade_strike -v"
+  ]
+}

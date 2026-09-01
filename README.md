@@ -37,3 +37,7 @@ order-five local-gluing census.
 
 See `docs/RESILIENT_LIFT_COUPLING_STRIKE.md` for the exact nine-class
 resilient-lift and Pareto coupling theorems.
+
+See `SOL_8.md` and `docs/DUAL_DECK_DESIGN_TRADE_STRIKE.md` for the explicit
+Kocay hypergraph source audit, the induced-deletion versus incidence-trace
+obstruction, and the exhaustive 64-member residue-module trade theorem.
