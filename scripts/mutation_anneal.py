@@ -15,6 +15,13 @@ of n is a counterexample and is replayed through the Python checkers.
 This explores the mixed regime the blow-up theorem does not cover (partial
 twin structure, small classes, asymmetric quotients) at orders 14 and
 above, where exhaustive methods stop.
+
+Seeds (--start): random graphs; bi-circulants on Z_m x {0,1}; or twin
+blow-ups of a random quotient with cell sizes 1 and 2 (the only regime the
+vector-deck theorem leaves open), each cell independent or a clique.  The
+objective is graded: 10 per exactly common card plus 1 per card matched
+under the coarse invariant (degree sequence, triangle count), so the
+annealer can climb toward exact matches from random starts.
 """
 
 from __future__ import annotations
@@ -48,6 +55,19 @@ def full_cert(rows, n):
     return pynauty.certificate(pynauty.Graph(n, adjacency_dict=adj))
 
 
+def coarse(rows, n, skip):
+    idx = [x for x in range(n) if x != skip]
+    mask = sum(1 << x for x in idx)
+    degs = sorted(bin(rows[x] & mask).count("1") for x in idx)
+    tri = 0
+    for x in idx:
+        nx = rows[x] & mask
+        for y in idx:
+            if y > x and nx >> y & 1:
+                tri += bin(nx & rows[y] & mask & ~((1 << (y + 1)) - 1)).count("1")
+    return (tuple(degs), tri)
+
+
 class State:
     def __init__(self, n, rows, nprime, v):
         self.n, self.v = n, v
@@ -62,11 +82,19 @@ class State:
         self.cg = [cert(self.g, n, x) for x in range(n)]
         self.ch = [cert(self.h, n, x) for x in range(n)]
 
+    def exact(self):
+        a, b = Counter(self.cg), Counter(self.ch)
+        return sum(min(a[c], b[c]) for c in a)
+
     def score(self):
         if full_cert(self.g, self.n) == full_cert(self.h, self.n):
             return 0
         a, b = Counter(self.cg), Counter(self.ch)
-        return sum(min(a[c], b[c]) for c in a)
+        ex = sum(min(a[c], b[c]) for c in a)
+        ca = Counter(coarse(self.g, self.n, x) for x in range(self.n))
+        cb = Counter(coarse(self.h, self.n, x) for x in range(self.n))
+        co = sum(min(ca[c], cb[c]) for c in ca)
+        return 10 * ex + co
 
     def toggle(self, rows, certs, a, b, which):
         rows[a] ^= 1 << b
@@ -101,6 +129,61 @@ class State:
             self.toggle(self.h, self.ch, a, b, "h")
 
 
+def bicirc_start(n, rng):
+    m = n // 2
+    rows = [0] * n
+    half = range(1, m // 2 + 1)
+    SA = [s for s in half if rng.random() < 0.5]
+    SB = [s for s in half if rng.random() < 0.5]
+    T = [t for t in range(m) if rng.random() < 0.5]
+    for i in range(m):
+        for s in SA:
+            j = (i + s) % m; rows[i] |= 1 << j; rows[j] |= 1 << i
+        for s in SB:
+            j = (i + s) % m; rows[m + i] |= 1 << (m + j); rows[m + j] |= 1 << (m + i)
+        for t in T:
+            j = (i + t) % m; rows[i] |= 1 << (m + j); rows[m + j] |= 1 << i
+    v = rng.randrange(n)
+    nprime = [x for x in range(n) if x != v and rng.random() < 0.5]
+    return State(n, rows, nprime, v)
+
+
+def blowup_start(n, rng, p):
+    # quotient on q vertices, cells of size 1 or 2 summing to n, each cell independent or a clique
+    while True:
+        sizes = [rng.choice((1, 2)) for _ in range(n)]
+        acc, cells = 0, []
+        for sz in sizes:
+            if acc + sz > n:
+                sz = n - acc
+            cells.append(sz); acc += sz
+            if acc == n:
+                break
+        if all(cells):
+            break
+    q = len(cells)
+    qrows = [0] * q
+    for a in range(q):
+        for b in range(a + 1, q):
+            if rng.random() < p:
+                qrows[a] |= 1 << b; qrows[b] |= 1 << a
+    verts, rows = [], [0] * n
+    k = 0
+    for c, sz in enumerate(cells):
+        verts.append(list(range(k, k + sz))); k += sz
+    for a in range(q):
+        if len(verts[a]) == 2 and rng.random() < 0.5:
+            x, y = verts[a]; rows[x] |= 1 << y; rows[y] |= 1 << x
+        for b in range(a + 1, q):
+            if qrows[a] >> b & 1:
+                for x in verts[a]:
+                    for y in verts[b]:
+                        rows[x] |= 1 << y; rows[y] |= 1 << x
+    v = rng.randrange(n)
+    nprime = [x for x in range(n) if x != v and rng.random() < p]
+    return State(n, rows, nprime, v)
+
+
 def random_start(n, rng, p):
     rows = [0] * n
     for a in range(n):
@@ -113,10 +196,10 @@ def random_start(n, rng, p):
     return State(n, rows, nprime, v)
 
 
-def anneal(n, steps, rng, t0, t1, p):
-    st = random_start(n, rng, p)
+def anneal(n, steps, rng, t0, t1, p, start):
+    st = {"random": lambda: random_start(n, rng, p), "bicirc": lambda: bicirc_start(n, rng), "blowup": lambda: blowup_start(n, rng, p)}[start]()
     cur = st.score()
-    best = cur
+    best = st.exact() if cur else 0
     best_pair = (list(st.g), list(st.h))
     for i in range(steps):
         t = t0 * (t1 / t0) ** (i / steps)
@@ -124,8 +207,9 @@ def anneal(n, steps, rng, t0, t1, p):
         s = st.score()
         if s >= cur or rng.random() < math.exp((s - cur) / t):
             cur = s
-            if s > best:
-                best, best_pair = s, (list(st.g), list(st.h))
+            ex = st.exact() if s else 0
+            if ex > best:
+                best, best_pair = ex, (list(st.g), list(st.h))
                 if best == n:
                     break
         else:
@@ -142,19 +226,20 @@ def main():
     ap.add_argument("--p", type=float, default=0.5)
     ap.add_argument("--t0", type=float, default=1.5)
     ap.add_argument("--t1", type=float, default=0.15)
+    ap.add_argument("--start", choices=["random", "bicirc", "blowup"], default="blowup")
     a = ap.parse_args()
     rng = random.Random(a.seed)
     overall = 0
     t_start = time.time()
     for r in range(a.restarts):
-        best, (g, h) = anneal(a.n, a.steps, rng, a.t0, a.t1, a.p)
+        best, (g, h) = anneal(a.n, a.steps, rng, a.t0, a.t1, a.p, a.start)
         G, H = Graph(tuple(g)), Graph(tuple(h))
         tag = ""
         if best == a.n:
             ok = same_deck(G, H) and not is_isomorphic(G, H)
             tag = " COUNTEREXAMPLE-VERIFIED" if ok else " REFUTED-ON-REPLAY"
         overall = max(overall, best)
-        print(f"n={a.n} restart={r} best_common_cards={best}{tag} G={G.to_graph6()} H={H.to_graph6()} degG={sorted(G.degrees)} ({time.time()-t_start:.0f}s)", flush=True)
+        print(f"n={a.n} start={a.start} restart={r} best_common_cards={best}{tag} G={G.to_graph6()} H={H.to_graph6()} degG={sorted(G.degrees)} ({time.time()-t_start:.0f}s)", flush=True)
         if tag.endswith("VERIFIED"):
             break
     print(f"n={a.n}: max common cards over {a.restarts} restarts = {overall}")
