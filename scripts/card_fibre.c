@@ -37,6 +37,14 @@
  * that cycle type.  -1 / -2 stop after the degree stages (profiling only;
  * no HIT lines are produced).
  *
+ * -m (near-miss mode) computes, exactly, the largest number of common
+ * cards over all pairs of non-isomorphic extensions of C with equal degree
+ * sequences (the card C itself counts as common), and prints
+ * "MAX <C> common=<c>/<n> pairs=<k> <G1> <G2>" per card; c = n is a
+ * counterexample.  This is the MaxSAT objective of deck_fixed_sat.py, but
+ * over a whole fibre at once and in milliseconds, so it can drive a climb
+ * over cards.
+ *
  * Input: one graph6 (or digraph6 with -T) line per card C on stdin.
  * Output: one line per card, "C fibre=<extensions kept> hits=<pairs>", and
  * for each pair a line "HIT <G1> <G2>" in graph6/digraph6 with v0 = m.
@@ -55,7 +63,7 @@
 #define MAXV 20
 typedef uint32_t rowt;
 
-static int tour = 0, allext = 0, kmin = 0, kmax = 1000, stopstage = 9;
+static int tour = 0, allext = 0, kmin = 0, kmax = 1000, stopstage = 9, maxmode = 0;
 
 static uint64_t fnv(const void *p, size_t len, uint64_t h) {
     const unsigned char *s = p;
@@ -215,6 +223,47 @@ static uint64_t card_degseq_hash(int n, const rowt *rows, const unsigned char *d
 static long long cards = 0, totalhits = 0;
 static ent *E = NULL; static size_t cap = 0;
 
+static int u64cmp(const void *a, const void *b) { uint64_t x = *(const uint64_t *)a, y = *(const uint64_t *)b; return x < y ? -1 : x > y; }
+
+static void nearmiss(int m, const rowt *crow, const char *s, size_t ne) {
+    int n = m + 1;
+    rowt rows[MAXV], card[MAXV];
+    char g6a[256], g6b[256];
+    uint64_t *H = malloc(ne * m * sizeof *H);
+    uint64_t *G = malloc(ne * sizeof *G);
+    int best = -1; long long npairs = 0; size_t ba = 0, bb = 0;
+    for (size_t i = 0; i < ne;) {
+        size_t j = i; while (j < ne && E[j].k1 == E[i].k1) j++;
+        if (j - i >= 2) {
+            for (size_t t = i; t < j; t++) {
+                build_rows(m, crow, E[t].N, rows);
+                for (int u = 0; u < m; u++) { card_rows(n, rows, u, card); H[t * m + u] = canon_hash(m, card); }
+                qsort(H + t * m, m, sizeof *H, u64cmp);
+                G[t] = canon_hash(n, rows);
+            }
+            for (size_t a = i; a < j; a++) for (size_t b = a + 1; b < j; b++) {
+                if (G[a] == G[b]) continue;
+                const uint64_t *x = H + a * m, *y = H + b * m;
+                int p = 0, q = 0, c = 0;
+                while (p < m && q < m) { if (x[p] == y[q]) { c++; p++; q++; } else if (x[p] < y[q]) p++; else q++; }
+                c++;   /* the shared card C */
+                if (c > best) { best = c; npairs = 1; ba = a; bb = b; }
+                else if (c == best) npairs++;
+            }
+        }
+        i = j;
+    }
+    if (best >= 0) {
+        build_rows(m, crow, E[ba].N, rows); write_g6(n, rows, g6a);
+        build_rows(m, crow, E[bb].N, rows); write_g6(n, rows, g6b);
+        printf("MAX %s common=%d/%d pairs=%lld %s %s\n", s, best, n, npairs, g6a, g6b);
+        if (best == n) totalhits++;
+    } else printf("MAX %s common=0/%d pairs=0\n", s, n);
+    fflush(stdout);
+    cards++;
+    free(H); free(G);
+}
+
 static void process_card(int m, const rowt *crow, const char *s) {
     rowt rows[MAXV], card[MAXV];
     char g6a[256], g6b[256];
@@ -250,6 +299,7 @@ static void process_card(int m, const rowt *crow, const char *s) {
         ne++;
     }
     qsort(E, ne, sizeof *E, cmp_ent);
+    if (maxmode) { nearmiss(m, crow, s, ne); return; }
     if (stopstage < 2) { printf("%s fibre=%zu stage1\n", s, ne); cards++; return; }
     /* stage 2: card degree sequences, for runs of equal k1 */
     for (size_t i = 0; i < ne;) {
@@ -356,11 +406,12 @@ int main(int argc, char **argv) {
     for (int i = 1; i < argc; i++) {
         if (!strcmp(argv[i], "-T")) tour = 1;
         else if (!strcmp(argv[i], "-a")) allext = 1;
+        else if (!strcmp(argv[i], "-m")) maxmode = 1;
         else if (!strcmp(argv[i], "-1")) stopstage = 1;
         else if (!strcmp(argv[i], "-2")) stopstage = 2;
         else if (!strcmp(argv[i], "-k") && i + 1 < argc) { sscanf(argv[++i], "%d:%d", &kmin, &kmax); }
         else if (!strcmp(argv[i], "-S") && i + 1 < argc) spec = argv[++i];
-        else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype] [-1|-2] < cards\n"); return 2; }
+        else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype] [-m] [-1|-2] < cards\n"); return 2; }
     }
     if (spec) { enumerate_type(spec); fprintf(stderr, "cards=%lld hits=%lld\n", cards, totalhits); return 0; }
     char line[4096];
