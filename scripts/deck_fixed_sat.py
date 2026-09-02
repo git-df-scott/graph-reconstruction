@@ -76,13 +76,20 @@ class Enc:
         for c in cnf.clauses:
             self.add(c)
 
-    def encode(self, dropped=()):
+    def encode(self, dropped=(), soft=False):
         n, d, G = self.n, self.d, self.G
-        for v in range(n):
-            self.card([self.hv(v, w) for w in range(n) if w != v], d[v])
+        self.sel = {}
+        if soft:
+            for v in range(n):
+                if v not in dropped:
+                    self.sel[v] = self.new()
         for v in range(n):
             if v in dropped:
                 continue
+            # labelled degrees are hard in both modes: the soft objective is the maximum
+            # number of matched cards over mates with the same labelled degree sequence
+            cond = [-self.sel[v]] if soft else []
+            self.card([self.hv(v, w) for w in range(n) if w != v], d[v])
             others = [a for a in range(n) if a != v]
             cdeg = {a: d[a] - (1 if G.edge(a, v) else 0) for a in others}
             allowed = {}
@@ -93,12 +100,12 @@ class Enc:
                         allowed[(a, x)] = self.new()
             for a in others:
                 row = [allowed[(a, x)] for x in others if (a, x) in allowed]
-                self.add(row)
+                self.add(cond + row)
                 for s, t in itertools.combinations(row, 2):
                     self.add([-s, -t])
             for x in others:
                 col = [allowed[(a, x)] for a in others if (a, x) in allowed]
-                self.add(col)
+                self.add(cond + col)
                 for s, t in itertools.combinations(col, 2):
                     self.add([-s, -t])
             for (a, x), pv in allowed.items():
@@ -235,12 +242,62 @@ def run(G: Graph, tau_limit=200000, dropped=(), verbose=False, max_rounds=100000
             return {"status": "SAT", "verified_counterexample": ok, "H": H.to_graph6(), "iso": False, "matched_cards": common, "rounds": rounds, "time": round(time.time() - t0, 2)}
 
 
+def run_maxsat(G: Graph, tau_limit=200000, verbose=False, max_rounds=100000):
+    """Maximum number of cards of G matched (identity matching after relabelling)
+    by a graph H with the same labelled degrees that is not isomorphic to G.
+    A counterexample scores n; the value is a lower bound on the number of
+    common cards with the best mate of equal degree sequence."""
+    from pysat.formula import WCNF
+    from pysat.examples.rc2 import RC2
+    enc = Enc(G)
+    enc.encode(soft=True)
+    classes, wsize = degree_group(enc.d, G)
+    exact = wsize <= tau_limit
+    if exact:
+        seen = set()
+        for tau in all_taus(classes, G.n):
+            rows = relabel(G, tau)
+            if rows not in seen:
+                seen.add(rows)
+                enc.block_labelled(rows)
+    # no lex-leader here: with a partial matching the labelling of H is pinned by the matched cards
+    if verbose:
+        print(f"maxsat n={G.n} G={G.to_graph6()} |W|={wsize} exact={exact} vars={enc.nv} clauses={len(enc.clauses)}", flush=True)
+    t0 = time.time()
+    cg = nauty_cert(G)
+    rounds = 0
+    extra = []
+    while True:
+        w = WCNF()
+        for c in enc.clauses + extra:
+            w.append(c)
+        for v, sv in enc.sel.items():
+            w.append([sv], weight=1)
+        with RC2(w, solver="cd15") as rc2:
+            model = rc2.compute()
+            if model is None:
+                return {"status": "UNSAT", "rounds": rounds, "time": round(time.time() - t0, 2)}
+            cost = rc2.cost
+        H = decode(model, enc)
+        if nauty_cert(H) == cg:
+            rounds += 1
+            if rounds > max_rounds:
+                return {"status": "GAVE-UP", "rounds": rounds, "time": round(time.time() - t0, 2)}
+            extra.append([(-var if H.edge(a, b) else var) for (a, b), var in enc.h.items()])
+            continue
+        matched = G.n - cost
+        val = set(l for l in model if l > 0)
+        which = sorted(v for v, sv in enc.sel.items() if sv in val)
+        return {"status": "OPT", "matched_cards": matched, "which": which, "H": H.to_graph6(), "rounds": rounds, "time": round(time.time() - t0, 2)}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("graphs", nargs="*", help="graph6 strings (or - for stdin, one per line)")
     ap.add_argument("--drop", type=int, default=0, help="drop the constraints of this many cards (control)")
     ap.add_argument("--tau-limit", type=int, default=200000)
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument("--maxsat", action="store_true", help="maximum matched cards over non-isomorphic mates with the same labelled degrees")
     a = ap.parse_args()
     lines = a.graphs
     if lines == ["-"]:
@@ -248,7 +305,7 @@ def main():
     for g6 in lines:
         G = Graph.from_graph6(g6)
         dropped = tuple(range(G.n - a.drop, G.n)) if a.drop else ()
-        r = run(G, a.tau_limit, dropped, a.verbose)
+        r = run_maxsat(G, a.tau_limit, a.verbose) if a.maxsat else run(G, a.tau_limit, dropped, a.verbose)
         print(g6, r, flush=True)
 
 
