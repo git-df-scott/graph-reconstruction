@@ -8,6 +8,14 @@ vector-deck theorem leaves open (class size 2 plus singletons); the earlier
 blow-up deck search compared blow-ups only against other blow-ups, whereas
 the verifier compares against every graph.
 
+Automorphism-invariant graphs (--aut c1,c2,...): random graphs on
+sum(c_i) vertices invariant under a permutation with the given cycle
+type, i.e. random unions of the permutation's orbits on vertex pairs.
+Bi-circulants are the cycle type 7,7 at order 14; this covers every
+other cycle type, in particular involutions and order-3 automorphisms
+with few fixed points, where the reattachment ambiguity a counterexample
+needs is available but the cyclic-orbit searches did not look.
+
 Bi-circulants on Z_m x {0,1}: orbit A = (i,0), orbit B = (i,1);
 (i,0)~(j,0) iff j-i in S_A (symmetric), (i,1)~(j,1) iff j-i in S_B,
 (i,0)~(j,1) iff j-i in T.  Regular graphs are reconstructible (Kelly) and
@@ -104,15 +112,68 @@ def blowups(q, n, geng, sample, rng):
                     yield build(Q, doubled, kk)
 
 
+def aut_invariant(cycles, sample, rng, p):
+    n = sum(cycles)
+    perm = []
+    start = 0
+    for c in cycles:
+        perm.extend([start + (i + 1) % c for i in range(c)])
+        start += c
+    # orbits on pairs
+    seen, orbits = set(), []
+    for a in range(n):
+        for b in range(a + 1, n):
+            if (a, b) in seen:
+                continue
+            orb, x, y = [], a, b
+            while True:
+                e = (min(x, y), max(x, y))
+                if e in seen:
+                    break
+                seen.add(e); orb.append(e)
+                x, y = perm[x], perm[y]
+            orbits.append(orb)
+    for _ in range(sample):
+        rows = [0] * n
+        for orb in orbits:
+            if rng.random() < p:
+                for a, b in orb:
+                    rows[a] |= 1 << b; rows[b] |= 1 << a
+        yield Graph(tuple(rows))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--m", type=int, default=0)
+    ap.add_argument("--aut", type=str, default="", help="cycle type, e.g. 2,2,2,2,2,2,2")
+    ap.add_argument("--p", type=float, default=0.5)
+    ap.add_argument("--twocard", action="store_true", help="keep only graphs passing the repeated-2-card filter")
     ap.add_argument("--blowup", type=int, default=0, help="quotient order q for twin blow-ups")
     ap.add_argument("--n", type=int, default=14)
     ap.add_argument("--geng", default="geng")
     ap.add_argument("--sample", type=int, default=0)
     ap.add_argument("--seed", type=int, default=1)
     a = ap.parse_args()
+    if a.aut:
+        rng = random.Random(a.seed)
+        cycles = [int(x) for x in a.aut.split(",")]
+        seen, emitted, tested = set(), 0, 0
+        if a.twocard:
+            sys.path.insert(0, str(Path(__file__).parent))
+            from twocard_filter import passes
+        for g in aut_invariant(cycles, a.sample, rng, a.p):
+            if len(set(g.degrees)) < 2 or not connected(g):
+                continue
+            c = cert(g)
+            if c in seen:
+                continue
+            seen.add(c); tested += 1
+            if a.twocard and not passes(g):
+                continue
+            emitted += 1
+            print(g.to_graph6(), flush=True)
+        print(f"aut-invariant cycle type {cycles} n={sum(cycles)}: distinct connected non-regular {tested}, emitted {emitted}", file=sys.stderr)
+        return
     if a.blowup:
         rng = random.Random(a.seed)
         seen, emitted = set(), 0
