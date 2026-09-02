@@ -17,8 +17,11 @@
  * two classes and no globalizer is a counterexample to reconstruction of
  * edge-coloured complete graphs with named colours at order n.
  *
- * Usage: sigma_dfs N [noprune]   (N=5 must give zero hits and, with noprune,
- * 24^5 = 7,962,624 leaves, matching docs/LAST_GLOBALIZER_STRIKE.md.)
+ * Usage: sigma_dfs N [noprune] [i/k]   (N=5 must give zero hits and, with
+ * noprune, 24^5 = 7,962,624 leaves, matching docs/LAST_GLOBALIZER_STRIKE.md.)
+ * With i/k only the subtrees whose (sigma_0, sigma_1) prefix has running
+ * index congruent to i modulo k are searched, so a long census can be run
+ * as k independent chunks whose node, leaf, pruned and hit counts add up.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -103,7 +106,11 @@ static int has_globalizer(void) {
 static long long leaves = 0, pruned = 0, hits = 0, nodes = 0;
 static int cur[MAXN];
 
+static int chunk_i = 0, chunk_k = 1;
+static long long prefix_counter = 0;
+
 static void dfs(int row) {
+    if (row == 2 && chunk_k > 1 && (prefix_counter++ % chunk_k) != chunk_i) return;
     nodes++;
     if (row == N) {
         leaves++;
@@ -152,6 +159,7 @@ static void dfs(int row) {
 int main(int argc, char **argv) {
     N = argc > 1 ? atoi(argv[1]) : 5;
     if (argc > 2 && !strcmp(argv[2], "noprune")) PRUNE = 0;
+    for (int a = 2; a < argc; a++) if (strchr(argv[a], '/')) sscanf(argv[a], "%d/%d", &chunk_i, &chunk_k);
     if (N < 4 || N > MAXN) return 1;
     E = 0;
     for (int u = 0; u < N; u++) for (int v = u + 1; v < N; v++) { eidx[u][v] = eidx[v][u] = E; eu[E] = u; ev[E] = v; E++; }
