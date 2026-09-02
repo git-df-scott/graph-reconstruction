@@ -49,6 +49,14 @@
  * orbit subsets congruent to i modulo k (parallel chunks; a graph reached
  * from several chunks is processed once per chunk).
  *
+ * -d keeps only extensions in which the new vertex has minimum degree in
+ * G (every vertex of C of degree |N| - 1 lies in N and none has smaller
+ * degree).  Sound because v0 may be chosen as a minimum-degree vertex of
+ * G, and the card matching preserves degrees, so H is also such an
+ * extension of C.  With cards C of at most E edges this gives the exact
+ * statement: no counterexample of order m + 1 with a minimum-degree card
+ * of at most E edges.
+ *
  * -m (near-miss mode) computes, exactly, the largest number of common
  * cards over all pairs of non-isomorphic extensions of C with equal degree
  * sequences (the card C itself counts as common), and prints
@@ -84,7 +92,7 @@ typedef uint32_t rowt;
 
 static int tour = 0, allext = 0, kmin = 0, kmax = 1000, stopstage = 9, maxmode = 0, hong = 0;
 static long long skipped_ctrl = 0;
-static int anti = 0, chunk_i = 0, chunk_k = 1;
+static int anti = 0, chunk_i = 0, chunk_k = 1, mindeg = 0, quiet = 0;
 
 #define PRIME 2305843009213693951ULL   /* 2^61 - 1 */
 static uint64_t mulmod(uint64_t a, uint64_t b) { return (uint64_t)(((unsigned __int128)a * b) % PRIME); }
@@ -316,37 +324,84 @@ static void nearmiss(int m, const rowt *crow, const char *s, size_t ne) {
 static void process_card(int m, const rowt *crow, const char *s) {
     rowt rows[MAXV], card[MAXV];
     char g6a[256], g6b[256];
-    if (hong && !tour && controllable_modp(m, crow)) { skipped_ctrl++; printf("%s controllable\n", s); cards++; return; }
+    if (hong && !tour && controllable_modp(m, crow)) { skipped_ctrl++; if (!quiet) printf("%s controllable\n", s); cards++; return; }
         int n = m + 1;
     size_t need = (size_t)1 << m;
     if (need > cap) { cap = need; E = realloc(E, cap * sizeof *E); }
     size_t ne = 0;
-    aut_generators(m, crow);
-    if (need > ufcap) { ufcap = need; uf = realloc(uf, ufcap * sizeof *uf); }
-    for (uint32_t N = 0; N < need; N++) uf[N] = N;
-    for (int gi = 0; gi < ngen; gi++) {
+    if (mindeg && !tour) {
+        /* only neighbourhoods N of size k with every vertex of C of degree < k in N and none of degree < k - 1 */
+        aut_generators(m, crow);
+        if (need > ufcap) { ufcap = need; uf = realloc(uf, ufcap * sizeof *uf); }
+        if (ngen) {
+            for (uint32_t N = 0; N < need; N++) uf[N] = N;
+            for (int gi = 0; gi < ngen; gi++) for (uint32_t N = 0; N < need; N++) {
+                uint32_t M = 0; for (int i = 0; i < m; i++) if (N >> i & 1) M |= 1u << gens[gi][i];
+                if (M != N) uf_union(N, M);
+            }
+        }
+        int dc[MAXV], dmin = m;
+        for (int i = 0; i < m; i++) { dc[i] = __builtin_popcount(crow[i]); if (dc[i] < dmin) dmin = dc[i]; }
+        for (int k = (kmin > 1 ? kmin : 1); k <= dmin + 1 && k <= kmax && k <= m; k++) {
+            rowt forced = 0, free = 0; int nf = 0, nfree = 0;
+            for (int i = 0; i < m; i++) { if (dc[i] == k - 1) { forced |= 1u << i; nf++; } else { free |= 1u << i; nfree++; } }
+            if (nf > k) continue;
+            int r = k - nf;
+            /* enumerate r-subsets of the free vertices via Gosper's hack on a compressed index */
+            int idx[MAXV], t = 0; for (int i = 0; i < m; i++) if (free >> i & 1) idx[t++] = i;
+            uint32_t sub = r ? (1u << r) - 1 : 0;
+            while (1) {
+                if (r && sub >= (1u << nfree)) break;
+                uint32_t N = forced; for (int j = 0; j < nfree; j++) if (sub >> j & 1) N |= 1u << idx[j];
+                if (ngen && uf_find(N) != N) goto next_sub;
+                build_rows(m, crow, N, rows);
+                if (!allext) {
+                    int d0 = __builtin_popcount(rows[0]), reg = 1;
+                    for (int i = 1; i < n; i++) if (__builtin_popcount(rows[i]) != d0) { reg = 0; break; }
+                    if (!reg && connected(n, rows)) {
+                        rowt co[MAXV]; rowt all = (1u << n) - 1;
+                        for (int i = 0; i < n; i++) co[i] = all & ~rows[i] & ~(1u << i);
+                        if (connected(n, co)) { E[ne].N = N; E[ne].k1 = degseq_hash(n, rows); E[ne].k2 = E[ne].k3 = E[ne].g = 0; E[ne].alive = 1; ne++; }
+                    }
+                } else { E[ne].N = N; E[ne].k1 = degseq_hash(n, rows); E[ne].k2 = E[ne].k3 = E[ne].g = 0; E[ne].alive = 1; ne++; }
+              next_sub:
+                if (!r) break;
+                { uint32_t c = sub & -sub, rr = sub + c; sub = (((rr ^ sub) >> 2) / c) | rr; }
+            }
+        }
+    } else {
+        aut_generators(m, crow);
+        if (need > ufcap) { ufcap = need; uf = realloc(uf, ufcap * sizeof *uf); }
+        for (uint32_t N = 0; N < need; N++) uf[N] = N;
+        for (int gi = 0; gi < ngen; gi++) {
+            for (uint32_t N = 0; N < need; N++) {
+                uint32_t M = 0;
+                for (int i = 0; i < m; i++) if (N >> i & 1) M |= 1u << gens[gi][i];
+                if (M != N) uf_union(N, M);
+            }
+        }
         for (uint32_t N = 0; N < need; N++) {
-            uint32_t M = 0;
-            for (int i = 0; i < m; i++) if (N >> i & 1) M |= 1u << gens[gi][i];
-            if (M != N) uf_union(N, M);
+            if (uf_find(N) != N) continue;
+            int k = __builtin_popcount(N);
+            if (k < kmin || k > kmax) continue;
+            if (mindeg) {
+                int ok = 1;
+                for (int i = 0; i < m && ok; i++) { int d = __builtin_popcount(crow[i]) + (N >> i & 1); if (d < k) ok = 0; }
+                if (!ok) continue;
+            }
+            build_rows(m, crow, N, rows);
+            if (!allext && !tour) {
+                int d0 = __builtin_popcount(rows[0]), reg = 1;
+                for (int i = 1; i < n; i++) if (__builtin_popcount(rows[i]) != d0) { reg = 0; break; }
+                if (reg) continue;
+                if (!connected(n, rows)) continue;
+                rowt co[MAXV]; rowt all = (1u << n) - 1;
+                for (int i = 0; i < n; i++) co[i] = all & ~rows[i] & ~(1u << i);
+                if (!connected(n, co)) continue;
+            }
+            E[ne].N = N; E[ne].k1 = degseq_hash(n, rows); E[ne].k2 = E[ne].k3 = E[ne].g = 0; E[ne].alive = 1;
+            ne++;
         }
-    }
-    for (uint32_t N = 0; N < need; N++) {
-        if (uf_find(N) != N) continue;
-        int k = __builtin_popcount(N);
-        if (k < kmin || k > kmax) continue;
-        build_rows(m, crow, N, rows);
-        if (!allext && !tour) {
-            int d0 = __builtin_popcount(rows[0]), reg = 1;
-            for (int i = 1; i < n; i++) if (__builtin_popcount(rows[i]) != d0) { reg = 0; break; }
-            if (reg) continue;
-            if (!connected(n, rows)) continue;
-            rowt co[MAXV]; rowt all = (1u << n) - 1;
-            for (int i = 0; i < n; i++) co[i] = all & ~rows[i] & ~(1u << i);
-            if (!connected(n, co)) continue;
-        }
-        E[ne].N = N; E[ne].k1 = degseq_hash(n, rows); E[ne].k2 = E[ne].k3 = E[ne].g = 0; E[ne].alive = 1;
-        ne++;
     }
     qsort(E, ne, sizeof *E, cmp_ent);
     if (maxmode) { nearmiss(m, crow, s, ne); return; }
@@ -402,8 +457,7 @@ static void process_card(int m, const rowt *crow, const char *s) {
         }
         i = j;
     }
-    printf("%s fibre=%zu hits=%lld\n", s, ne, hits);
-    fflush(stdout);
+    if (!quiet || hits) { printf("%s fibre=%zu hits=%lld\n", s, ne, hits); fflush(stdout); }
     cards++; totalhits += hits;
     }
 
@@ -468,6 +522,8 @@ int main(int argc, char **argv) {
         if (!strcmp(argv[i], "-T")) tour = 1;
         else if (!strcmp(argv[i], "-a")) allext = 1;
         else if (!strcmp(argv[i], "-m")) maxmode = 1;
+        else if (!strcmp(argv[i], "-d")) mindeg = 1;
+        else if (!strcmp(argv[i], "-q")) quiet = 1;
         else if (!strcmp(argv[i], "-H")) hong = 1;
         else if (!strcmp(argv[i], "-1")) stopstage = 1;
         else if (!strcmp(argv[i], "-2")) stopstage = 2;
@@ -475,7 +531,7 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "-S") && i + 1 < argc) spec = argv[++i];
         else if (!strcmp(argv[i], "-C") && i + 1 < argc) { spec = argv[++i]; anti = 1; }
         else if (!strcmp(argv[i], "-r") && i + 1 < argc) { sscanf(argv[++i], "%d/%d", &chunk_i, &chunk_k); }
-        else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype | -C antimorphism-type] [-r i/k] [-m] [-H] [-1|-2] < cards\n"); return 2; }
+        else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype | -C antimorphism-type] [-r i/k] [-m] [-H] [-d] [-q] [-1|-2] < cards\n"); return 2; }
     }
     if (spec) { enumerate_type(spec); fprintf(stderr, "cards=%lld hits=%lld controllable-skipped=%lld\n", cards, totalhits, skipped_ctrl); return 0; }
     char line[4096];
