@@ -192,11 +192,24 @@ static uint64_t degseq_hash(int n, const rowt *rows) {
     return fnv(cnt, n + 1, FNV0);
 }
 
-static int u64cmp(const void *a, const void *b) { uint64_t x = *(const uint64_t *)a, y = *(const uint64_t *)b; return x < y ? -1 : x > y; }
 
-static uint64_t multiset_hash(uint64_t *v, int m) {
-    qsort(v, m, sizeof *v, u64cmp);
-    return fnv(v, m * sizeof *v, FNV0);
+static uint64_t mix64(uint64_t x) {   /* splitmix64 finaliser */
+    x += 0x9e3779b97f4a7c15ULL;
+    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9ULL;
+    x = (x ^ (x >> 27)) * 0x94d049bb133111ebULL;
+    return x ^ (x >> 31);
+}
+/* order-independent hash of a multiset: sum of mixed elements */
+static uint64_t multiset_hash(const uint64_t *v, int m) {
+    uint64_t h = 0;
+    for (int i = 0; i < m; i++) h += mix64(v[i]);
+    return mix64(h);
+}
+/* hash of the degree sequence of G - u from the degrees of G */
+static uint64_t card_degseq_hash(int n, const rowt *rows, const unsigned char *deg, int u) {
+    unsigned char cnt[MAXV + 1]; memset(cnt, 0, sizeof cnt);
+    for (int w = 0; w < n; w++) if (w != u) cnt[deg[w] - (rows[w] >> u & 1)]++;   /* out-degree loses the arc w -> u */
+    return fnv(cnt, n, FNV0);
 }
 
 static long long cards = 0, totalhits = 0;
@@ -244,8 +257,10 @@ static void process_card(int m, const rowt *crow, const char *s) {
         if (j - i >= 2) {
             for (size_t t = i; t < j; t++) {
                 build_rows(m, crow, E[t].N, rows);
+                unsigned char deg[MAXV];
+                for (int w = 0; w < n; w++) deg[w] = __builtin_popcount(rows[w]);
                 uint64_t hs[MAXV];
-                for (int u = 0; u < m; u++) { card_rows(n, rows, u, card); hs[u] = degseq_hash(m, card); }
+                for (int u = 0; u < m; u++) hs[u] = card_degseq_hash(n, rows, deg, u);
                 E[t].k2 = multiset_hash(hs, m);
             }
         } else E[i].alive = 0;
