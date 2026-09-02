@@ -57,6 +57,11 @@
  * statement: no counterexample of order m + 1 with a minimum-degree card
  * of at most E edges.
  *
+ * -x FILE pre-loads the isomorphism-class table of the -S / -C enumeration
+ * with the graphs listed in FILE (graph6, first token per line), so a run
+ * interrupted after writing its per-card lines resumes without repeating
+ * those fibres; the enumeration itself is repeated.
+ *
  * -m (near-miss mode) computes, exactly, the largest number of common
  * cards over all pairs of non-isomorphic extensions of C with equal degree
  * sequences (the card C itself counts as common), and prints
@@ -516,6 +521,20 @@ static void enumerate_type(const char *spec) {
     fprintf(stderr, "cycle type %s: distinct graphs %lld\n", spec, distinct);
 }
 
+static const char *skipfile = NULL;
+static void load_skiplist(void) {
+    FILE *f = fopen(skipfile, "r"); if (!f) { fprintf(stderr, "cannot open %s\n", skipfile); exit(2); }
+    char line[4096]; rowt crow[MAXV]; long long n = 0;
+    while (fgets(line, sizeof line, f)) {
+        char *s = line; size_t L = strcspn(s, " \t\r\n"); s[L] = 0;
+        if (!L || *s == '#' || *s == 'H' || *s == 'M' || !strncmp(s, "cards=", 6) || !strncmp(s, "cycle", 5)) continue;
+        int m = parse_g6(s, crow); if (m < 1) continue;
+        if (hset_add(canon_hash(m, crow))) n++;
+    }
+    fclose(f);
+    fprintf(stderr, "skip-list: %lld distinct cards pre-loaded\n", n);
+}
+
 int main(int argc, char **argv) {
     const char *spec = NULL;
     for (int i = 1; i < argc; i++) {
@@ -531,8 +550,10 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "-S") && i + 1 < argc) spec = argv[++i];
         else if (!strcmp(argv[i], "-C") && i + 1 < argc) { spec = argv[++i]; anti = 1; }
         else if (!strcmp(argv[i], "-r") && i + 1 < argc) { sscanf(argv[++i], "%d/%d", &chunk_i, &chunk_k); }
+        else if (!strcmp(argv[i], "-x") && i + 1 < argc) skipfile = argv[++i];
         else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype | -C antimorphism-type] [-r i/k] [-m] [-H] [-d] [-q] [-1|-2] < cards\n"); return 2; }
     }
+    if (skipfile) load_skiplist();
     if (spec) { enumerate_type(spec); fprintf(stderr, "cards=%lld hits=%lld controllable-skipped=%lld\n", cards, totalhits, skipped_ctrl); return 0; }
     char line[4096];
     rowt crow[MAXV];
