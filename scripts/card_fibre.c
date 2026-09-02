@@ -45,6 +45,13 @@
  * over a whole fibre at once and in milliseconds, so it can drive a climb
  * over cards.
  *
+ * -H skips controllable cards (Hong, Godsil-McKay: a graph with a
+ * controllable card is reconstructible, so no counterexample has one).
+ * Controllability is decided by the rank of the walk matrix
+ * [1, A1, ..., A^(m-1) 1] modulo the prime 2^61 - 1; full rank modulo p
+ * implies full rank over Q, so a skip is always sound, and a deficient
+ * rank modulo p merely keeps the card.
+ *
  * Input: one graph6 (or digraph6 with -T) line per card C on stdin.
  * Output: one line per card, "C fibre=<extensions kept> hits=<pairs>", and
  * for each pair a line "HIT <G1> <G2>" in graph6/digraph6 with v0 = m.
@@ -63,7 +70,36 @@
 #define MAXV 20
 typedef uint32_t rowt;
 
-static int tour = 0, allext = 0, kmin = 0, kmax = 1000, stopstage = 9, maxmode = 0;
+static int tour = 0, allext = 0, kmin = 0, kmax = 1000, stopstage = 9, maxmode = 0, hong = 0;
+static long long skipped_ctrl = 0;
+
+#define PRIME 2305843009213693951ULL   /* 2^61 - 1 */
+static uint64_t mulmod(uint64_t a, uint64_t b) { return (uint64_t)(((unsigned __int128)a * b) % PRIME); }
+static uint64_t powmod(uint64_t a, uint64_t e) { uint64_t r = 1; while (e) { if (e & 1) r = mulmod(r, a); a = mulmod(a, a); e >>= 1; } return r; }
+/* 1 if the walk matrix of the (undirected) graph has full rank mod PRIME */
+static int controllable_modp(int n, const rowt *rows) {
+    uint64_t W[MAXV][MAXV], v[MAXV], w[MAXV];
+    for (int i = 0; i < n; i++) v[i] = 1;
+    for (int k = 0; k < n; k++) {
+        for (int i = 0; i < n; i++) W[i][k] = v[i];
+        for (int i = 0; i < n; i++) { uint64_t s = 0; for (int j = 0; j < n; j++) if (rows[i] >> j & 1) { s += v[j]; if (s >= PRIME) s -= PRIME; } w[i] = s; }
+        memcpy(v, w, sizeof v);
+    }
+    int rank = 0;
+    for (int c = 0; c < n && rank < n; c++) {
+        int piv = -1;
+        for (int r = rank; r < n; r++) if (W[r][c]) { piv = r; break; }
+        if (piv < 0) continue;
+        if (piv != rank) for (int j = 0; j < n; j++) { uint64_t t = W[piv][j]; W[piv][j] = W[rank][j]; W[rank][j] = t; }
+        uint64_t inv = powmod(W[rank][c], PRIME - 2);
+        for (int r = rank + 1; r < n; r++) if (W[r][c]) {
+            uint64_t f = mulmod(W[r][c], inv);
+            for (int j = c; j < n; j++) { uint64_t t = mulmod(f, W[rank][j]); W[r][j] = W[r][j] >= t ? W[r][j] - t : W[r][j] + PRIME - t; }
+        }
+        rank++;
+    }
+    return rank == n;
+}
 
 static uint64_t fnv(const void *p, size_t len, uint64_t h) {
     const unsigned char *s = p;
@@ -267,6 +303,7 @@ static void nearmiss(int m, const rowt *crow, const char *s, size_t ne) {
 static void process_card(int m, const rowt *crow, const char *s) {
     rowt rows[MAXV], card[MAXV];
     char g6a[256], g6b[256];
+    if (hong && !tour && controllable_modp(m, crow)) { skipped_ctrl++; printf("%s controllable\n", s); cards++; return; }
         int n = m + 1;
     size_t need = (size_t)1 << m;
     if (need > cap) { cap = need; E = realloc(E, cap * sizeof *E); }
@@ -407,13 +444,14 @@ int main(int argc, char **argv) {
         if (!strcmp(argv[i], "-T")) tour = 1;
         else if (!strcmp(argv[i], "-a")) allext = 1;
         else if (!strcmp(argv[i], "-m")) maxmode = 1;
+        else if (!strcmp(argv[i], "-H")) hong = 1;
         else if (!strcmp(argv[i], "-1")) stopstage = 1;
         else if (!strcmp(argv[i], "-2")) stopstage = 2;
         else if (!strcmp(argv[i], "-k") && i + 1 < argc) { sscanf(argv[++i], "%d:%d", &kmin, &kmax); }
         else if (!strcmp(argv[i], "-S") && i + 1 < argc) spec = argv[++i];
-        else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype] [-m] [-1|-2] < cards\n"); return 2; }
+        else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype] [-m] [-H] [-1|-2] < cards\n"); return 2; }
     }
-    if (spec) { enumerate_type(spec); fprintf(stderr, "cards=%lld hits=%lld\n", cards, totalhits); return 0; }
+    if (spec) { enumerate_type(spec); fprintf(stderr, "cards=%lld hits=%lld controllable-skipped=%lld\n", cards, totalhits, skipped_ctrl); return 0; }
     char line[4096];
     rowt crow[MAXV];
     while (fgets(line, sizeof line, stdin)) {
@@ -424,6 +462,6 @@ int main(int argc, char **argv) {
         if (m < 1 || m + 1 > MAXV) { fprintf(stderr, "bad line: %s\n", s); continue; }
         process_card(m, crow, s);
     }
-    fprintf(stderr, "cards=%lld hits=%lld\n", cards, totalhits);
+    fprintf(stderr, "cards=%lld hits=%lld controllable-skipped=%lld\n", cards, totalhits, skipped_ctrl);
     return 0;
 }
