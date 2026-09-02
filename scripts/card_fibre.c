@@ -37,6 +37,18 @@
  * that cycle type.  -1 / -2 stop after the degree stages (profiling only;
  * no HIT lines are produced).
  *
+ * -C c1,c2,... enumerates every self-complementary graph having an
+ * antimorphism of the given cycle type (all lengths divisible by 4, plus
+ * at most one fixed point): the pairs fall into orbits of even length on
+ * which edge and non-edge alternate, so each orbit contributes one bit.
+ * Motivation: if G and its complement have the same deck at odd order n,
+ * the complement involution on the n cards fixes one, so some card is
+ * self-complementary; at order 17 (the first odd order with an even pair
+ * count above 13) the fibre over the 703,760 self-complementary graphs of
+ * order 16 settles that mechanism exactly.  -r i/k processes only the
+ * orbit subsets congruent to i modulo k (parallel chunks; a graph reached
+ * from several chunks is processed once per chunk).
+ *
  * -m (near-miss mode) computes, exactly, the largest number of common
  * cards over all pairs of non-isomorphic extensions of C with equal degree
  * sequences (the card C itself counts as common), and prints
@@ -72,6 +84,7 @@ typedef uint32_t rowt;
 
 static int tour = 0, allext = 0, kmin = 0, kmax = 1000, stopstage = 9, maxmode = 0, hong = 0;
 static long long skipped_ctrl = 0;
+static int anti = 0, chunk_i = 0, chunk_k = 1;
 
 #define PRIME 2305843009213693951ULL   /* 2^61 - 1 */
 static uint64_t mulmod(uint64_t a, uint64_t b) { return (uint64_t)(((unsigned __int128)a * b) % PRIME); }
@@ -415,21 +428,32 @@ static void enumerate_type(const char *spec) {
     if (n < 2 || n + 1 > MAXV) { fprintf(stderr, "bad cycle type\n"); exit(2); }
     int perm[MAXV], start = 0;
     for (int c = 0; c < nc; c++) { for (int i = 0; i < ct[c]; i++) perm[start + i] = start + (i + 1) % ct[c]; start += ct[c]; }
-    rowt omask[64][MAXV]; int k = 0;
+    rowt omask[64][MAXV], amask[64][MAXV]; int k = 0;
     unsigned char seen[MAXV][MAXV]; memset(seen, 0, sizeof seen);
     for (int a = 0; a < n; a++) for (int b = a + 1; b < n; b++) {
         if (seen[a][b]) continue;
-        for (int i = 0; i < n; i++) omask[k][i] = 0;
-        int x = a, y = b;
-        while (1) { int u = x < y ? x : y, v = x < y ? y : x; if (seen[u][v]) break; seen[u][v] = 1; omask[k][u] |= 1u << v; omask[k][v] |= 1u << u; x = perm[x]; y = perm[y]; }
+        for (int i = 0; i < n; i++) omask[k][i] = amask[k][i] = 0;
+        int x = a, y = b, pos = 0;
+        while (1) {
+            int u = x < y ? x : y, v = x < y ? y : x;
+            if (seen[u][v]) break;
+            seen[u][v] = 1;
+            if (!anti || pos % 2 == 0) { omask[k][u] |= 1u << v; omask[k][v] |= 1u << u; }
+            else { amask[k][u] |= 1u << v; amask[k][v] |= 1u << u; }
+            x = perm[x]; y = perm[y]; pos++;
+        }
+        if (anti && pos % 2) { fprintf(stderr, "odd pair-orbit: not an antimorphism type\n"); exit(2); }
         k++;
         if (k > 40) { fprintf(stderr, "too many orbits\n"); exit(2); }
     }
     fprintf(stderr, "cycle type %s: n=%d pair-orbits=%d subsets=%llu\n", spec, n, k, 1ULL << k);
     rowt crow[MAXV]; char g6[256]; long long distinct = 0;
-    for (uint64_t sub = 0; sub < (1ULL << k); sub++) {
+    for (uint64_t sub = (uint64_t)chunk_i; sub < (1ULL << k); sub += chunk_k) {
         for (int i = 0; i < n; i++) crow[i] = 0;
-        for (int o = 0; o < k; o++) if (sub >> o & 1) for (int i = 0; i < n; i++) crow[i] |= omask[o][i];
+        for (int o = 0; o < k; o++) {
+            if (sub >> o & 1) { for (int i = 0; i < n; i++) crow[i] |= omask[o][i]; }
+            else if (anti) { for (int i = 0; i < n; i++) crow[i] |= amask[o][i]; }
+        }
         if (!hset_add(canon_hash(n, crow))) continue;
         distinct++;
         write_g6(n, crow, g6);
@@ -449,7 +473,9 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "-2")) stopstage = 2;
         else if (!strcmp(argv[i], "-k") && i + 1 < argc) { sscanf(argv[++i], "%d:%d", &kmin, &kmax); }
         else if (!strcmp(argv[i], "-S") && i + 1 < argc) spec = argv[++i];
-        else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype] [-m] [-H] [-1|-2] < cards\n"); return 2; }
+        else if (!strcmp(argv[i], "-C") && i + 1 < argc) { spec = argv[++i]; anti = 1; }
+        else if (!strcmp(argv[i], "-r") && i + 1 < argc) { sscanf(argv[++i], "%d/%d", &chunk_i, &chunk_k); }
+        else { fprintf(stderr, "usage: card_fibre [-T] [-a] [-k min:max] [-S cycletype | -C antimorphism-type] [-r i/k] [-m] [-H] [-1|-2] < cards\n"); return 2; }
     }
     if (spec) { enumerate_type(spec); fprintf(stderr, "cards=%lld hits=%lld controllable-skipped=%lld\n", cards, totalhits, skipped_ctrl); return 0; }
     char line[4096];
