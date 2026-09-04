@@ -1,0 +1,12 @@
+{
+  "method": "authenticated GitHub Git-data API",
+  "original_merge": "37a05263a46ad5e09ddb06b95a8fdf60b4927b8e",
+  "original_audit": "8672265",
+  "published_merge": "a799f15d49e03d5f787992e1aa7cd4d39daa2d97",
+  "published_audit": "cfbdc50dced00312c4c476d027be981c3c614304",
+  "merge_tree": "073740321f136c4e992ee9aee1e0b13b1de46938",
+  "audit_tree": "9f451b14838e155db34ef9762143c28099c9b949",
+  "original_objects_bundle": "data/astra_direct/inherited_audit.bundle",
+  "both_original_remote_parents_preserved": true,
+  "tree_equalities_checked": true
+}

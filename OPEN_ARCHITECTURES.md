@@ -1,5 +1,29 @@
 # Three best remaining CE architectures
 
+## September-4 direct strike update
+
+`ASTRA_DIRECT_CE_STRIKE.md` supplies an executable refinement of rank 1:
+root migration through double-deletion overlaps. For a fixed shared card,
+each moving card map leaves only three extension bits free; a separate SAT
+branch includes every root-fixed map. Twenty-three specified fibres were
+exhausted, including arbitrary nonuniform attachments to the inherited
+selector card at weights `(1,1,3,4)`. This does not close other shared cards.
+
+The strongest next direct target is the **three-root pair/selector repair at
+parent order 22**. The fixed 19-vertex core is obtained by removing vertices
+9 (`q01`) and 15 (the first path-selector vertex) from that selector card.
+It has 120 free edge bits across both parents, and exactly 8,745,408 possible
+parent maps before grouping equivalent constraints. Its exact specification
+is `data/astra_direct/next_three_root/specification.json`; the constructor is
+`scripts/astra_two_root_repair.py --roots 3`.
+
+The preceding two-root instance has an independently verified UNSAT proof
+with all 175,104 parent maps excluded; its entire map set was separately
+recreated with VF2. Three-root SAT was **not run**. Use this concrete continuation
+before returning to the broader historical menu below.
+
+## Original hostile-audit ranking
+
 The ranking favors logical openness, distance from closed mechanisms, direct
 production of ordinary graphs, certificate simplicity, and controllable
 scaling.  Recency is not a criterion.

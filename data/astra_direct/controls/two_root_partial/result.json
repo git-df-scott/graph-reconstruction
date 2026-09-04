@@ -1,0 +1,26 @@
+{
+  "core": {
+    "order": 2,
+    "edges": [],
+    "graph6": "A?"
+  },
+  "parent_order": 4,
+  "edge_bits": 10,
+  "dropped_cards": 3,
+  "solver_seconds_budget": 10.0,
+  "isomorphic_models_blocked": 0,
+  "status": "PARTIAL_DECK_POSITIVE_CONTROL",
+  "build_seconds": 0.0003716669998539146,
+  "initial_variables": 88,
+  "initial_clauses": 222,
+  "common_cards": 2,
+  "total_seconds": 0.00139233800018701,
+  "final_variables": 88,
+  "final_clauses": 222,
+  "solver_stats": {
+    "restarts": 1,
+    "conflicts": 1,
+    "decisions": 15,
+    "propagations": 89
+  }
+}

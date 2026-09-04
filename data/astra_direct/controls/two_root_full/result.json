@@ -1,0 +1,25 @@
+{
+  "core": {
+    "order": 2,
+    "edges": [],
+    "graph6": "A?"
+  },
+  "parent_order": 4,
+  "edge_bits": 10,
+  "dropped_cards": 0,
+  "solver_seconds_budget": 10.0,
+  "isomorphic_models_blocked": 20,
+  "status": "UNSAT_SINGLE_SOLVER_NO_PROOF",
+  "build_seconds": 0.000629865000519203,
+  "initial_variables": 187,
+  "initial_clauses": 585,
+  "total_seconds": 0.012410467999870889,
+  "final_variables": 207,
+  "final_clauses": 685,
+  "solver_stats": {
+    "restarts": 21,
+    "conflicts": 1857,
+    "decisions": 3060,
+    "propagations": 61492
+  }
+}

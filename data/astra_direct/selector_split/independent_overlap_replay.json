@@ -1,0 +1,15 @@
+{
+  "status": "INDEPENDENT_COMPLETE_MOVING_DOMAIN_PASS",
+  "graph6": "T??????oDoO{]?PwF{??q?DK?Qw?[w?R{?F^",
+  "double_subset_pairs_tried": 572,
+  "overlap_isomorphisms": 29412,
+  "exact_neighborhood_pair_set": 6185,
+  "pair_rejections": {
+    "parent_isomorphic": 1367,
+    "parent_degree_mismatch": 4605,
+    "deck_invariant_multiplicity_mismatch": 213
+  },
+  "backend": "NetworkX VF2",
+  "networkx_version": "3.6.1",
+  "seconds": 37.87497767599962
+}

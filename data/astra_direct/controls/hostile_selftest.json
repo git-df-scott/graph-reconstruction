@@ -1,0 +1,17 @@
+{
+  "controls": {
+    "corrupted_deck_rejected": true,
+    "isomorphic_equal_decks": "REJECTED_PARENT_ISOMORPHIC",
+    "nonisomorphic_same_degree_sequence": "REJECTED_DECK_MISMATCH",
+    "order_two_equal_decks_rejected": "REJECTED_ORDER_BELOW_THREE",
+    "same_support_different_multiplicity": "REJECTED_DECK_MISMATCH"
+  },
+  "expected": {
+    "corrupted_deck_rejected": true,
+    "isomorphic_equal_decks": "REJECTED_PARENT_ISOMORPHIC",
+    "nonisomorphic_same_degree_sequence": "REJECTED_DECK_MISMATCH",
+    "order_two_equal_decks_rejected": "REJECTED_ORDER_BELOW_THREE",
+    "same_support_different_multiplicity": "REJECTED_DECK_MISMATCH"
+  },
+  "passed": true
+}

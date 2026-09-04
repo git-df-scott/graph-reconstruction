@@ -1,0 +1,337 @@
+{
+  "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+  "card": {
+    "order": 21,
+    "edges": [
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        1,
+        13
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        2,
+        14
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        3,
+        14
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        5,
+        11
+      ],
+      [
+        5,
+        13
+      ],
+      [
+        5,
+        14
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        6,
+        13
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        7,
+        13
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        8,
+        13
+      ],
+      [
+        8,
+        14
+      ],
+      [
+        9,
+        15
+      ],
+      [
+        9,
+        16
+      ],
+      [
+        9,
+        17
+      ],
+      [
+        10,
+        15
+      ],
+      [
+        10,
+        18
+      ],
+      [
+        10,
+        19
+      ],
+      [
+        11,
+        16
+      ],
+      [
+        11,
+        18
+      ],
+      [
+        11,
+        20
+      ],
+      [
+        12,
+        17
+      ],
+      [
+        12,
+        18
+      ],
+      [
+        12,
+        20
+      ],
+      [
+        13,
+        15
+      ],
+      [
+        13,
+        19
+      ],
+      [
+        13,
+        20
+      ],
+      [
+        14,
+        16
+      ],
+      [
+        14,
+        17
+      ],
+      [
+        14,
+        19
+      ],
+      [
+        15,
+        16
+      ],
+      [
+        15,
+        17
+      ],
+      [
+        15,
+        18
+      ],
+      [
+        15,
+        19
+      ],
+      [
+        15,
+        20
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        16,
+        19
+      ],
+      [
+        16,
+        20
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        20
+      ],
+      [
+        18,
+        19
+      ],
+      [
+        18,
+        20
+      ],
+      [
+        19,
+        20
+      ]
+    ],
+    "graph6": "T??????oDoO{]?PwF{??q?DK?Qw?[w?R{?F^"
+  },
+  "root_fixed": {
+    "card_isomorphism_options": 3600,
+    "aut_C": 144,
+    "card_type_multiplicities": [
+      4,
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "variables": 10873,
+    "clauses": 93910,
+    "sat_models": 0,
+    "status": "UNSAT",
+    "proof_lines": 13488
+  },
+  "root_moving": {
+    "double_deleted_subsets": 210,
+    "double_deleted_types": 116,
+    "isomorphic_double_subset_pairs": 572,
+    "double_overlap_isomorphisms": 29412
+  },
+  "pair_gates": {
+    "emitted_completions": 941184,
+    "parent_isomorphic_rejections": 1367,
+    "edge_count_rejections": 3994,
+    "duplicate_neighborhood_pairs": 934999,
+    "nonisomorphic_parent_pairs": 213,
+    "exact_deck_rejections": 213,
+    "parent_degree_rejections": 611
+  },
+  "unique_neighborhood_pairs": 6185,
+  "seconds": 2.0886960329999056,
+  "versions": {
+    "python": "3.12.13",
+    "pynauty": "2.8.8.1",
+    "networkx": "3.6.1",
+    "python_sat": "1.9.dev15"
+  },
+  "construction": {
+    "port_weights": [
+      1,
+      1,
+      3,
+      4
+    ],
+    "types": [
+      "P0",
+      "P1",
+      "P2",
+      "P2",
+      "P2",
+      "P3",
+      "P3",
+      "P3",
+      "P3",
+      "q",
+      "q",
+      "q",
+      "q",
+      "q",
+      "q",
+      "z",
+      "z",
+      "z",
+      "z",
+      "z",
+      "z"
+    ],
+    "neighborhoods_allowed": 2097152,
+    "uniformity_constraint": false
+  },
+  "proof_replay": {
+    "verified_unsat": true,
+    "rup_additions": 1342,
+    "deletions": 12146
+  }
+}

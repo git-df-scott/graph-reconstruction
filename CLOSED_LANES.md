@@ -35,6 +35,16 @@ architecture.
 | Kocay trade | Published `n=3,4` pair under trace deletion and the 64-member `n=3` residue trade family. | exact bounded source audit |
 | Crossed matrix holonomy | All 5,040 conjugates of the fixed `BASE_LIFT` crossed between two `7x7` axes. | committed exact run |
 | STS screen | The two listed STS(13) and 79 Pasch-containing STS(15) incidence graphs. | named list only |
+| Astra shared-card overlap strike | All one-vertex extension pairs for exactly 18 phase-terminal cards, four quadratic-residue tripod cards, and the selector card at weights `(1,1,3,4)`; explicit graphs and parameters in `ASTRA_DIRECT_CE_STRIKE.md` | exact canonical comparisons and checked root-fixed DRUP proofs; three complete moving domains independently replayed with VF2 |
+
+The order-22 two-root repair over the one specified 20-vertex selector core
+has a separately verified UNSAT proof: 82 edge bits, 33,201 SAT variables,
+1,595,879 clauses, and 175,104 explicitly excluded parent maps. DRAT-trim
+verified the proof and an independent VF2 implementation reproduced the full
+parent-map set. See `ASTRA_DIRECT_CE_STRIKE.md`; do not generalize this finite
+closure to other two-root cores.
+The three-root repair at the same parent order is not closed and was not
+searched in this session.
 
 ## Heuristically dead, not closed
 
