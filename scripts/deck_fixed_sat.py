@@ -20,6 +20,12 @@ otherwise an adjacent-transposition lex-leader predicate under W is added
 and the copies found by the solver are blocked one at a time with nauty
 deciding isomorphism (CEGAR).
 
+Audit note (2026-09-04): the exact small-W blocking path is straightforward.
+The custom adjacent-row lex-leader used for large W has exhaustive tiny
+controls through order 6 but no proof or independently checkable UNSAT
+certificate in this repository.  Treat large-W UNSAT batches as single-stack
+evidence until that gap is closed.
+
 Any SAT answer is replayed through the Python deck and isomorphism
 checkers.  --drop k removes the constraints of k cards (positive control:
 the search must then find mates sharing the remaining cards).

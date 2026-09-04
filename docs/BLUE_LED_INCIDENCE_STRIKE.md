@@ -130,6 +130,11 @@ triple, and the four-way join regenerated a globalizer, usually identity.
 A further 50,000 asymmetric two-conjugate crossed systems retained up to 17
 classes but again had zero zero-globalizer systems.
 
+**2026-09-04 audit note.**  The repository contains code for the 5,040
+conjugate census, but no committed implementation, output, or certificate for
+the pair/triple/four-way joins or the additional 50,000-system run.  Those
+claims are historical session notes and are not binding results.
+
 ## Strongest new conclusion
 
 The new construction language is viable, but three mechanisms are now
@@ -156,4 +161,3 @@ PYTHONPATH=scripts python scripts/matrix_bideck_local_search.py --systems 10000 
 PYTHONPATH=scripts python scripts/matrix_bideck_local_search.py --systems 100000 --assignments 64 --moves 2
 PYTHONPATH=scripts python scripts/crossed_matrix_holonomy.py
 ```
-

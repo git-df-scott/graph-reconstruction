@@ -14,9 +14,13 @@
  * tied with another one, (1) the degree sequence of G, (2) the multiset of
  * card degree sequences, (3) the multiset of nauty canonical forms of the
  * m cards G - u, u in V(C) (the card G - v0 = C is common to the fibre),
- * and (4) the canonical form of G.  Every key is a 64-bit hash; equal decks
- * give equal keys, so hashing can only add false hits, and every HIT line
- * is meant to be replayed by scripts/deck_fixed_sat.py or grc.same_deck.
+ * and (4) the canonical form of G.  WARNING (hostile audit 2026-09-04):
+ * canonical forms are reduced to 64-bit hashes.  The multiset stages can add
+ * false hits, but hash equality is also used to deduplicate input card types
+ * and to suppress equal-parent candidates.  A collision in either use can
+ * cause a false negative.  Silent runs are therefore computational evidence,
+ * not exact certificates, until collision-safe storage or collision-freedom
+ * replay is added.  Every HIT line must be replayed by the hostile checker.
  *
  * Extensions N and g(N), g an automorphism of C, give isomorphic G (extend g
  * by v0 -> v0), hence equal decks, so only one representative per orbit of

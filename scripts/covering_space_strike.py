@@ -242,6 +242,9 @@ def search(voltage_group, ranks, hostile=True, progress=16):
     started = time.monotonic()
     group_order = {"C2": 2, "C3": 3, "S3": 6, "S4": 24}[voltage_group]
     bases = classified_bases(set(ranks))
+    # SHA-256 is only a first-level index.  Keep every distinct exact deck in
+    # a digest bucket: storing a single representative here can turn a digest
+    # collision into a false negative on a later equal deck.
     deck_table = {}
     presentations = digest_collisions = exact_collisions = 0
     isomorphic_collisions = candidate_count = 0
@@ -257,9 +260,12 @@ def search(voltage_group, ranks, hostile=True, progress=16):
             deck = canonical_deck(parent)
             digest = exact_deck_digest(deck)
             presentations += 1
-            previous = deck_table.get(digest)
+            bucket = deck_table.setdefault(digest, {})
+            previous = bucket.get(deck)
             if previous is None:
-                deck_table[digest] = (assignment, voltage_code)
+                if bucket:
+                    digest_collisions += 1
+                bucket[deck] = (assignment, voltage_code)
                 continue
             digest_collisions += 1
             old_assignment, old_voltage = previous
@@ -289,7 +295,7 @@ def search(voltage_group, ranks, hostile=True, progress=16):
         "base_count": len(bases),
         "rank_histogram": dict(sorted(rank_histogram.items())),
         "presentations": presentations,
-        "parent_deck_classes": len(deck_table),
+        "parent_deck_classes": sum(len(bucket) for bucket in deck_table.values()),
         "digest_collisions": digest_collisions,
         "exact_deck_collisions": exact_collisions,
         "isomorphic_deck_collisions": isomorphic_collisions,

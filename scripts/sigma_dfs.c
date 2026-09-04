@@ -18,7 +18,8 @@
  * edge-coloured complete graphs with named colours at order n.
  *
  * Usage: sigma_dfs N [noprune] [i/k]   (N=5 must give zero hits and, with
- * noprune, 24^5 = 7,962,624 leaves, matching docs/LAST_GLOBALIZER_STRIKE.md.)
+ * noprune, 5*24^4 = 1,658,880 leaves after the sigma_0 conjugacy
+ * normalization; this covers the original 24^5 raw systems.)
  * With i/k only the subtrees whose (sigma_0, sigma_1) prefix has running
  * index congruent to i modulo k are searched, so a long census can be run
  * as k independent chunks whose node, leaf, pruned and hit counts add up.
