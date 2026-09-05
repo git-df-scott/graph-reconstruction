@@ -43,8 +43,10 @@ has a separately verified UNSAT proof: 82 edge bits, 33,201 SAT variables,
 verified the proof and an independent VF2 implementation reproduced the full
 parent-map set. See `ASTRA_DIRECT_CE_STRIKE.md`; do not generalize this finite
 closure to other two-root cores.
-The three-root repair at the same parent order is not closed and was not
-searched in this session.
+The three-root repair at the same parent order has now been searched with
+bounded SAT runs, which timed out. It is not closed. See
+`ASTRA_THREE_ROOT_STRIKE.md`; small independently checked UNSAT controls
+are not full-domain certificates.
 
 ## Heuristically dead, not closed
 
@@ -103,3 +105,15 @@ unfinished.
 
 Unresolved timeouts.  They are neither counterexample candidates nor negative
 results.
+
+
+## September-5 bounded construction result (single implementation)
+
+The fully migrating three-root P3/P3 construction over the specified
+19-vertex selector core exhausted all 330 quotient families of 325,944
+nonextendable equal-degree residual-map presentations: 10,813,440 15-bit
+assignments, no nonisomorphic equal-deck pair. Exact canonical comparisons
+were used. The core automorphism group and all symbolic single-card
+identities were independently verified, but the full negative search was
+not independently replayed. This closes only that finite implementation's
+stated domain, not the three-root architecture. See `ASTRA_THREE_ROOT_STRIKE.md`.

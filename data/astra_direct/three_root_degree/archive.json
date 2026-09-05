@@ -1,0 +1,19 @@
+{
+  "schema": "astra-exact-input-archive-v1",
+  "hash_role": "integrity only",
+  "files": [
+    {
+      "name": "formula.cnf",
+      "codec": "xz",
+      "raw_bytes": 3529820195,
+      "raw_sha256": "e93acba891055a8f047f52822819326669b5454453f88141b7a388765a641ac7",
+      "compressed_bytes": 10073912,
+      "parts": [
+        "formula.cnf.xz.part000",
+        "formula.cnf.xz.part001",
+        "formula.cnf.xz.part002"
+      ],
+      "seconds": 32.73049620600068
+    }
+  ]
+}

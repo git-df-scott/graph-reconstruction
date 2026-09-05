@@ -1,0 +1,16 @@
+{
+  "status": "ALL_QUOTIENT_FAMILIES_EXHAUSTED_NO_CE",
+  "templates_searched": 330,
+  "templates_total": 330,
+  "counts": {
+    "assignments": 10813440,
+    "parent_isomorphic": 150691,
+    "nonisomorphic_parent_pairs": 389279,
+    "missing_probe_card": 387633,
+    "edge_count_rejections": 7434240,
+    "degree_rejections": 2839230,
+    "full_deck_mismatch": 1646
+  },
+  "include_extendable": false,
+  "seconds": 141.35126171999946
+}

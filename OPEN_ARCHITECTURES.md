@@ -9,7 +9,7 @@ branch includes every root-fixed map. Twenty-three specified fibres were
 exhausted, including arbitrary nonuniform attachments to the inherited
 selector card at weights `(1,1,3,4)`. This does not close other shared cards.
 
-The strongest next direct target is the **three-root pair/selector repair at
+The September-4 continuation target was the **three-root pair/selector repair at
 parent order 22**. The fixed 19-vertex core is obtained by removing vertices
 9 (`q01`) and 15 (the first path-selector vertex) from that selector card.
 It has 120 free edge bits across both parents, and exactly 8,745,408 possible
@@ -19,8 +19,20 @@ is `data/astra_direct/next_three_root/specification.json`; the constructor is
 
 The preceding two-root instance has an independently verified UNSAT proof
 with all 175,104 parent maps excluded; its entire map set was separately
-recreated with VF2. Three-root SAT was **not run**. Use this concrete continuation
-before returning to the broader historical menu below.
+recreated with VF2. Three-root SAT has now been run: the full-domain baseline,
+degree-strengthened and degree/triangle/root-normalized attempts timed out.
+The domain remains open. See `ASTRA_THREE_ROOT_STRIKE.md` for exact budgets,
+input archives, and the separate 15-bit fully migrating construction. All
+330 nonextendable quotient families of that restricted construction were
+exhausted with no CE (single search implementation).
+
+The single next direct strike is **partial migration retaining one added
+vertex across a card map**. Fix the same core and P3 root types; move two
+added vertices into the core and two core vertices into the target roots.
+A residual map on 16 core vertices leaves a shared 16-bit neighborhood
+column, four bridge bits, and six deletion-incidence bits: at most 26 free
+bits per compatible template. This retains information absent from the
+fully migrating 15-bit construction. It has not been implemented or searched.
 
 ## Original hostile-audit ranking
 

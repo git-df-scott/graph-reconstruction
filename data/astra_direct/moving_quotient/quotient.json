@@ -1,0 +1,6953 @@
+{
+  "status": "EXACT_CORE_AUTOMORPHISM_QUOTIENT",
+  "include_extendable": false,
+  "core_automorphisms": 144,
+  "core_group_independent_VF2_match": true,
+  "oriented_patterns": 2928,
+  "pattern_orbits": 986,
+  "residual_double_orbits": 330,
+  "distinct_literal_families": 330,
+  "ordered_raw_templates_covered": 325944,
+  "raw_domain": {
+    "core_four_deletion_subsets": 3876,
+    "residual_types": 951,
+    "raw_equal_degree_P3_oriented_map_templates": 764280,
+    "extendable_templates": 438336,
+    "nonextendable_templates": 325944,
+    "independent_bits_per_template": 15,
+    "edge_count_equal_assignments_per_template": 10240
+  },
+  "orbit_records": [
+    {
+      "source_pattern": [
+        0,
+        [
+          1,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        0,
+        [
+          1,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 0
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          2,
+          5,
+          13
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 1728,
+      "family_index": 1
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          2,
+          5,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 1728,
+      "family_index": 2
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 3
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 4
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          5,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          5,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 5
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 6
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 7
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        0,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 8
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        0,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 9
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        0,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 10
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 11
+    },
+    {
+      "source_pattern": [
+        0,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 12
+    },
+    {
+      "source_pattern": [
+        1,
+        [
+          0,
+          9,
+          16
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          0,
+          9,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 13
+    },
+    {
+      "source_pattern": [
+        1,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 14
+    },
+    {
+      "source_pattern": [
+        1,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 15
+    },
+    {
+      "source_pattern": [
+        1,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        1,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 16
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          3,
+          5,
+          13
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          7,
+          13
+        ]
+      ],
+      "residual_orbit_size": 6,
+      "raw_templates_covered": 3456,
+      "family_index": 17
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          3,
+          13
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          7,
+          13
+        ]
+      ],
+      "residual_orbit_size": 6,
+      "raw_templates_covered": 1728,
+      "family_index": 18
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          3,
+          9,
+          11
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          3,
+          9,
+          11
+        ]
+      ],
+      "residual_orbit_size": 24,
+      "raw_templates_covered": 864,
+      "family_index": 19
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          3,
+          9,
+          16
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          3,
+          11,
+          15
+        ]
+      ],
+      "residual_orbit_size": 24,
+      "raw_templates_covered": 1728,
+      "family_index": 20
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "residual_orbit_size": 4,
+      "raw_templates_covered": 1296,
+      "family_index": 21
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          2,
+          6,
+          13
+        ]
+      ],
+      "residual_orbit_size": 4,
+      "raw_templates_covered": 5184,
+      "family_index": 22
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          6,
+          13
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          2,
+          6,
+          13
+        ]
+      ],
+      "residual_orbit_size": 4,
+      "raw_templates_covered": 5184,
+      "family_index": 23
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 24
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 25
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 26
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 27
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          5,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 28
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 29
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 864,
+      "family_index": 30
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 31
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 32
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 33
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 34
+    },
+    {
+      "source_pattern": [
+        2,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        2,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 35
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          0,
+          2,
+          9
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          1,
+          6,
+          12
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 36
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          0,
+          6,
+          10
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          1,
+          2,
+          11
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 37
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 38
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          0,
+          9,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          1,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 39
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          0,
+          9,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          1,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 40
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          0,
+          10,
+          14
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          1,
+          11,
+          15
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 41
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          0,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          1,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 42
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          0,
+          10,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          1,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 43
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          3,
+          9
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          7,
+          12
+        ]
+      ],
+      "residual_orbit_size": 6,
+      "raw_templates_covered": 1728,
+      "family_index": 44
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          3,
+          11
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          7,
+          10
+        ]
+      ],
+      "residual_orbit_size": 6,
+      "raw_templates_covered": 1728,
+      "family_index": 45
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          10,
+          12
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 46
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 47
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          9,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 48
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          9,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 49
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 50
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          11,
+          15
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          10,
+          14
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 51
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          10,
+          18
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 52
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          2,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          6,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 3456,
+      "family_index": 53
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 54
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 55
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 56
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 57
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 58
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 59
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 60
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 61
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 62
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 63
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 64
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 65
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          14,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          12,
+          15,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 66
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          14,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          12,
+          15,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 67
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          15,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          12,
+          14,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 68
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          15,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          12,
+          14,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 69
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          16,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          12,
+          16,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 70
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          9,
+          17,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          12,
+          16,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 71
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 72
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 73
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 74
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 75
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 76
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          14,
+          15
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          14,
+          15
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 77
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          14,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          15,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 78
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          15,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          14,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 79
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          15,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          14,
+          16
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 80
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          16,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          17,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 81
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          10,
+          17,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          11,
+          16,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 82
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          13,
+          14,
+          16
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          13,
+          15,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 83
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          13,
+          14,
+          18
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          13,
+          15,
+          16
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 84
+    },
+    {
+      "source_pattern": [
+        5,
+        [
+          13,
+          16,
+          17
+        ]
+      ],
+      "target_pattern": [
+        5,
+        [
+          13,
+          17,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 85
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          1,
+          5,
+          12
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          1,
+          5,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 86
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 87
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 88
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 89
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          1,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          1,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 90
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          2,
+          3,
+          11
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          2,
+          3,
+          11
+        ]
+      ],
+      "residual_orbit_size": 24,
+      "raw_templates_covered": 216,
+      "family_index": 91
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 92
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          2,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          2,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 93
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          6,
+          12
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          6,
+          12
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 432,
+      "family_index": 94
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 95
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 96
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 97
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 98
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 99
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 100
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 108,
+      "raw_templates_covered": 1728,
+      "family_index": 101
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 108,
+      "raw_templates_covered": 1728,
+      "family_index": 102
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 103
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 104
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 216,
+      "raw_templates_covered": 3456,
+      "family_index": 105
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 216,
+      "raw_templates_covered": 3456,
+      "family_index": 106
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 324,
+      "raw_templates_covered": 5184,
+      "family_index": 107
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 324,
+      "raw_templates_covered": 5184,
+      "family_index": 108
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 108,
+      "raw_templates_covered": 1728,
+      "family_index": 109
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 108,
+      "raw_templates_covered": 1728,
+      "family_index": 110
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 324,
+      "raw_templates_covered": 5184,
+      "family_index": 111
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 324,
+      "raw_templates_covered": 5184,
+      "family_index": 112
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 113
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 114
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 115
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          5,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 116
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 117
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        14,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 118
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 119
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 120
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 121
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 122
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 123
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 124
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 125
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          10,
+          16,
+          17
+        ]
+      ],
+      "target_pattern": [
+        14,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 126
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 127
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          11,
+          14,
+          16
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          11,
+          16,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 128
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          11,
+          16,
+          17
+        ]
+      ],
+      "target_pattern": [
+        14,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 129
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 130
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 131
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 132
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 133
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 134
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 135
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 136
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          14,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          14,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 137
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          14,
+          17
+        ]
+      ],
+      "target_pattern": [
+        14,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 138
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        14,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 139
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          15,
+          17
+        ]
+      ],
+      "target_pattern": [
+        9,
+        [
+          12,
+          15,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 140
+    },
+    {
+      "source_pattern": [
+        9,
+        [
+          12,
+          15,
+          17
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 141
+    },
+    {
+      "source_pattern": [
+        15,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 142
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          1,
+          2,
+          11
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          1,
+          2,
+          11
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 143
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 144
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          1,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          1,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 145
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          1,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          1,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 146
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          3,
+          11
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          3,
+          11
+        ]
+      ],
+      "residual_orbit_size": 24,
+      "raw_templates_covered": 216,
+      "family_index": 147
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 148
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 149
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 150
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 192,
+      "raw_templates_covered": 1728,
+      "family_index": 151
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 192,
+      "raw_templates_covered": 1728,
+      "family_index": 152
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 96,
+      "raw_templates_covered": 864,
+      "family_index": 153
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 96,
+      "raw_templates_covered": 864,
+      "family_index": 154
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 384,
+      "raw_templates_covered": 3456,
+      "family_index": 155
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 384,
+      "raw_templates_covered": 3456,
+      "family_index": 156
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 157
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          2,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          2,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 158
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 159
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          5,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          5,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 160
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 161
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 162
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 163
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 164
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 165
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 166
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 167
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          11,
+          16,
+          17
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          11,
+          16,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 168
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          11,
+          17,
+          18
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          11,
+          17,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 169
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 170
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          12,
+          14,
+          18
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          12,
+          14,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 171
+    },
+    {
+      "source_pattern": [
+        10,
+        [
+          12,
+          16,
+          18
+        ]
+      ],
+      "target_pattern": [
+        10,
+        [
+          12,
+          16,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 172
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          0,
+          5,
+          10
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          0,
+          5,
+          10
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 173
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 174
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          0,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          0,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 175
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          0,
+          10,
+          18
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          0,
+          10,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 176
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          1,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        16,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 177
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          1,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        16,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 178
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 179
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          2,
+          3,
+          9
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          2,
+          3,
+          9
+        ]
+      ],
+      "residual_orbit_size": 24,
+      "raw_templates_covered": 216,
+      "family_index": 180
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 181
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          2,
+          9,
+          16
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          2,
+          9,
+          16
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 182
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          2,
+          9,
+          16
+        ]
+      ],
+      "target_pattern": [
+        16,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 864,
+      "family_index": 183
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "target_pattern": [
+        16,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 184
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          6,
+          10
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          6,
+          10
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 432,
+      "family_index": 185
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 186
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 187
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 108,
+      "raw_templates_covered": 1728,
+      "family_index": 188
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 108,
+      "raw_templates_covered": 1728,
+      "family_index": 189
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 190
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 191
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 216,
+      "raw_templates_covered": 3456,
+      "family_index": 192
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 216,
+      "raw_templates_covered": 3456,
+      "family_index": 193
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 108,
+      "raw_templates_covered": 1728,
+      "family_index": 194
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 108,
+      "raw_templates_covered": 1728,
+      "family_index": 195
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 324,
+      "raw_templates_covered": 5184,
+      "family_index": 196
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 324,
+      "raw_templates_covered": 5184,
+      "family_index": 197
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 324,
+      "raw_templates_covered": 5184,
+      "family_index": 198
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 324,
+      "raw_templates_covered": 5184,
+      "family_index": 199
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          14
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          14
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 200
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 201
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 202
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 203
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          10,
+          18
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          10,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 204
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          12,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 205
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          5,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 206
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          5,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 207
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 208
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 209
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 210
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 211
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 212
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 213
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          14,
+          16
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 214
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          15,
+          16
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          9,
+          15,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 215
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          16,
+          18
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          9,
+          16,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 216
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          9,
+          16,
+          18
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 217
+    },
+    {
+      "source_pattern": [
+        18,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 218
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 219
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 220
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 221
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 222
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 223
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 224
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 225
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 226
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 227
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 228
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 229
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          16,
+          17
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          10,
+          16,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 230
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          16,
+          17
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 231
+    },
+    {
+      "source_pattern": [
+        17,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 232
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          17,
+          18
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          10,
+          17,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 233
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          10,
+          17,
+          18
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 234
+    },
+    {
+      "source_pattern": [
+        17,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 235
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        11,
+        [
+          12,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 236
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          12,
+          14,
+          18
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 237
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          11,
+          14,
+          18
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 238
+    },
+    {
+      "source_pattern": [
+        11,
+        [
+          12,
+          16,
+          18
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 239
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 240
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          0,
+          2,
+          9
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          0,
+          2,
+          9
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 241
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 242
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 243
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 244
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          0,
+          9,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          0,
+          9,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 245
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          3,
+          9
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          3,
+          9
+        ]
+      ],
+      "residual_orbit_size": 24,
+      "raw_templates_covered": 216,
+      "family_index": 246
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          3,
+          11
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          3,
+          11
+        ]
+      ],
+      "residual_orbit_size": 24,
+      "raw_templates_covered": 216,
+      "family_index": 247
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 248
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 249
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 250
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 251
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 96,
+      "raw_templates_covered": 864,
+      "family_index": 252
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 96,
+      "raw_templates_covered": 864,
+      "family_index": 253
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 192,
+      "raw_templates_covered": 1728,
+      "family_index": 254
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 192,
+      "raw_templates_covered": 1728,
+      "family_index": 255
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 384,
+      "raw_templates_covered": 3456,
+      "family_index": 256
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          13
+        ]
+      ],
+      "residual_orbit_size": 384,
+      "raw_templates_covered": 3456,
+      "family_index": 257
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          9,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          9,
+          17
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 258
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          2,
+          11,
+          13
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 259
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          5,
+          10,
+          13
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 260
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          5,
+          10,
+          18
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          5,
+          10,
+          18
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 261
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          5,
+          10,
+          18
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 262
+    },
+    {
+      "source_pattern": [
+        18,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 263
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 264
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 265
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 266
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 267
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 268
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 269
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 270
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          14,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          14,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 271
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          15,
+          17
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          9,
+          15,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 272
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          9,
+          17,
+          18
+        ]
+      ],
+      "target_pattern": [
+        16,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 273
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 274
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 275
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          10,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 276
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          10,
+          15,
+          18
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          10,
+          17,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 277
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          10,
+          15,
+          18
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 278
+    },
+    {
+      "source_pattern": [
+        12,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        12,
+        [
+          11,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 279
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          0,
+          9,
+          10
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 280
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          1,
+          11,
+          12
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 281
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          2,
+          9,
+          11
+        ]
+      ],
+      "residual_orbit_size": 48,
+      "raw_templates_covered": 432,
+      "family_index": 282
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          5,
+          10,
+          12
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 283
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 284
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 285
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 286
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 287
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 288
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 289
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 290
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 291
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          9,
+          12,
+          17
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 292
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 293
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 294
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 295
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 296
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 297
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 298
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 299
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 300
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 301
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 576,
+      "raw_templates_covered": 576,
+      "family_index": 302
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 303
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 432,
+      "raw_templates_covered": 432,
+      "family_index": 304
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 305
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 1728,
+      "raw_templates_covered": 1728,
+      "family_index": 306
+    },
+    {
+      "source_pattern": [
+        13,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        13,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 307
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          2,
+          5,
+          13
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 1728,
+      "family_index": 308
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          2,
+          5,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 1728,
+      "family_index": 309
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        14,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 310
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 311
+    },
+    {
+      "source_pattern": [
+        15,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 576,
+      "family_index": 312
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          5,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          5,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 313
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          9,
+          10,
+          16
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          11,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 314
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 315
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 316
+    },
+    {
+      "source_pattern": [
+        14,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        14,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 317
+    },
+    {
+      "source_pattern": [
+        15,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        15,
+        [
+          9,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 318
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          2,
+          5,
+          13
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 1728,
+      "family_index": 319
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          2,
+          5,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 1728,
+      "family_index": 320
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 321
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 322
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          5,
+          13,
+          17
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          5,
+          13,
+          17
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 323
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        16,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 324
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          10,
+          11,
+          18
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 288,
+      "family_index": 325
+    },
+    {
+      "source_pattern": [
+        18,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "target_pattern": [
+        18,
+        [
+          10,
+          11,
+          16
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 326
+    },
+    {
+      "source_pattern": [
+        16,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "target_pattern": [
+        16,
+        [
+          10,
+          12,
+          18
+        ]
+      ],
+      "residual_orbit_size": 144,
+      "raw_templates_covered": 144,
+      "family_index": 327
+    },
+    {
+      "source_pattern": [
+        17,
+        [
+          2,
+          5,
+          13
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          5,
+          6,
+          13
+        ]
+      ],
+      "residual_orbit_size": 12,
+      "raw_templates_covered": 1728,
+      "family_index": 328
+    },
+    {
+      "source_pattern": [
+        17,
+        [
+          5,
+          13,
+          14
+        ]
+      ],
+      "target_pattern": [
+        17,
+        [
+          5,
+          13,
+          15
+        ]
+      ],
+      "residual_orbit_size": 36,
+      "raw_templates_covered": 1152,
+      "family_index": 329
+    }
+  ],
+  "seconds": 2.936613349000254
+}

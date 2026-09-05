@@ -1,0 +1,14 @@
+test_completions_against_independent_edge_equations (test_astra_overlap.OverlapControls.test_completions_against_independent_edge_equations) ... ok
+test_drup_accepts_unsat_rejects_false_empty (test_astra_overlap.OverlapControls.test_drup_accepts_unsat_rejects_false_empty) ... ok
+test_fixed_root_cnf_against_full_colored_decks (test_astra_overlap.OverlapControls.test_fixed_root_cnf_against_full_colored_decks) ... ok
+test_parent_map_universe_against_all_permutations (test_astra_overlap.OverlapControls.test_parent_map_universe_against_all_permutations) ... ok
+test_two_root_encoding_all_small_assignments (test_astra_overlap.OverlapControls.test_two_root_encoding_all_small_assignments) ... ok
+test_watched_up_against_simple_scan (test_astra_overlap.OverlapControls.test_watched_up_against_simple_scan) ... ok
+test_full_core_native_clause_samples_all_layers (test_astra_three_root.ThreeRootControls.test_full_core_native_clause_samples_all_layers) ... ok
+test_native_complete_small_universe_and_each_clause (test_astra_three_root.ThreeRootControls.test_native_complete_small_universe_and_each_clause) ... ok
+test_three_root_deck_encoding_all_order_four_assignments (test_astra_three_root.ThreeRootControls.test_three_root_deck_encoding_all_order_four_assignments) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 5.374s
+
+OK

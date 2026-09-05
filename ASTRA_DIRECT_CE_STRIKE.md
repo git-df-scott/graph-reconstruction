@@ -1,5 +1,9 @@
 # Astra direct counterexample strike — 2026-09-04
 
+Continuation published with this report: `ASTRA_THREE_ROOT_STRIKE.md` records
+the executed three-root SAT attempts and 15-bit migrating-card construction.
+The result below describes the original September-4 strike.
+
 ## Result
 
 ```text

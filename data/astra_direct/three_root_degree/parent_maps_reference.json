@@ -1,0 +1,7 @@
+{
+  "shared_archive": "../three_root_strike/archive.json",
+  "logical_file": "parent_maps.bin",
+  "comparison": "full decompressed bytes",
+  "bytes": 192398976,
+  "equal": true
+}

@@ -1,0 +1,39 @@
+{
+  "core": {
+    "order": 2,
+    "edges": [],
+    "graph6": "A?"
+  },
+  "parent_order": 5,
+  "edge_bits": 18,
+  "roots": 3,
+  "dropped_cards": 0,
+  "solver_seconds_budget": 15.0,
+  "isomorphic_models_blocked": 0,
+  "status": "UNSAT_PROOF_PENDING_INDEPENDENT_CHECK",
+  "preblock_all_parent_isomorphisms": true,
+  "fast_preblock": true,
+  "redundant_degree_constraints": true,
+  "base_encode_seconds": 0.0047343530004582135,
+  "base_variables": 546,
+  "base_clauses": 2563,
+  "parent_isomorphism_maps_by_migration_count": {
+    "0": 12,
+    "1": 72,
+    "2": 36,
+    "3": 0
+  },
+  "build_seconds": 0.4443594300009863,
+  "initial_variables": 618,
+  "initial_clauses": 2971,
+  "proof_lines": 46683,
+  "total_seconds": 0.949773879001441,
+  "final_variables": 618,
+  "final_clauses": 2971,
+  "solver_stats": {
+    "restarts": 22,
+    "conflicts": 26760,
+    "decisions": 31893,
+    "propagations": 1634066
+  }
+}

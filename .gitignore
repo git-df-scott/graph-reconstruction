@@ -2,3 +2,8 @@ __pycache__/
 *.pyc
 .DS_Store
 *.py[cod]
+# Large mutable inputs are published losslessly through archive.json + XZ parts.
+data/astra_direct/three_root_strike/formula.cnf
+data/astra_direct/three_root_strike/unsat.drup
+data/astra_direct/three_root_strike/parent_maps.bin.gz
+data/astra_direct/three_root_strike/.formula.cnf.*

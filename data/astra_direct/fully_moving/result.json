@@ -1,0 +1,24 @@
+{
+  "status": "BOUNDED_TEMPLATE_PREFIX_COMPLETE_NO_CE",
+  "templates_requested": 16,
+  "templates_searched": 16,
+  "counts": {
+    "assignments": 524288,
+    "parent_isomorphic": 1024,
+    "nonisomorphic_parent_pairs": 8496,
+    "missing_probe_card": 8496,
+    "edge_count_rejections": 360448,
+    "degree_rejections": 154320
+  },
+  "domain": {
+    "core_four_deletion_subsets": 3876,
+    "residual_types": 951,
+    "raw_equal_degree_P3_oriented_map_templates": 764280,
+    "extendable_templates": 438336,
+    "nonextendable_templates": 325944,
+    "independent_bits_per_template": 15,
+    "edge_count_equal_assignments_per_template": 10240
+  },
+  "selection": "first distinct templates in deterministic overlap iteration, nonextendable residual maps, equal core deletion degrees; root triples P3",
+  "seconds": 4.523435749999408
+}
