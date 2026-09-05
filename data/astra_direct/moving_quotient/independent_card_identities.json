@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "templates": 330,
+  "symbolic_card_edge_equalities": 69300,
+  "assignments_per_template": 32768,
+  "scope": "single-card identity only; not independent negative search verification"
+}

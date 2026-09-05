@@ -1,0 +1,209 @@
+{
+  "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+  "card": {
+    "order": 15,
+    "edges": [
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        12
+      ],
+      [
+        0,
+        13
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        11
+      ],
+      [
+        2,
+        14
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        5,
+        14
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        13,
+        14
+      ]
+    ],
+    "graph6": "NJfHMcH`ICkHcHaCc`G"
+  },
+  "root_fixed": {
+    "card_isomorphism_options": 17,
+    "aut_C": 1,
+    "card_type_multiplicities": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "variables": 94,
+    "clauses": 449,
+    "sat_models": 0,
+    "status": "UNSAT",
+    "proof_lines": 1
+  },
+  "root_moving": {
+    "double_deleted_subsets": 105,
+    "double_deleted_types": 92,
+    "isomorphic_double_subset_pairs": 118,
+    "double_overlap_isomorphisms": 150
+  },
+  "pair_gates": {
+    "emitted_completions": 4800,
+    "parent_isomorphic_rejections": 542,
+    "edge_count_rejections": 1526,
+    "duplicate_neighborhood_pairs": 2231,
+    "nonisomorphic_parent_pairs": 108,
+    "exact_deck_rejections": 108,
+    "parent_degree_rejections": 393
+  },
+  "unique_neighborhood_pairs": 2569,
+  "seconds": 0.2036796169995796,
+  "versions": {
+    "python": "3.12.13",
+    "pynauty": "2.8.8.1",
+    "networkx": "3.6.1",
+    "python_sat": "1.9.dev15"
+  }
+}

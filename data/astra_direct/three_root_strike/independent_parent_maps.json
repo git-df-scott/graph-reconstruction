@@ -1,0 +1,15 @@
+{
+  "status": "INDEPENDENT_PARENT_MAP_UNIVERSE_PASS",
+  "map_count": 8745408,
+  "migration_counts": {
+    "0": 864,
+    "1": 59616,
+    "2": 1184544,
+    "3": 7500384
+  },
+  "comparison": "sorted full permutation bytes, no hashes",
+  "backend": "NetworkX VF2",
+  "networkx_version": "3.6.1",
+  "numpy_version": "2.3.5",
+  "seconds": 67.199394407
+}

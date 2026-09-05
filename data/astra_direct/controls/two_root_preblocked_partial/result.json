@@ -1,0 +1,35 @@
+{
+  "core": {
+    "order": 2,
+    "edges": [],
+    "graph6": "A?"
+  },
+  "parent_order": 4,
+  "edge_bits": 10,
+  "dropped_cards": 3,
+  "solver_seconds_budget": 10.0,
+  "isomorphic_models_blocked": 0,
+  "status": "PARTIAL_DECK_POSITIVE_CONTROL",
+  "preblock_all_parent_isomorphisms": true,
+  "base_encode_seconds": 0.00038574999962293077,
+  "base_variables": 88,
+  "base_clauses": 222,
+  "parent_isomorphism_maps_by_migration_count": {
+    "0": 4,
+    "1": 16,
+    "2": 4
+  },
+  "build_seconds": 0.0007611849996465025,
+  "initial_variables": 108,
+  "initial_clauses": 326,
+  "common_cards": 3,
+  "total_seconds": 0.001596871000401734,
+  "final_variables": 108,
+  "final_clauses": 326,
+  "solver_stats": {
+    "restarts": 1,
+    "conflicts": 27,
+    "decisions": 61,
+    "propagations": 417
+  }
+}

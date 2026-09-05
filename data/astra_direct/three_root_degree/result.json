@@ -1,0 +1,231 @@
+{
+  "core": {
+    "order": 19,
+    "edges": [
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        11
+      ],
+      [
+        2,
+        13
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        3,
+        11
+      ],
+      [
+        3,
+        13
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        4,
+        11
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        5,
+        13
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        6,
+        12
+      ],
+      [
+        6,
+        13
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        7,
+        13
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        8,
+        13
+      ],
+      [
+        9,
+        16
+      ],
+      [
+        9,
+        17
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        10,
+        16
+      ],
+      [
+        10,
+        18
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        11,
+        16
+      ],
+      [
+        11,
+        18
+      ],
+      [
+        12,
+        17
+      ],
+      [
+        12,
+        18
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        13,
+        15
+      ],
+      [
+        13,
+        17
+      ],
+      [
+        14,
+        15
+      ],
+      [
+        14,
+        16
+      ],
+      [
+        14,
+        17
+      ],
+      [
+        14,
+        18
+      ],
+      [
+        15,
+        16
+      ],
+      [
+        15,
+        17
+      ],
+      [
+        15,
+        18
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        17,
+        18
+      ]
+    ],
+    "graph6": "R??????mCNN?PwNw?@G?J?FK?Rw?\\w"
+  },
+  "parent_order": 22,
+  "edge_bits": 120,
+  "roots": 3,
+  "dropped_cards": 0,
+  "solver_seconds_budget": 900.0,
+  "isomorphic_models_blocked": 0,
+  "status": "TIMEOUT_UNRESOLVED",
+  "preblock_all_parent_isomorphisms": true,
+  "fast_preblock": true,
+  "redundant_degree_constraints": true,
+  "base_encode_seconds": 2.534540456999821,
+  "base_variables": 36892,
+  "base_clauses": 1669751,
+  "parent_isomorphism_maps_by_migration_count": {
+    "0": 864,
+    "1": 59616,
+    "2": 1184544,
+    "3": 7500384
+  },
+  "build_seconds": 143.72173618600027,
+  "initial_variables": 40432,
+  "initial_clauses": 10429319,
+  "total_seconds": 1043.8397503329998,
+  "final_variables": 40432,
+  "final_clauses": 10429319,
+  "solver_stats": {
+    "restarts": 1065,
+    "conflicts": 364962,
+    "decisions": 753546,
+    "propagations": 108899496
+  }
+}

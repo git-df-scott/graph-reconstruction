@@ -1,0 +1,30 @@
+PARENT_BLOCK_LAYER 0 864 0.365
+PARENT_BLOCK_LAYER 1 59616 1.098
+PARENT_BLOCK_PROGRESS 2 10000 296064 3.989
+PARENT_BLOCK_PROGRESS 2 20000 656064 8.332
+PARENT_BLOCK_PROGRESS 2 30000 1016064 13.728
+PARENT_BLOCK_LAYER 2 1184544 16.915
+PARENT_BLOCK_PROGRESS 3 40000 1376064 19.312
+PARENT_BLOCK_PROGRESS 3 50000 1736064 25.207
+PARENT_BLOCK_PROGRESS 3 60000 2096064 31.178
+PARENT_BLOCK_PROGRESS 3 70000 2456064 37.527
+PARENT_BLOCK_PROGRESS 3 80000 2816064 43.555
+PARENT_BLOCK_PROGRESS 3 90000 3176064 49.658
+PARENT_BLOCK_PROGRESS 3 100000 3536064 55.825
+PARENT_BLOCK_PROGRESS 3 110000 3896064 61.754
+PARENT_BLOCK_PROGRESS 3 120000 4256064 67.392
+PARENT_BLOCK_PROGRESS 3 130000 4616064 73.305
+PARENT_BLOCK_PROGRESS 3 140000 4976064 79.453
+PARENT_BLOCK_PROGRESS 3 150000 5336064 85.561
+PARENT_BLOCK_PROGRESS 3 160000 5696064 91.554
+PARENT_BLOCK_PROGRESS 3 170000 6056064 97.652
+PARENT_BLOCK_PROGRESS 3 180000 6416064 103.8
+PARENT_BLOCK_PROGRESS 3 190000 6776064 110.023
+PARENT_BLOCK_PROGRESS 3 200000 7136064 116.242
+PARENT_BLOCK_PROGRESS 3 210000 7496064 122.461
+PARENT_BLOCK_PROGRESS 3 220000 7856064 128.718
+PARENT_BLOCK_PROGRESS 3 230000 8216064 134.696
+PARENT_BLOCK_PROGRESS 3 240000 8576064 141.741
+PARENT_BLOCK_LAYER 3 7500384 144.654
+TWO_ROOT_ENCODED {"base_clauses": 1643731, "base_encode_seconds": 2.456914534999669, "base_variables": 31618, "build_seconds": 147.17052615300054, "core": {"edges": [[0, 9], [0, 10], [1, 11], [1, 12], [2, 9], [2, 11], [2, 13], [3, 9], [3, 11], [3, 13], [4, 9], [4, 11], [4, 13], [5, 10], [5, 12], [5, 13], [6, 10], [6, 12], [6, 13], [7, 10], [7, 12], [7, 13], [8, 10], [8, 12], [8, 13], [9, 16], [9, 17], [10, 14], [10, 16], [10, 18], [11, 15], [11, 16], [11, 18], [12, 17], [12, 18], [13, 14], [13, 15], [13, 17], [14, 15], [14, 16], [14, 17], [14, 18], [15, 16], [15, 17], [15, 18], [16, 17], [16, 18], [17, 18]], "graph6": "R??????mCNN?PwNw?@G?J?FK?Rw?\\w", "order": 19}, "dropped_cards": 0, "edge_bits": 120, "initial_clauses": 10403299, "initial_variables": 35158, "isomorphic_models_blocked": 0, "parent_isomorphism_maps_by_migration_count": {"0": 864, "1": 59616, "2": 1184544, "3": 7500384}, "parent_order": 22, "preblock_all_parent_isomorphisms": true, "roots": 3, "solver_seconds_budget": 1800.0, "status": "BUILDING"}
+TWO_ROOT_RESULT {"base_clauses": 1643731, "base_encode_seconds": 2.456914534999669, "base_variables": 31618, "build_seconds": 147.17052615300054, "core": {"edges": [[0, 9], [0, 10], [1, 11], [1, 12], [2, 9], [2, 11], [2, 13], [3, 9], [3, 11], [3, 13], [4, 9], [4, 11], [4, 13], [5, 10], [5, 12], [5, 13], [6, 10], [6, 12], [6, 13], [7, 10], [7, 12], [7, 13], [8, 10], [8, 12], [8, 13], [9, 16], [9, 17], [10, 14], [10, 16], [10, 18], [11, 15], [11, 16], [11, 18], [12, 17], [12, 18], [13, 14], [13, 15], [13, 17], [14, 15], [14, 16], [14, 17], [14, 18], [15, 16], [15, 17], [15, 18], [16, 17], [16, 18], [17, 18]], "graph6": "R??????mCNN?PwNw?@G?J?FK?Rw?\\w", "order": 19}, "dropped_cards": 0, "edge_bits": 120, "final_clauses": 10403299, "final_variables": 35158, "initial_clauses": 10403299, "initial_variables": 35158, "isomorphic_models_blocked": 0, "parent_isomorphism_maps_by_migration_count": {"0": 864, "1": 59616, "2": 1184544, "3": 7500384}, "parent_order": 22, "preblock_all_parent_isomorphisms": true, "roots": 3, "solver_seconds_budget": 1800.0, "solver_stats": {"conflicts": 512307, "decisions": 1035195, "propagations": 134657125, "restarts": 1923}, "status": "TIMEOUT_UNRESOLVED", "total_seconds": 1947.7975712900006}

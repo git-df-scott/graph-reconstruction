@@ -1,0 +1,9 @@
+{
+  "core_four_deletion_subsets": 3876,
+  "residual_types": 951,
+  "raw_equal_degree_P3_oriented_map_templates": 764280,
+  "extendable_templates": 438336,
+  "nonextendable_templates": 325944,
+  "independent_bits_per_template": 15,
+  "edge_count_equal_assignments_per_template": 10240
+}

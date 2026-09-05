@@ -1,6 +1,7 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
 
@@ -39,6 +40,14 @@ class CoveringSpaceStrikeTests(unittest.TestCase):
         self.assertEqual(128, result["presentations"])
         self.assertEqual(0, result["nonisomorphic_deck_collisions"])
         self.assertTrue(result["zero_counterexamples"])
+
+    def test_digest_collision_cannot_merge_exact_deck_classes(self):
+        with mock.patch.object(strike, "exact_deck_digest", return_value="forced"):
+            result = strike.search("C2", (3,), progress=0)
+        self.assertEqual(127, result["digest_collisions"])
+        self.assertEqual(8, result["parent_deck_classes"])
+        self.assertEqual(120, result["exact_deck_collisions"])
+        self.assertEqual(0, result["nonisomorphic_deck_collisions"])
 
 
 if __name__ == "__main__":

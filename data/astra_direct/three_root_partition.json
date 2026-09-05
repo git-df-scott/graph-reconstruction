@@ -1,0 +1,178 @@
+{
+  "status": "ONE_CASE_STARTED_FINAL_RESULT_NOT_RECOVERED",
+  "core_specification": "next_three_root/specification.json",
+  "parent_order": 22,
+  "cases": [
+    {
+      "root_edge_counts": [
+        0,
+        0
+      ],
+      "unit_literals": [
+        -58,
+        -59,
+        -60,
+        -118,
+        -119,
+        -120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    },
+    {
+      "root_edge_counts": [
+        0,
+        1
+      ],
+      "unit_literals": [
+        -58,
+        -59,
+        -60,
+        -118,
+        -119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    },
+    {
+      "root_edge_counts": [
+        0,
+        2
+      ],
+      "unit_literals": [
+        -58,
+        -59,
+        -60,
+        -118,
+        119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    },
+    {
+      "root_edge_counts": [
+        0,
+        3
+      ],
+      "unit_literals": [
+        -58,
+        -59,
+        -60,
+        118,
+        119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    },
+    {
+      "root_edge_counts": [
+        1,
+        1
+      ],
+      "unit_literals": [
+        -58,
+        -59,
+        60,
+        -118,
+        -119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    },
+    {
+      "root_edge_counts": [
+        1,
+        2
+      ],
+      "unit_literals": [
+        -58,
+        -59,
+        60,
+        -118,
+        119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    },
+    {
+      "root_edge_counts": [
+        1,
+        3
+      ],
+      "unit_literals": [
+        -58,
+        -59,
+        60,
+        118,
+        119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    },
+    {
+      "root_edge_counts": [
+        2,
+        2
+      ],
+      "unit_literals": [
+        -58,
+        59,
+        60,
+        -118,
+        119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "UNRESOLVED_FINAL_RESULT_NOT_RECOVERED_AFTER_RUNTIME_RESET",
+      "observed_build_seconds": 126.458957,
+      "observed_variables": 71340,
+      "observed_clauses": 10576944,
+      "solver_seconds_budget": 600
+    },
+    {
+      "root_edge_counts": [
+        2,
+        3
+      ],
+      "unit_literals": [
+        -58,
+        59,
+        60,
+        118,
+        119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    },
+    {
+      "root_edge_counts": [
+        3,
+        3
+      ],
+      "unit_literals": [
+        58,
+        59,
+        60,
+        118,
+        119,
+        120
+      ],
+      "remaining_free_edge_bits": 114,
+      "status": "NOT_SEPARATELY_RUN"
+    }
+  ],
+  "coverage": "S3 independently permutes the three root-edge slots; exchanging parents orders the two edge counts. The ten representatives cover all 64 patterns.",
+  "first_case": [
+    2,
+    2
+  ],
+  "first_case_reason": "contains the inherited selector near-miss after root relabeling; a heuristic priority, not CE evidence",
+  "first_command": "python scripts/astra_two_root_repair.py --roots 3 --preblock --fast-preblock --certify --degree-constraints --triangle-constraints --root-leaders --near-miss-phases --root-case 2 2 --seconds 1800 --out data/astra_direct/three_root_case_2_2"
+}

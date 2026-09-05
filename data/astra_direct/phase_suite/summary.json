@@ -1,0 +1,4514 @@
+[
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NNdkiUD?iAwDgDCAd?g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 146
+    },
+    "pair_gates": {
+      "emitted_completions": 4672,
+      "parent_isomorphic_rejections": 524,
+      "edge_count_rejections": 1488,
+      "duplicate_neighborhood_pairs": 2169,
+      "nonisomorphic_parent_pairs": 85,
+      "exact_deck_rejections": 85,
+      "parent_degree_rejections": 406
+    },
+    "unique_neighborhood_pairs": 2503,
+    "seconds": 0.17598324000027787,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 1,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NndkiUD?iAwDgDCAd?g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 146
+    },
+    "pair_gates": {
+      "emitted_completions": 4672,
+      "parent_isomorphic_rejections": 524,
+      "edge_count_rejections": 1568,
+      "duplicate_neighborhood_pairs": 2169,
+      "nonisomorphic_parent_pairs": 75,
+      "exact_deck_rejections": 75,
+      "parent_degree_rejections": 336
+    },
+    "unique_neighborhood_pairs": 2503,
+    "seconds": 0.1592634469998302,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 1,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NJfgmSD_iAgDgDcAd?g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 145
+    },
+    "pair_gates": {
+      "emitted_completions": 4640,
+      "parent_isomorphic_rejections": 518,
+      "edge_count_rejections": 1480,
+      "duplicate_neighborhood_pairs": 2155,
+      "nonisomorphic_parent_pairs": 99,
+      "exact_deck_rejections": 99,
+      "parent_degree_rejections": 388
+    },
+    "unique_neighborhood_pairs": 2485,
+    "seconds": 0.188273064999521,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 2,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NjfgmSD_iAgDgDcAd?g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 145
+    },
+    "pair_gates": {
+      "emitted_completions": 4640,
+      "parent_isomorphic_rejections": 518,
+      "edge_count_rejections": 1560,
+      "duplicate_neighborhood_pairs": 2155,
+      "nonisomorphic_parent_pairs": 81,
+      "exact_deck_rejections": 81,
+      "parent_degree_rejections": 326
+    },
+    "unique_neighborhood_pairs": 2485,
+    "seconds": 0.17363133100025152,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 2,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NJFkiUD?mAgDGDcAt?g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 144
+    },
+    "pair_gates": {
+      "emitted_completions": 4608,
+      "parent_isomorphic_rejections": 512,
+      "edge_count_rejections": 1472,
+      "duplicate_neighborhood_pairs": 2141,
+      "nonisomorphic_parent_pairs": 128,
+      "exact_deck_rejections": 128,
+      "parent_degree_rejections": 355
+    },
+    "unique_neighborhood_pairs": 2467,
+    "seconds": 0.20722827699955815,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 3,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NjFkiUD?mAgDGDcAt?g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 144
+    },
+    "pair_gates": {
+      "emitted_completions": 4608,
+      "parent_isomorphic_rejections": 512,
+      "edge_count_rejections": 1552,
+      "duplicate_neighborhood_pairs": 2141,
+      "nonisomorphic_parent_pairs": 107,
+      "exact_deck_rejections": 107,
+      "parent_degree_rejections": 296
+    },
+    "unique_neighborhood_pairs": 2467,
+    "seconds": 0.19621277099940926,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 3,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NNdLIeH@IC{HcHACc`G"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 149
+    },
+    "pair_gates": {
+      "emitted_completions": 4768,
+      "parent_isomorphic_rejections": 536,
+      "edge_count_rejections": 1522,
+      "duplicate_neighborhood_pairs": 2217,
+      "nonisomorphic_parent_pairs": 59,
+      "exact_deck_rejections": 59,
+      "parent_degree_rejections": 434
+    },
+    "unique_neighborhood_pairs": 2551,
+    "seconds": 0.14330625999991753,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 1,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NndLIeH@IC{HcHACc`G"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 151
+    },
+    "pair_gates": {
+      "emitted_completions": 4832,
+      "parent_isomorphic_rejections": 546,
+      "edge_count_rejections": 1618,
+      "duplicate_neighborhood_pairs": 2247,
+      "nonisomorphic_parent_pairs": 43,
+      "exact_deck_rejections": 43,
+      "parent_degree_rejections": 378
+    },
+    "unique_neighborhood_pairs": 2585,
+    "seconds": 0.12548807999974088,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 1,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NJfHMcH`ICkHcHaCc`G"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 150
+    },
+    "pair_gates": {
+      "emitted_completions": 4800,
+      "parent_isomorphic_rejections": 542,
+      "edge_count_rejections": 1526,
+      "duplicate_neighborhood_pairs": 2231,
+      "nonisomorphic_parent_pairs": 108,
+      "exact_deck_rejections": 108,
+      "parent_degree_rejections": 393
+    },
+    "unique_neighborhood_pairs": 2569,
+    "seconds": 0.2036796169995796,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 2,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NjfHMcH`ICkHcHaCc`G"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 148
+    },
+    "pair_gates": {
+      "emitted_completions": 4736,
+      "parent_isomorphic_rejections": 532,
+      "edge_count_rejections": 1588,
+      "duplicate_neighborhood_pairs": 2201,
+      "nonisomorphic_parent_pairs": 79,
+      "exact_deck_rejections": 79,
+      "parent_degree_rejections": 336
+    },
+    "unique_neighborhood_pairs": 2535,
+    "seconds": 0.1783802250001827,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 2,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NJFLIeH@MCkHCHaCs`G"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 151
+    },
+    "pair_gates": {
+      "emitted_completions": 4832,
+      "parent_isomorphic_rejections": 543,
+      "edge_count_rejections": 1538,
+      "duplicate_neighborhood_pairs": 2250,
+      "nonisomorphic_parent_pairs": 56,
+      "exact_deck_rejections": 56,
+      "parent_degree_rejections": 445
+    },
+    "unique_neighborhood_pairs": 2582,
+    "seconds": 0.1552943739998227,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 3,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NjFLIeH@MCkHCHaCs`G"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 151
+    },
+    "pair_gates": {
+      "emitted_completions": 4832,
+      "parent_isomorphic_rejections": 543,
+      "edge_count_rejections": 1618,
+      "duplicate_neighborhood_pairs": 2250,
+      "nonisomorphic_parent_pairs": 41,
+      "exact_deck_rejections": 41,
+      "parent_degree_rejections": 380
+    },
+    "unique_neighborhood_pairs": 2582,
+    "seconds": 0.14813355100068293,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 3,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NNdliuL@iE{LkLEEd`g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 195
+    },
+    "pair_gates": {
+      "emitted_completions": 6240,
+      "parent_isomorphic_rejections": 506,
+      "edge_count_rejections": 1864,
+      "duplicate_neighborhood_pairs": 2959,
+      "nonisomorphic_parent_pairs": 125,
+      "exact_deck_rejections": 125,
+      "parent_degree_rejections": 786
+    },
+    "unique_neighborhood_pairs": 3281,
+    "seconds": 0.24146066499997687,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 1,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NndliuL@iE{LkLEEd`g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 197
+    },
+    "pair_gates": {
+      "emitted_completions": 6304,
+      "parent_isomorphic_rejections": 518,
+      "edge_count_rejections": 1828,
+      "duplicate_neighborhood_pairs": 2987,
+      "nonisomorphic_parent_pairs": 135,
+      "exact_deck_rejections": 135,
+      "parent_degree_rejections": 836
+    },
+    "unique_neighborhood_pairs": 3317,
+    "seconds": 0.24914462199922127,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 1,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NJfhmsL`iEkLkLeEd`g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 197
+    },
+    "pair_gates": {
+      "emitted_completions": 6304,
+      "parent_isomorphic_rejections": 518,
+      "edge_count_rejections": 1880,
+      "duplicate_neighborhood_pairs": 2987,
+      "nonisomorphic_parent_pairs": 178,
+      "exact_deck_rejections": 178,
+      "parent_degree_rejections": 741
+    },
+    "unique_neighborhood_pairs": 3317,
+    "seconds": 0.32311102699986805,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 2,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NjfhmsL`iEkLkLeEd`g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 195
+    },
+    "pair_gates": {
+      "emitted_completions": 6240,
+      "parent_isomorphic_rejections": 506,
+      "edge_count_rejections": 1808,
+      "duplicate_neighborhood_pairs": 2959,
+      "nonisomorphic_parent_pairs": 191,
+      "exact_deck_rejections": 191,
+      "parent_degree_rejections": 776
+    },
+    "unique_neighborhood_pairs": 3281,
+    "seconds": 0.3357832319998124,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 2,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NJFliuL@mEkLKLeEt`g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 196
+    },
+    "pair_gates": {
+      "emitted_completions": 6272,
+      "parent_isomorphic_rejections": 512,
+      "edge_count_rejections": 1874,
+      "duplicate_neighborhood_pairs": 2973,
+      "nonisomorphic_parent_pairs": 157,
+      "exact_deck_rejections": 157,
+      "parent_degree_rejections": 756
+    },
+    "unique_neighborhood_pairs": 3299,
+    "seconds": 0.3004866419996688,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 3,
+      "terminal_edge": 0
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  },
+  {
+    "status": "COMPLETE_NO_CE_IN_THIS_SHARED_CARD_FIBRE",
+    "card": {
+      "order": 15,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "graph6": "NjFliuL@mEkLKLeEt`g"
+    },
+    "root_fixed": {
+      "card_isomorphism_options": 17,
+      "aut_C": 1,
+      "card_type_multiplicities": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "variables": 94,
+      "clauses": 449,
+      "sat_models": 0,
+      "status": "UNSAT",
+      "proof_lines": 1
+    },
+    "root_moving": {
+      "double_deleted_subsets": 105,
+      "double_deleted_types": 92,
+      "isomorphic_double_subset_pairs": 118,
+      "double_overlap_isomorphisms": 196
+    },
+    "pair_gates": {
+      "emitted_completions": 6272,
+      "parent_isomorphic_rejections": 512,
+      "edge_count_rejections": 1818,
+      "duplicate_neighborhood_pairs": 2973,
+      "nonisomorphic_parent_pairs": 166,
+      "exact_deck_rejections": 166,
+      "parent_degree_rejections": 803
+    },
+    "unique_neighborhood_pairs": 3299,
+    "seconds": 0.3092523920004169,
+    "versions": {
+      "python": "3.12.13",
+      "pynauty": "2.8.8.1",
+      "networkx": "3.6.1",
+      "python_sat": "1.9.dev15"
+    },
+    "construction": {
+      "core_order": 13,
+      "steps": [
+        1,
+        3,
+        4
+      ],
+      "word": [
+        0,
+        1,
+        3,
+        5,
+        8,
+        9
+      ],
+      "shift": 3,
+      "terminal_edge": 1
+    },
+    "proof_replay": {
+      "verified_unsat": true,
+      "rup_additions": 1,
+      "deletions": 0
+    }
+  }
+]

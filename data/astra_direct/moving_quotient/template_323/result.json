@@ -1,0 +1,12 @@
+{
+  "status": "SELECTED_TEMPLATE_EXHAUSTED_NO_CE_SINGLE_IMPLEMENTATION",
+  "counts": {
+    "assignments": 32768,
+    "nonisomorphic_parent_pairs": 824,
+    "full_deck_mismatch": 100,
+    "degree_rejections": 8808,
+    "missing_probe_card": 724,
+    "parent_isomorphic": 608,
+    "edge_count_rejections": 22528
+  }
+}

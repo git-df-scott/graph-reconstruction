@@ -1,0 +1,5 @@
+INDEPENDENT_MAP_LAYER 0 864 3.181
+INDEPENDENT_MAP_LAYER 1 59616 4.184
+INDEPENDENT_MAP_LAYER 2 1184544 13.987
+INDEPENDENT_MAP_LAYER 3 7500384 65.339
+{"backend": "NetworkX VF2", "comparison": "sorted full permutation bytes, no hashes", "map_count": 8745408, "migration_counts": {"0": 864, "1": 59616, "2": 1184544, "3": 7500384}, "networkx_version": "3.6.1", "numpy_version": "2.3.5", "seconds": 67.199394407, "status": "INDEPENDENT_PARENT_MAP_UNIVERSE_PASS"}

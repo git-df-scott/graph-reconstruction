@@ -1,0 +1,6 @@
+{
+  "purpose": "inherited near-miss phase preference, no edge constraints",
+  "nonisomorphic_nauty": true,
+  "common_cards": 9,
+  "order": 22
+}

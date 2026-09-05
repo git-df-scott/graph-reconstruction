@@ -1,0 +1,15 @@
+{
+  "status": "TIMEOUT_UNRESOLVED",
+  "provenance": "Final solver output observed before runtime reset; original temporary result.json and run.log were not recovered. Exact formula archive survived. This is a transcription, not the original solver receipt.",
+  "solver_seconds_budget": 600,
+  "build_seconds": 135.073443,
+  "total_seconds": 755.072632,
+  "variables": 71340,
+  "clauses": 10576938,
+  "solver_stats": {
+    "conflicts": 133209,
+    "decisions": 331056,
+    "propagations": 198113475,
+    "restarts": 602
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "INDEPENDENT_PARENT_MAP_UNIVERSE_PASS",
+  "map_count": 175104,
+  "migration_counts": {
+    "0": 288,
+    "1": 14400,
+    "2": 160416
+  },
+  "comparison": "full exact permutation sets",
+  "backend": "NetworkX VF2",
+  "networkx_version": "3.6.1",
+  "seconds": 14.589850286999535
+}

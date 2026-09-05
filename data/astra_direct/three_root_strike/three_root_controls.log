@@ -1,0 +1,13 @@
+test_degree_matching_all_small_assignments (test_astra_three_root.ThreeRootControls.test_degree_matching_all_small_assignments) ... ok
+test_full_core_native_clause_samples_all_layers (test_astra_three_root.ThreeRootControls.test_full_core_native_clause_samples_all_layers) ... ok
+test_native_complete_small_universe_and_each_clause (test_astra_three_root.ThreeRootControls.test_native_complete_small_universe_and_each_clause) ... ok
+test_root_type_leaders_cover_all_64_patterns (test_astra_three_root.ThreeRootControls.test_root_type_leaders_cover_all_64_patterns) ... ok
+test_seed_phases_respect_proved_leaders (test_astra_three_root.ThreeRootControls.test_seed_phases_respect_proved_leaders) ... ok
+test_three_root_deck_encoding_all_order_four_assignments (test_astra_three_root.ThreeRootControls.test_three_root_deck_encoding_all_order_four_assignments) ... ok
+test_triangle_matching_all_small_assignments (test_astra_three_root.ThreeRootControls.test_triangle_matching_all_small_assignments) ... ok
+test_unary_thresholds_both_directions (test_astra_three_root.ThreeRootControls.test_unary_thresholds_both_directions) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 5.407s
+
+OK

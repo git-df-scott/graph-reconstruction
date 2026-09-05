@@ -1,5 +1,10 @@
 # Graph Reconstruction Campaign
 
+> **Canonical handoff (2026-09-04):** read
+> `CANONICAL_STATE_2026_09_04.md` and `ASTRA_HANDOFF.md` first.  The hostile
+> audit merged the divergent September 2 branches and downgraded several
+> stale, sampled, unsupported, or hash-dependent claims.
+
 Exact, reproducible tooling for the Kelly--Ulam graph reconstruction
 conjecture.  The repository distinguishes three outcomes sharply:
 
