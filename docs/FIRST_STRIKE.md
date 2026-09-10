@@ -88,3 +88,42 @@ assignments still have isomorphic parents.  A further structured harvest found
 an external global permutation.  This refutes the stronger claim that one of
 the given card maps must extend, while leaving the actual global-gluing target
 open.
+
+## Alphabet extension, 2026-09-10
+
+- Ordinary GRC counterexample: **NO**.
+
+`scripts/weighted_selector_alphabet.py` re-runs the same weighted-orbit
+equation over every vector of a three-letter multiplicity box.  Candidate
+collisions are detected by two independent 64-bit multiset hashes and every
+hash collision is re-verified exactly in Python; no hash equality is accepted.
+Results are frozen in `docs/WEIGHTED_SELECTOR_ALPHABET_CERTIFICATE.json`.
+
+| Box | Vectors | A4-orbits | Exact weighted-deck collisions |
+|---|---:|---:|---:|
+| `{2,3}^16` (replay) | 65,536 | 5,760 | 0 |
+| `{1,2,3}^16` | 43,046,721 | 3,602,475 | 0 |
+| `{2,3,4}^16` | 43,046,721 | 3,602,475 | 0 |
+| `{0,1,2}^16` | 43,046,721 | 3,602,475 | 24, all of total weight at most 3 |
+
+`scripts/selector_quotient_check.py` makes the exclusion exact rather than a
+sufficient-condition search.  The 16-vertex selector quotient (four ports,
+six pair vertices, six selector vertices; Ivanov, arXiv:2608.11930) has
+45 edges, no false-twin pair, and exactly 12 automorphisms, namely the even
+port permutations already used by the search.  Hence for any weight vector
+with every class of size at least two, the expanded graphs `G(x)` and `G(y)`
+are isomorphic iff `x` and `y` lie in one A4-orbit, and the vertex deck of
+`G(x)` is exactly the weighted orbit deck.  The `{2,3,4}^16` result is
+therefore an exact statement: no two nonisomorphic expansions with all class
+sizes in `{2,3,4}` share a deck.  Direct backtracking isomorphism checks on
+expansions with weight-one classes (orders 16, 22 and 24) also agree with the
+abstraction, and orbit mates expand to isomorphic graphs while non-mates do
+not, but the `{1,2,3}^16` exclusion is stated only under the A4-orbit
+condition because a card whose class vanishes may acquire extra symmetry.
+
+The 24 collisions in the zero box have at most three vertices in total, far
+below the 14-vertex legal floor, and arise exactly from that extra symmetry
+of a reduced quotient.  They are not counterexamples.
+
+Not addressed: alphabets of four or more letters, and other selector
+quotients.
